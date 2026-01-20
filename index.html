@@ -325,7 +325,7 @@
       overflow:hidden;
     }
 
-    /* decorative braid */
+    /* decorative braid placeholder */
     .repeat-panel::before{
       content:"";
       position:absolute;
@@ -356,11 +356,13 @@
       padding:26px 22px 46px;
       text-align:left;
       color:rgba(12,25,64,0.92);
+      display:flex;
+      flex-direction:column;
     }
 
     .repeat-col h3{
       margin:0 0 14px 0;
-      font-size:14px;
+      font-size:16px;
       font-weight:700;
       letter-spacing:0.1px;
       color:rgba(12,25,64,0.92);
@@ -368,8 +370,8 @@
     }
 
     .repeat-col ul{
-      margin:0;
-      padding-left:18px;
+      margin:24px 0 0 18px;
+      padding-left:0;
       display:flex;
       flex-direction:column;
       gap:10px;
@@ -380,22 +382,14 @@
 
     .repeat-mid{
       display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
       align-items:center;
-      gap:10px;
+      justify-content:center;
       text-align:center;
-      padding-top:34px;
+      padding:26px 34px 46px;
     }
 
-    .repeat-mid .mid-top{
-      font-size:13px;
-      font-weight:600;
-      color:rgba(12,25,64,0.92);
-    }
-
-    .repeat-mid .mid-bottom{
-      font-size:13px;
+    .repeat-mid .mid-text{
+      font-size:16px;
       font-weight:600;
       color:rgba(12,25,64,0.92);
     }
@@ -592,9 +586,7 @@
               </div>
 
               <div class="repeat-col repeat-mid">
-                <div class="mid-top">Buyers don’t study your<br>message.</div>
-                <div class="col-rule"></div>
-                <div class="mid-bottom">They make fast assumptions.</div>
+                <div class="mid-text">Buyers don’t study your message. They make fast assumptions.</div>
               </div>
 
               <div class="repeat-col">
