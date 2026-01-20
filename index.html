@@ -3,901 +3,364 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clarity Converts</title>
-  <meta name="description" content="Make your B2B homepage make sense in one scroll." />
+  <title>Clarity Converts – Make your B2B homepage make sense in one scroll.</title>
+  <meta name="description" content="Make your B2B homepage make sense in one scroll. If the right buyer lands today, would they know what you do, who it is for, and why it matters." />
 
+  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg0:#040a1a;
-      --bg1:#071232;
-      --bg2:#0a1b45;
+    :root {
+      --bg0:#020518;
+      --bg1:#061330;
+      --bg2:#041736;
+
       --text:#eaf0ff;
       --muted:#b9c6ef;
       --muted2:#8ea0d6;
 
-      --card:rgba(255,255,255,0.06);
-      --card2:rgba(255,255,255,0.08);
-      --stroke:rgba(255,255,255,0.10);
-      --stroke2:rgba(255,255,255,0.14);
-
-      --white:#ffffff;
-      --ink:#071232;
-      --ink2:#102a62;
-
       --accent:#4ea1ff;
-      --accent2:#7ad7ff;
+      --accent-soft:#7ad7ff;
+
+      --card:rgba(10,23,66,0.96);
+      --card-soft:rgba(11,27,74,0.94);
+      --stroke:rgba(255,255,255,0.14);
+      --stroke-soft:rgba(255,255,255,0.10);
 
       --radius:18px;
-      --radius2:26px;
-      --shadow: 0 24px 60px rgba(0,0,0,0.35);
-      --shadow2: 0 10px 30px rgba(0,0,0,0.25);
+      --radius-lg:24px;
+      --shadow-strong:0 26px 60px rgba(0,0,0,0.45);
+      --shadow-soft:0 16px 40px rgba(0,0,0,0.35);
 
-      --max: 1120px;
+      --max-width:1120px;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
+    * {
+      box-sizing:border-box;
+    }
+
+    html, body {
+      height:100%;
+    }
+
+    body {
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 900px at 15% 10%, rgba(78,161,255,0.16), transparent 55%),
-        radial-gradient(900px 700px at 85% 20%, rgba(122,215,255,0.10), transparent 60%),
+        radial-gradient(1100px 900px at 12% 0%, rgba(124,211,255,0.28), transparent 60%),
+        radial-gradient(900px 700px at 88% 20%, rgba(65,149,255,0.22), transparent 60%),
         linear-gradient(180deg, var(--bg0), var(--bg1) 40%, var(--bg2) 100%);
       overflow-x:hidden;
     }
 
-    /* subtle “premium” texture */
-    body:before{
+    body::before {
       content:"";
       position:fixed;
       inset:-2px;
       pointer-events:none;
       background:
-        radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.06) 40%, transparent 42%) repeat,
-        radial-gradient(2px 2px at 80% 60%, rgba(255,255,255,0.04) 40%, transparent 42%) repeat;
-      background-size: 180px 180px;
-      opacity:0.25;
-      mix-blend-mode: overlay;
-      filter: blur(0.2px);
+        radial-gradient(2px 2px at 8% 14%, rgba(255,255,255,0.05) 40%, transparent 42%) repeat,
+        radial-gradient(2px 2px at 72% 60%, rgba(255,255,255,0.04) 40%, transparent 42%) repeat;
+      background-size:180px 180px;
+      opacity:0.26;
+      mix-blend-mode:overlay;
     }
 
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width: var(--max); margin:0 auto; padding: 0 22px; }
-    .section{ padding: 84px 0; }
-    .section.tight{ padding: 56px 0; }
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
 
-    .topbar{
+    .wrap {
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:0 22px;
+    }
+
+    /* Glass header */
+
+    header {
       position:sticky;
       top:0;
       z-index:10;
-      backdrop-filter: blur(10px);
-      background: rgba(4,10,26,0.55);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .nav{
+    .header-inner {
+      margin-top:18px;
+      margin-bottom:24px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:linear-gradient(120deg, rgba(13,30,80,0.78), rgba(8,17,52,0.86));
+      border:1px solid rgba(255,255,255,0.18);
+      box-shadow:0 18px 42px rgba(3,8,26,0.75);
+      backdrop-filter:blur(18px);
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding: 14px 0;
+      gap:22px;
     }
-    .brand{
-      font-weight: 650;
-      letter-spacing: 0.2px;
-      font-size: 14px;
-      opacity: 0.95;
-    }
-    .navlinks{
-      display:flex;
-      gap: 18px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .navlinks a{ padding: 8px 10px; border-radius: 10px; }
-    .navlinks a:hover{ background: rgba(255,255,255,0.06); color: var(--text); }
 
-    .hero{
-      padding-top: 58px;
-      padding-bottom: 36px;
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex:1;
     }
-    .heroGrid{
+
+    .brand-name {
+      font-size:15px;
+      font-weight:650;
+      letter-spacing:0.18px;
+      color:rgba(234,240,255,0.94);
+    }
+
+    .brand-separator {
+      width:1px;
+      height:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.32), rgba(255,255,255,0.08));
+      opacity:0.9;
+    }
+
+    .nav-links {
+      display:flex;
+      gap:14px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .nav-links a {
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    .nav-links a:hover {
+      background:rgba(255,255,255,0.08);
+      color:var(--text);
+    }
+
+    /* Hero */
+
+    main {
+      padding-bottom:72px;
+    }
+
+    .hero {
+      padding-top:24px;
+      padding-bottom:40px;
+    }
+
+    .hero-grid {
       display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 34px;
-      align-items:start;
+      grid-template-columns:minmax(0, 1.05fr);
+      justify-content:center;
+      text-align:center;
     }
-    h1{
-      margin: 0;
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -0.8px;
+
+    h1 {
+      margin:0;
+      font-size:clamp(32px, 4vw, 52px);
+      letter-spacing:-0.9px;
+      line-height:1.05;
     }
-    .subhead{
-      margin-top: 14px;
-      max-width: 60ch;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
+
+    .hero-sub {
+      margin:18px auto 0 auto;
+      max-width:620px;
+      font-size:15px;
+      line-height:1.8;
+      color:var(--muted);
     }
-    .ctaRow{
-      margin-top: 22px;
+
+    .hero-sub span {
+      display:block;
+      margin-top:4px;
+    }
+
+    .hero-ctas {
+      margin-top:26px;
       display:flex;
       flex-wrap:wrap;
-      gap: 12px;
-      align-items:center;
+      justify-content:center;
+      gap:14px;
     }
 
-    .btn{
+    .btn {
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      font-weight: 600;
-      font-size: 14px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
+      gap:8px;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,0.24);
+      background:rgba(255,255,255,0.04);
+      color:var(--text);
       cursor:pointer;
-    }
-    .btn:hover{ background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.22); }
-
-    .btn.primary{
-      border: 1px solid rgba(78,161,255,0.45);
-      background: linear-gradient(180deg, rgba(78,161,255,0.22), rgba(78,161,255,0.08));
-      box-shadow: 0 10px 26px rgba(78,161,255,0.18);
-    }
-    .btn.primary:hover{
-      background: linear-gradient(180deg, rgba(78,161,255,0.28), rgba(78,161,255,0.10));
+      transition:background 0.16s ease, border-color 0.16s ease, transform 0.1s ease;
     }
 
-    .micro{
-      margin-top: 12px;
-      color: var(--muted2);
-      font-size: 13px;
-      line-height: 1.6;
+    .btn.primary {
+      border-color:rgba(77,161,255,0.80);
+      background:linear-gradient(180deg, rgba(94,189,255,0.32), rgba(69,136,255,0.20));
+      box-shadow:0 18px 44px rgba(59,144,255,0.40);
     }
 
-    .miniCards{
+    .btn:hover {
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+
+    .btn.primary:hover {
+      background:linear-gradient(180deg, rgba(101,198,255,0.36), rgba(69,136,255,0.24));
+    }
+
+    /* Trust bar row */
+
+    .trust-row {
+      margin-top:56px;
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 30px;
-    }
-    .miniCard{
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: 16px;
-      padding: 14px 14px;
-    }
-    .miniTitle{
-      font-weight: 650;
-      font-size: 13px;
-      margin:0 0 6px 0;
-    }
-    .miniText{
-      margin:0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
     }
 
-    .dividerGlow{
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(122,215,255,0.35), rgba(78,161,255,0.35), transparent);
-      opacity:0.55;
-      margin: 22px 0 0 0;
+    .trust-card {
+      background:var(--card-soft);
+      border-radius:var(--radius-lg);
+      border:1px solid var(--stroke-soft);
+      padding:16px 16px 18px 16px;
+      box-shadow:var(--shadow-soft);
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
 
-    .headlineBlock{
-      text-align:center;
-      padding-top: 12px;
-    }
-    .headlineBlock h2{
-      margin:0;
-      font-size: clamp(24px, 2.6vw, 34px);
-      letter-spacing: -0.4px;
-      line-height: 1.2;
-    }
-    .headlineBlock p{
-      margin: 12px auto 0 auto;
-      max-width: 70ch;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .confusionWrap{
-      margin-top: 30px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 20px;
+    .trust-icon-wrap {
+      width:64px;
+      height:64px;
+      border-radius:18px;
+      background:radial-gradient(circle at 0% 0%, rgba(124,211,255,0.36), transparent 55%), rgba(4,13,40,0.9);
+      border:1px solid rgba(151,209,255,0.40);
+      display:flex;
+      align-items:center;
+      justify-content:center;
       overflow:hidden;
     }
-    .confusionGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .confCol{
-      padding: 18px 18px 14px 18px;
-      border-right: 1px solid rgba(255,255,255,0.08);
-    }
-    .confCol:last-child{ border-right:none; }
-    .confLabel{
-      font-size: 13px;
-      color: var(--muted2);
-      margin:0 0 10px 0;
-      font-weight: 600;
-    }
-    .confList{
-      margin:0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-    .confFooter{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-    }
-    .confFootItem{
-      padding: 10px 18px;
-      font-size: 12px;
-      color: rgba(234,240,255,0.70);
-      text-transform: lowercase;
-      letter-spacing: 0.2px;
-      border-right: 1px solid rgba(255,255,255,0.06);
-    }
-    .confFootItem:last-child{ border-right:none; }
 
-    .twoCol{
-      display:grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 34px;
-      align-items:start;
-    }
-    .kicker{
-      color: rgba(122,215,255,0.85);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      margin: 0 0 10px 0;
-    }
-    h3{
-      margin: 0;
-      font-size: 26px;
-      letter-spacing: -0.3px;
-      line-height: 1.25;
-    }
-    .bodyCopy{
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.75;
-    }
-    .deliverables{
-      margin-top: 18px;
-      display:grid;
-      gap: 12px;
-    }
-    .deliverable{
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 16px;
-      padding: 14px 14px;
-    }
-    .deliverable strong{
+    .trust-icon-wrap img {
+      max-width:52px;
+      height:auto;
       display:block;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-    .deliverable span{
-      display:block;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
     }
 
-    .stackCard{
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 20px;
-      padding: 16px;
-    }
-    .stackTitle{
-      font-weight: 700;
-      font-size: 14px;
-      margin: 0 0 14px 0;
-      color: rgba(234,240,255,0.85);
-    }
-
-    .stackCanvas{
-      position:relative;
-      height: 560px;
-      border-radius: 18px;
-    }
-
-    /* placeholders you will replace with real PNGs later */
-    .ph{
-      position:absolute;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow2);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding: 14px;
-      color: rgba(234,240,255,0.75);
-      font-size: 13px;
-    }
-    .ph.small{
-      border-radius: 16px;
-      box-shadow: 0 14px 36px rgba(0,0,0,0.28);
-    }
-
-    .phDoc{ width: 420px; height: 520px; top: 0; left: 50%; transform: translateX(-50%); }
-    .phBook{ width: 320px; height: 420px; top: 170px; left: 50%; transform: translateX(-50%); background: linear-gradient(180deg, rgba(78,161,255,0.18), rgba(78,161,255,0.06)); }
-    .phVid{ width: 420px; height: 70px; top: 505px; left: 50%; transform: translateX(-50%); background: linear-gradient(180deg, rgba(78,161,255,0.20), rgba(78,161,255,0.10)); }
-
-    .centerCta{
-      margin-top: 22px;
-      display:flex;
-      justify-content:flex-start;
-    }
-
-    .clearGrid{
-      margin-top: 22px;
-      display:grid;
-      gap: 14px;
-    }
-    .clearItem{
-      display:grid;
-      grid-template-columns: 70px 1fr;
-      gap: 14px;
-      align-items:center;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 18px;
-      padding: 14px;
-    }
-    .clearLetter{
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight: 800;
-      font-size: 22px;
-      color: rgba(234,240,255,0.9);
-    }
-    .clearText h4{
-      margin: 0;
-      font-size: 16px;
-      letter-spacing: -0.1px;
-    }
-    .clearText p{
-      margin: 6px 0 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-
-    .whiteSection{
-      background: rgba(255,255,255,0.02);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .serviceGrid{
-      margin-top: 22px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .serviceCard{
-      background: rgba(255,255,255,0.92);
-      color: var(--ink);
-      border-radius: 22px;
-      padding: 18px 18px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(7,18,50,0.10);
-    }
-    .badge{
-      display:inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--ink2);
-      background: rgba(78,161,255,0.18);
-      padding: 6px 10px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
-    .serviceCard h4{
-      margin: 0;
-      font-size: 16px;
-      letter-spacing: -0.1px;
-    }
-    .serviceCard p{
-      margin: 10px 0 0 0;
-      color: rgba(7,18,50,0.74);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .serviceList{
-      margin: 12px 0 0 0;
-      padding-left: 18px;
-      color: rgba(7,18,50,0.78);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-    .serviceCard .btn{
-      margin-top: 14px;
-      width: 100%;
-      border-color: rgba(7,18,50,0.14);
-      background: rgba(7,18,50,0.04);
-      color: var(--ink);
-    }
-    .serviceCard .btn:hover{ background: rgba(7,18,50,0.06); }
-
-    .portfolioGrid{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .caseCard{
-      background: rgba(255,255,255,0.92);
-      color: var(--ink);
-      border-radius: 22px;
-      padding: 18px;
-      border: 1px solid rgba(7,18,50,0.10);
-      box-shadow: var(--shadow);
-    }
-    .caseThumb{
-      height: 220px;
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(7,18,50,0.08), rgba(7,18,50,0.02));
-      border: 1px solid rgba(7,18,50,0.10);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color: rgba(7,18,50,0.55);
-      font-size: 13px;
-      margin-bottom: 14px;
-    }
-    .caseCard h4{ margin:0; font-size: 16px; }
-    .caseCard p{ margin: 8px 0 0 0; color: rgba(7,18,50,0.72); font-size: 13px; line-height: 1.6; }
-    .caseLink{
-      display:inline-block;
-      margin-top: 12px;
-      font-weight: 700;
-      font-size: 13px;
-      color: var(--ink2);
-      opacity: 0.9;
-    }
-    .caseLink:hover{ opacity:1; text-decoration: underline; }
-
-    .aboutGrid{
-      margin-top: 22px;
-      display:grid;
-      grid-template-columns: 0.45fr 0.55fr;
-      gap: 18px;
-      align-items:stretch;
-    }
-    .portrait{
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
-      min-height: 320px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color: rgba(234,240,255,0.7);
-      font-size: 13px;
-    }
-    .aboutCard{
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
-      padding: 18px;
-    }
-    .aboutCard h4{ margin:0; font-size: 18px; }
-    .aboutCard p{ margin: 10px 0 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
-
-    .finalCta{
-      text-align:center;
-    }
-    .finalCta h2{
+    .trust-title {
       margin:0;
-      font-size: 34px;
-      letter-spacing: -0.4px;
-      line-height: 1.2;
-    }
-    .finalCta p{
-      margin: 10px auto 0 auto;
-      color: var(--muted);
-      max-width: 70ch;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-    .finalButtons{
-      margin-top: 18px;
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap: 12px;
+      font-size:15px;
+      font-weight:600;
     }
 
-    footer{
-      padding: 28px 0 40px 0;
-      color: rgba(234,240,255,0.55);
-      font-size: 12px;
-      text-align:center;
+    .trust-text {
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.6;
     }
 
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      .miniCards{ grid-template-columns: 1fr; }
-      .confusionGrid{ grid-template-columns: 1fr; }
-      .confFooter{ grid-template-columns: 1fr; }
-      .confCol{ border-right:none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-      .confCol:last-child{ border-bottom:none; }
-      .confFootItem{ border-right:none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-      .confFootItem:last-child{ border-bottom:none; }
-      .twoCol{ grid-template-columns: 1fr; }
-      .serviceGrid{ grid-template-columns: 1fr; }
-      .portfolioGrid{ grid-template-columns: 1fr; }
-      .aboutGrid{ grid-template-columns: 1fr; }
-      .stackCanvas{ height: 600px; }
-      .phDoc, .phVid{ width: 100%; }
-      .phBook{ width: 76%; }
+    @media (max-width: 900px) {
+      .header-inner {
+        border-radius:18px;
+      }
+
+      .brand {
+        gap:14px;
+      }
+
+      .hero {
+        padding-top:12px;
+      }
+
+      .trust-row {
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar">
+  <header>
     <div class="wrap">
-      <div class="nav">
-        <div class="brand">clarity-converts.com</div>
-        <div class="navlinks">
+      <div class="header-inner">
+        <div class="brand">
+          <div class="brand-name">clarity-converts.com</div>
+          <div class="brand-separator"></div>
+        </div>
+        <nav class="nav-links">
           <a href="#home">Home</a>
           <a href="#contact">Contact</a>
-        </div>
+        </nav>
       </div>
     </div>
-  </div>
+  </header>
 
   <main id="home">
-    <section class="section hero">
+    <section class="hero">
       <div class="wrap">
-        <div class="heroGrid">
+        <div class="hero-grid">
           <div>
-            <h1>Make your B2B homepage<br/>make sense in one scroll.</h1>
-            <p class="subhead">
-              <!-- TODO: Replace with your exact subheadline text -->
-              If buyers cannot explain what you do in plain language, they do not feel safe moving forward.
+            <h1>Make your B2B homepage<br>make sense in one scroll.</h1>
+
+            <p class="hero-sub">
+              If the right buyer lands today, would they know what you do, who it is for, and why it matters
+              <span>I help you fix that.</span>
             </p>
 
-            <div class="ctaRow">
-              <a class="btn primary" href="#contact">Book a 15-minute clarity call</a>
-              <a class="btn" href="#work">See if you are missing clarity</a>
+            <div class="hero-ctas">
+              <a href="#contact" class="btn primary">Book a 48-Hour Clarity Audit</a>
+              <a href="#contact" class="btn">See if we are a fit in 15 minutes</a>
             </div>
 
-            <p class="micro">
-              <!-- TODO: Replace with your exact microcopy -->
-              One page. One decision. No fluff.
-            </p>
+            <div class="trust-row">
+              <article class="trust-card">
+                <div class="trust-icon-wrap">
+                  <!-- hero visual 1 -->
+                  <img src="hero-visual-1.png" alt="Magnifying glass over homepage interface">
+                </div>
+                <h3 class="trust-title">Fix the top 3 leaks.</h3>
+                <p class="trust-text">
+                  Headline. Proof. CTA. The usual conversion killers.
+                </p>
+              </article>
 
-            <div class="miniCards" aria-label="Quick outcomes">
-              <div class="miniCard">
-                <p class="miniTitle">Find the clarity leaks</p>
-                <p class="miniText">Where buyers misread you, and what they assume instead.</p>
-              </div>
-              <div class="miniCard">
-                <p class="miniTitle">Fix the message hierarchy</p>
-                <p class="miniText">Make the value obvious without making it louder.</p>
-              </div>
-              <div class="miniCard">
-                <p class="miniTitle">Make proof feel earned</p>
-                <p class="miniText">Show enough reality for a buyer to commit.</p>
-              </div>
-            </div>
+              <article class="trust-card">
+                <div class="trust-icon-wrap">
+                  <!-- hero visual 2 -->
+                  <img src="hero-visual-2.png" alt="Checklist turning into a page layout">
+                </div>
+                <h3 class="trust-title">Action plan, not theory</h3>
+                <p class="trust-text">
+                  What to change first, what to cut, and what to test next.
+                </p>
+              </article>
 
-            <div class="dividerGlow"></div>
-          </div>
-
-          <div>
-            <!-- Hero placeholder visual -->
-            <div class="miniCard" style="padding:18px; border-radius:22px;">
-              <p class="miniTitle" style="font-size:14px;">Hero visual placeholder</p>
-              <p class="miniText">Replace this with your real hero graphic later.</p>
-              <div style="height:220px; margin-top:12px; border-radius:18px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; color:rgba(234,240,255,0.70); font-size:13px;">
-                Image placeholder
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section tight">
-      <div class="wrap">
-        <div class="headlineBlock">
-          <h2>If buyers cannot repeat it, they will not buy it.</h2>
-          <p>
-            <!-- TODO: Replace with your exact paragraph -->
-            Most homepages fail quietly. They feel polished, but they do not land a clear decision in the buyer’s head.
-          </p>
-        </div>
-
-        <div class="confusionWrap" aria-label="Buyer confusion breakdown">
-          <div class="confusionGrid">
-            <div class="confCol">
-              <p class="confLabel">What buyers think they are seeing</p>
-              <ul class="confList">
-                <li><!-- TODO --> A quick scan for relevance</li>
-                <li><!-- TODO --> A familiar category and promise</li>
-                <li><!-- TODO --> Proof that feels credible</li>
-              </ul>
-            </div>
-            <div class="confCol">
-              <p class="confLabel">What is actually happening</p>
-              <ul class="confList">
-                <li><!-- TODO --> They are guessing your category</li>
-                <li><!-- TODO --> They are filling gaps with assumptions</li>
-                <li><!-- TODO --> They are looking for reasons to exit</li>
-              </ul>
-            </div>
-            <div class="confCol">
-              <p class="confLabel">What happens as a result</p>
-              <ul class="confList">
-                <li><!-- TODO --> They stay shallow</li>
-                <li><!-- TODO --> They misinterpret value</li>
-                <li><!-- TODO --> They leave without clarity</li>
-              </ul>
-            </div>
-          </div>
-          <div class="confFooter">
-            <div class="confFootItem">browse</div>
-            <div class="confFootItem">misinterpret</div>
-            <div class="confFootItem">exit</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="wrap">
-        <div class="twoCol">
-          <div>
-            <p class="kicker">Know where buyers get confused</p>
-            <h3>And what to fix first.</h3>
-            <p class="bodyCopy">
-              <!-- TODO: Replace with your exact copy -->
-              You do not need more copy. You need a clean diagnosis of what buyers misunderstand, and the smallest set of changes that removes confusion.
-            </p>
-
-            <div class="deliverables" aria-label="Deliverables list">
-              <div class="deliverable">
-                <strong>Recorded walkthrough (20 to 25 minutes)</strong>
-                <span>Shows the exact clarity leaks, what buyers assume instead, and why they happen.</span>
-              </div>
-              <div class="deliverable">
-                <strong>Diagnostic document (PDF)</strong>
-                <span>Annotated findings, page-level notes, and the specific clarity gaps to address.</span>
-              </div>
-              <div class="deliverable">
-                <strong>Rewrite guidance</strong>
-                <span>Ready-to-use copy options for hero, subheads, proof, and CTAs.</span>
-              </div>
-              <div class="deliverable">
-                <strong>Priority fix list</strong>
-                <span>The highest impact changes, ranked in the order to make them.</span>
-              </div>
-              <div class="deliverable">
-                <strong>Action plan</strong>
-                <span>A simple step-by-step plan to apply fixes without a full redesign.</span>
-              </div>
-
-            <div class="centerCta">
-              <a class="btn primary" href="#contact">Book a 15-minute clarity call</a>
-            </div>
-          </div>
-
-          <div class="stackCard">
-            <p class="stackTitle">What you will receive</p>
-
-            <div class="stackCanvas" aria-label="Deliverables stack placeholder">
-              <div class="ph phDoc">TOC page image placeholder</div>
-              <div class="ph phBook">Cover image placeholder</div>
-              <div class="ph phVid small">Recorded walkthrough card placeholder</div>
-            </div>
-
-            <p class="micro" style="margin-top:10px;">
-              Later, we replace these three placeholders with your exported PNGs.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section tight">
-      <div class="wrap">
-        <div class="headlineBlock">
-          <h2>The C.L.E.A.R Framework</h2>
-          <p><!-- TODO --> The structure I use to diagnose and improve homepage clarity.</p>
-        </div>
-
-        <div class="clearGrid">
-          <div class="clearItem">
-            <div class="clearLetter">C</div>
-            <div class="clearText">
-              <h4>Context</h4>
-              <p><!-- TODO --> The category, the buyer, and the moment they are in.</p>
-            </div>
-          </div>
-          <div class="clearItem">
-            <div class="clearLetter">L</div>
-            <div class="clearText">
-              <h4>Leverage</h4>
-              <p><!-- TODO --> The strongest angle that makes the decision easier.</p>
-            </div>
-          </div>
-          <div class="clearItem">
-            <div class="clearLetter">E</div>
-            <div class="clearText">
-              <h4>Evidence</h4>
-              <p><!-- TODO --> Proof that removes doubt, before the buyer asks.</p>
-            </div>
-          </div>
-          <div class="clearItem">
-            <div class="clearLetter">A</div>
-            <div class="clearText">
-              <h4>Action Path</h4>
-              <p><!-- TODO --> A clean next step that matches intent.</p>
-            </div>
-          </div>
-          <div class="clearItem">
-            <div class="clearLetter">R</div>
-            <div class="clearText">
-              <h4>Reinforcement</h4>
-              <p><!-- TODO --> Repeated signals that the message is stable and real.</p>
+              <article class="trust-card">
+                <div class="trust-icon-wrap">
+                  <!-- hero visual 3 -->
+                  <img src="hero-visual-3.png" alt="Homepage layout ready to ship">
+                </div>
+                <h3 class="trust-title">Hand off ready output</h3>
+                <p class="trust-text">
+                  A page plan and copy direction your designer can ship.
+                </p>
+              </article>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="section whiteSection">
-      <div class="wrap">
-        <div class="headlineBlock">
-          <h2>How we can work together.</h2>
-          <p><!-- TODO --> Built for clarity and speed. Each engagement ships something real.</p>
-        </div>
-
-        <div class="serviceGrid" aria-label="Services">
-          <div class="serviceCard">
-            <span class="badge">Fast diagnostic</span>
-            <h4>48-Hour Clarity Audit</h4>
-            <p><!-- TODO --> Identify the confusion. Get the fixes. Implement without guessing.</p>
-            <ul class="serviceList">
-              <li>Recorded walkthrough</li>
-              <li>Diagnostic PDF</li>
-              <li>Rewrite guidance</li>
-              <li>Priority fix list</li>
-              <li>Action plan</li>
-            </ul>
-            <a class="btn" href="#contact">See if this fits</a>
-          </div>
-
-          <div class="serviceCard">
-            <span class="badge">Homepage rebuild</span>
-            <h4>Homepage Rewrite</h4>
-            <p><!-- TODO --> A decision-first homepage that a buyer can repeat in one sentence.</p>
-            <ul class="serviceList">
-              <li>Message hierarchy and page plan</li>
-              <li>Section-by-section rewrite</li>
-              <li>Proof and objection placement</li>
-              <li>CTA and conversion flow</li>
-            </ul>
-            <a class="btn" href="#contact">Talk through scope</a>
-          </div>
-
-          <div class="serviceCard">
-            <span class="badge">Messaging system</span>
-            <h4>Conversion Messaging System</h4>
-            <p><!-- TODO --> Clarify positioning and buyer language so every page stays consistent.</p>
-            <ul class="serviceList">
-              <li>Buyer language capture</li>
-              <li>Core narrative and proof plan</li>
-              <li>Reusable copy blocks</li>
-              <li>Website consistency guardrails</li>
-            </ul>
-            <a class="btn" href="#contact">See the process</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="headlineBlock">
-          <h2>How clarity changes the way buyers see your product.</h2>
-          <p><!-- TODO --> Two real examples. No inflated numbers. Just clean before and after thinking.</p>
-        </div>
-
-        <div class="portfolioGrid" aria-label="Portfolio">
-          <div class="caseCard">
-            <div class="caseThumb">EcoVedo preview placeholder</div>
-            <h4>EcoVedo</h4>
-            <p><!-- TODO --> What changed, what was removed, and what became obvious.</p>
-            <a class="caseLink" href="#contact">View breakdown</a>
-          </div>
-
-          <div class="caseCard">
-            <div class="caseThumb">FoundersMood preview placeholder</div>
-            <h4>FOUNDERSMOOD</h4>
-            <p><!-- TODO --> The decision path, proof layering, and why the message clicked.</p>
-            <a class="caseLink" href="#contact">View breakdown</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section tight">
-      <div class="wrap">
-        <div class="aboutGrid" aria-label="About">
-          <div class="portrait">Portrait placeholder</div>
-          <div class="aboutCard">
-            <h4>The thinking behind the clarity.</h4>
-            <p><!-- TODO --> Write your about copy here. Keep it specific, calm, and grounded.</p>
-            <div style="margin-top:14px;">
-              <a class="btn primary" href="#contact">See how we can work together</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="wrap">
-        <div class="finalCta">
-          <h2>Ready when you are.</h2>
-          <p><!-- TODO --> Short closing line that sets expectation for the call or email.</p>
-
-          <div class="finalButtons">
-            <a class="btn primary" href="#">Book a 15-minute clarity call</a>
-            <a class="btn" href="mailto:you@example.com">Email</a>
-            <a class="btn" href="#">LinkedIn</a>
-            <a class="btn" href="#">I write hard, softly. Weekly.</a>
-          </div>
-
-          <p class="micro" style="margin-top:12px;">
-            Replace the links above with your real booking link, email, and LinkedIn URL.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 clarity-converts.com
-    </footer>
   </main>
 </body>
 </html>
