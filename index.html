@@ -32,14 +32,6 @@
 
       --tag-bg:rgba(255,255,255,0.10);
       --tag-text:rgba(9,20,47,0.75);
-
-      --intent:#dbe7ff;
-      --assumption:#dbe7ff;
-      --exit:#dbe7ff;
-
-      --intent-chip:#cfdcff;
-      --assumption-chip:#cfdcff;
-      --exit-chip:#cfdcff;
     }
 
     * { box-sizing:border-box; }
@@ -333,12 +325,11 @@
     }
 
     .repeat-col{
-      padding:26px 22px 46px;
+      padding:26px 22px 54px;
       text-align:left;
       color:rgba(12,25,64,0.92);
       display:flex;
       flex-direction:column;
-      justify-content:center;
     }
 
     .repeat-col h3{
@@ -350,37 +341,6 @@
       text-align:center;
     }
 
-    .repeat-col ul{
-      margin:22px 0 0 18px;
-      padding-left:0;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      font-size:13px;
-      line-height:1.45;
-      color:rgba(12,25,64,0.88);
-    }
-
-    .repeat-mid{
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      text-align:center;
-      padding:18px 34px 40px;
-    }
-
-    .repeat-mid .mid-text{
-      font-size:16px;
-      font-weight:600;
-      color:rgba(12,25,64,0.92);
-    }
-
-    /* inner dividers */
-    .repeat-grid > :nth-child(2){
-      border-left:1px solid rgba(12,25,64,0.22);
-      border-right:1px solid rgba(12,25,64,0.22);
-    }
-
     .repeat-col .col-rule{
       width:70%;
       height:1px;
@@ -388,39 +348,70 @@
       background:linear-gradient(90deg, rgba(12,25,64,0.00), rgba(12,25,64,0.22), rgba(12,25,64,0.00));
     }
 
-    /* bottom tags row */
+    /* Center the bullet blocks vertically inside their columns */
+    .list-wrap{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 4px;
+    }
+
+    .repeat-col ul{
+      margin:0;
+      padding-left:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      font-size:13px;
+      line-height:1.45;
+      color:rgba(12,25,64,0.88);
+    }
+
+    .repeat-mid{
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      text-align:center;
+      padding:26px 34px 54px;
+    }
+
+    /* Highlight middle statement like the titles and place it slightly lower */
+    .repeat-mid .mid-text{
+      margin-top:22px;
+      font-size:16px;
+      font-weight:700;
+      color:rgba(12,25,64,0.92);
+      line-height:1.25;
+      max-width: 24ch;
+    }
+
+    /* Inner dividers for the main 3 columns only */
+    .repeat-grid > :nth-child(2){
+      border-left:1px solid rgba(12,25,64,0.22);
+      border-right:1px solid rgba(12,25,64,0.22);
+    }
+
+    /* Bottom labels as one strip, no dividers */
     .repeat-tags{
       position:absolute;
       left:0;
       right:0;
       bottom:0;
       height:42px;
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      background:var(--tag-bg);
+      display:flex;
+      align-items:center;
+      justify-content:space-around;
+      background:rgba(255,255,255,0.12);
       border-top:1px solid rgba(12,25,64,0.18);
     }
 
     .repeat-tag{
-      display:flex;
-      align-items:center;
-      justify-content:center;
       font-size:13px;
       font-weight:600;
       letter-spacing:0.2px;
       color:rgba(12,25,64,0.78);
       text-transform:lowercase;
-    }
-
-    .repeat-tag + .repeat-tag{
-      border-left:none;
-    }
-
-    .repeat-tag span{
-      padding:0;
-      border-radius:0;
-      background:none;
-      color:rgba(12,25,64,0.82);
     }
 
     .repeat-micro{
@@ -432,26 +423,22 @@
       text-align:center;
     }
 
-    .repeat-micro strong{
-      font-weight:600;
-      color:rgba(234,240,255,0.86);
-    }
-
+    /* Make the two lines stand out more */
     .micro-rule-row{
       margin-top:14px;
       display:flex;
       align-items:center;
       justify-content:center;
       gap:14px;
-      color:rgba(234,240,255,0.80);
+      color:rgba(234,240,255,0.84);
       font-size:12.5px;
       font-weight:500;
     }
 
     .micro-rule-row .line{
-      width:200px;
-      height:1px;
-      background:linear-gradient(90deg, rgba(255,255,255,0.00), rgba(255,255,255,0.45), rgba(255,255,255,0.00));
+      width:220px;
+      height:2px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.00), rgba(255,255,255,0.55), rgba(255,255,255,0.00));
     }
 
     @media (max-width: 900px){
@@ -465,20 +452,27 @@
         border-bottom:1px solid rgba(12,25,64,0.22);
       }
       .repeat-tags{
-        grid-template-columns:1fr;
-        height:auto;
         position:relative;
-      }
-      .repeat-tag + .repeat-tag{
-        border-left:none;
-        border-top:1px solid rgba(12,25,64,0.18);
+        height:auto;
+        padding:10px 0;
+        justify-content:space-evenly;
       }
       .repeat-col{
         padding:22px 18px 22px;
         text-align:left;
       }
+      .repeat-mid{
+        padding:22px 18px 22px;
+      }
+      .repeat-mid .mid-text{
+        margin-top:10px;
+        max-width: 28ch;
+      }
       .repeat-panel{
         border-radius:14px;
+      }
+      .micro-rule-row .line{
+        width:120px;
       }
     }
   </style>
@@ -558,13 +552,16 @@
               <div class="repeat-col">
                 <h3>What founders think<br>they're showing</h3>
                 <div class="col-rule"></div>
-                <ul>
-                  <li>Clear value</li>
-                  <li>Strong differentiation</li>
-                  <li>Benefits that matter</li>
-                  <li>A simple story</li>
-                  <li>An obvious next step</li>
-                </ul>
+
+                <div class="list-wrap">
+                  <ul>
+                    <li>Clear value</li>
+                    <li>Strong differentiation</li>
+                    <li>Benefits that matter</li>
+                    <li>A simple story</li>
+                    <li>An obvious next step</li>
+                  </ul>
+                </div>
               </div>
 
               <div class="repeat-col repeat-mid">
@@ -574,18 +571,21 @@
               <div class="repeat-col">
                 <h3>What buyers<br>actually see</h3>
                 <div class="col-rule"></div>
-                <ul>
-                  <li>Claims that feel big, but unsupported</li>
-                  <li>No clear entry point</li>
-                  <li>Hard to know if it is for them</li>
-                  <li>Proof buried, or missing</li>
-                </ul>
+
+                <div class="list-wrap">
+                  <ul>
+                    <li>Claims that feel big, but unsupported</li>
+                    <li>No clear entry point</li>
+                    <li>Hard to know if it is for them</li>
+                    <li>Proof buried, or missing</li>
+                  </ul>
+                </div>
               </div>
 
               <div class="repeat-tags" aria-hidden="true">
-                <div class="repeat-tag"><span>intent</span></div>
-                <div class="repeat-tag"><span>assumption</span></div>
-                <div class="repeat-tag"><span>exit</span></div>
+                <div class="repeat-tag">intent</div>
+                <div class="repeat-tag">assumption</div>
+                <div class="repeat-tag">exit</div>
               </div>
             </div>
           </div>
