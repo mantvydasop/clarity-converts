@@ -371,10 +371,10 @@
     /* middle column text, highlighted and hanging in the middle band */
     .repeat-mid{
       display:flex;
-      align-items:center;
+      align-items:flex-start;  /* was: center */
       justify-content:center;
       text-align:center;
-      padding:26px 34px 54px;
+      padding:40px 34px 54px; /* you can tune 40px */
     }
 
     .repeat-mid .mid-text{
@@ -571,7 +571,10 @@
               </div>
 
               <div class="repeat-col repeat-mid">
-                <div class="mid-text">Buyers do not study your message. They make fast assumptions.</div>
+                <div class="mid-text">
+                  Buyers do not study your message.<br>
+                  <span class="mid-sub">They make fast assumptions.</span>
+                </div>
               </div>
 
               <div class="repeat-col">
