@@ -30,7 +30,7 @@
       --panel-stroke:rgba(255,255,255,0.18);
       --panel-text:#0b1b4a;
 
-      --tag-bg:rgba(255,255,255,0.32);
+      --tag-bg:rgba(255,255,255,0.10);
       --tag-text:rgba(9,20,47,0.75);
 
       --intent:#dbe7ff;
@@ -325,26 +325,6 @@
       overflow:hidden;
     }
 
-    /* decorative braid placeholder */
-    .repeat-panel::before{
-      content:"";
-      position:absolute;
-      left:-10%;
-      right:-10%;
-      top:52%;
-      height:120px;
-      transform:translateY(-50%);
-      background:
-        radial-gradient(80px 40px at 20% 60%, rgba(56,140,255,0.85), transparent 70%),
-        radial-gradient(90px 45px at 45% 40%, rgba(20,78,200,0.90), transparent 72%),
-        radial-gradient(90px 45px at 70% 60%, rgba(90,200,255,0.85), transparent 70%),
-        radial-gradient(110px 55px at 55% 65%, rgba(11,42,120,0.90), transparent 72%),
-        linear-gradient(90deg, rgba(10,40,120,0.10), rgba(10,40,120,0.00), rgba(10,40,120,0.10));
-      filter: blur(0.2px);
-      opacity:0.95;
-      pointer-events:none;
-    }
-
     .repeat-grid{
       position:relative;
       display:grid;
@@ -358,6 +338,7 @@
       color:rgba(12,25,64,0.92);
       display:flex;
       flex-direction:column;
+      justify-content:center;
     }
 
     .repeat-col h3{
@@ -370,7 +351,7 @@
     }
 
     .repeat-col ul{
-      margin:24px 0 0 18px;
+      margin:22px 0 0 18px;
       padding-left:0;
       display:flex;
       flex-direction:column;
@@ -383,9 +364,9 @@
     .repeat-mid{
       display:flex;
       align-items:center;
-      justify-content:center;
+      justify-content:flex-start;
       text-align:center;
-      padding:26px 34px 46px;
+      padding:18px 34px 40px;
     }
 
     .repeat-mid .mid-text{
@@ -416,7 +397,7 @@
       height:42px;
       display:grid;
       grid-template-columns:1fr 1fr 1fr;
-      background:rgba(255,255,255,0.10);
+      background:var(--tag-bg);
       border-top:1px solid rgba(12,25,64,0.18);
     }
 
@@ -432,18 +413,18 @@
     }
 
     .repeat-tag + .repeat-tag{
-      border-left:1px solid rgba(12,25,64,0.18);
+      border-left:none;
     }
 
     .repeat-tag span{
-      padding:6px 12px;
-      border-radius:10px;
-      background:rgba(255,255,255,0.36);
+      padding:0;
+      border-radius:0;
+      background:none;
       color:rgba(12,25,64,0.82);
     }
 
     .repeat-micro{
-      margin:22px auto 0;
+      margin:32px auto 0;
       max-width:820px;
       font-size:12.5px;
       line-height:1.75;
@@ -461,15 +442,16 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:12px;
-      color:rgba(234,240,255,0.68);
-      font-size:12px;
+      gap:14px;
+      color:rgba(234,240,255,0.80);
+      font-size:12.5px;
+      font-weight:500;
     }
 
     .micro-rule-row .line{
-      width:140px;
+      width:200px;
       height:1px;
-      background:linear-gradient(90deg, rgba(255,255,255,0.00), rgba(255,255,255,0.25), rgba(255,255,255,0.00));
+      background:linear-gradient(90deg, rgba(255,255,255,0.00), rgba(255,255,255,0.45), rgba(255,255,255,0.00));
     }
 
     @media (max-width: 900px){
@@ -586,7 +568,7 @@
               </div>
 
               <div class="repeat-col repeat-mid">
-                <div class="mid-text">Buyers don’t study your message. They make fast assumptions.</div>
+                <div class="mid-text">Buyers do not study your message. They make fast assumptions.</div>
               </div>
 
               <div class="repeat-col">
@@ -595,7 +577,7 @@
                 <ul>
                   <li>Claims that feel big, but unsupported</li>
                   <li>No clear entry point</li>
-                  <li>Hard to know if it’s for them</li>
+                  <li>Hard to know if it is for them</li>
                   <li>Proof buried, or missing</li>
                 </ul>
               </div>
