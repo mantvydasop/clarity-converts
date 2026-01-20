@@ -30,7 +30,7 @@
       --panel-stroke:rgba(255,255,255,0.18);
       --panel-text:#0b1b4a;
 
-      --tag-bg:rgba(255,255,255,0.10);
+      --tag-bg:#cfd7ea;
       --tag-text:rgba(9,20,47,0.75);
     }
 
@@ -348,7 +348,7 @@
       background:linear-gradient(90deg, rgba(12,25,64,0.00), rgba(12,25,64,0.22), rgba(12,25,64,0.00));
     }
 
-    /* Center the bullet blocks vertically inside their columns */
+    /* bullet lists centered vertically in their column area */
     .list-wrap{
       flex:1;
       display:flex;
@@ -368,31 +368,31 @@
       color:rgba(12,25,64,0.88);
     }
 
+    /* middle column text, highlighted and hanging in the middle band */
     .repeat-mid{
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       justify-content:center;
       text-align:center;
       padding:26px 34px 54px;
     }
 
-    /* Highlight middle statement like the titles and place it slightly lower */
     .repeat-mid .mid-text{
-      margin-top:22px;
       font-size:16px;
       font-weight:700;
       color:rgba(12,25,64,0.92);
-      line-height:1.25;
-      max-width: 24ch;
+      line-height:1.3;
+      max-width:24ch;
+      margin-top:6px;
     }
 
-    /* Inner dividers for the main 3 columns only */
+    /* vertical dividers for main columns only */
     .repeat-grid > :nth-child(2){
       border-left:1px solid rgba(12,25,64,0.22);
       border-right:1px solid rgba(12,25,64,0.22);
     }
 
-    /* Bottom labels as one strip, no dividers */
+    /* bottom labels as one merged strip, no inner lines visible */
     .repeat-tags{
       position:absolute;
       left:0;
@@ -402,7 +402,7 @@
       display:flex;
       align-items:center;
       justify-content:space-around;
-      background:rgba(255,255,255,0.12);
+      background:var(--tag-bg);
       border-top:1px solid rgba(12,25,64,0.18);
     }
 
@@ -423,7 +423,6 @@
       text-align:center;
     }
 
-    /* Make the two lines stand out more */
     .micro-rule-row{
       margin-top:14px;
       display:flex;
@@ -439,6 +438,10 @@
       width:220px;
       height:2px;
       background:linear-gradient(90deg, rgba(255,255,255,0.00), rgba(255,255,255,0.55), rgba(255,255,255,0.00));
+    }
+
+    .micro-text{
+      white-space:nowrap;
     }
 
     @media (max-width: 900px){
@@ -465,14 +468,17 @@
         padding:22px 18px 22px;
       }
       .repeat-mid .mid-text{
-        margin-top:10px;
-        max-width: 28ch;
+        margin-top:4px;
+        max-width:28ch;
       }
       .repeat-panel{
         border-radius:14px;
       }
       .micro-rule-row .line{
         width:120px;
+      }
+      .micro-text{
+        white-space:normal;
       }
     }
   </style>
@@ -594,7 +600,7 @@
             <div>I close the gap by tightening the promise, moving proof earlier, and making the next steps obvious.</div>
             <div class="micro-rule-row">
               <div class="line"></div>
-              <div>This is not “better writing”. This is fewer wrong assumptions.</div>
+              <div class="micro-text">This is not “better writing”. This is fewer wrong assumptions.</div>
               <div class="line"></div>
             </div>
           </div>
