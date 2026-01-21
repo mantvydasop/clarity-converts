@@ -275,9 +275,29 @@
 
     /* Section 2: Repeatability */
     .repeat-section{
+      position:relative;
       padding-top:62px;
       text-align:center;
     }
+
+    .repeat-section::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:-40px;
+      transform:translateX(-50%);
+
+      width:180%;
+      height:320px;
+
+      background:url("assets/ribbon-image.png") no-repeat center;
+      background-size:cover;
+
+      opacity:0.8;
+      pointer-events:none;
+      z-index:0;
+    }
+      
 
     .repeat-title{
       font-size:32px;
@@ -309,6 +329,8 @@
 
     .repeat-panel{
       position:relative;
+      z-index:1;
+      
       width:min(860px, 96%);
       margin:34px auto 0;
       border-radius:12px;
@@ -316,25 +338,6 @@
       box-shadow: 0 22px 60px rgba(0,0,0,0.35);
       overflow:hidden;
       backdrop-filter:blur(12px);
-    }
-
-    .repeat-panel::before{
-      content:"";
-      position:absolute;
-      left:50%;
-      top:100%;
-      transform:translate(-50%, -65%);
-
-      
-      width:220%;
-      height:260px;
-      
-      background:url("assets/ribbon-image.png") no-repeat center;
-      background-size:cover;
-
-      opacity:0.55;
-      pointer-events:none;
-      z-index:0;
     }
 
     .repeat-grid,
