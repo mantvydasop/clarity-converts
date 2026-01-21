@@ -317,6 +317,30 @@
       overflow:hidden;
     }
 
+    .repeat-panel::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -10%);
+      width:140%;
+      height:160px;
+      
+      background:url("assets/ribbon-image.png") no-repeat center;
+      background-size:contain;
+
+      opacity:0.9;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .repeat-grid,
+    .repeat-tags{
+      position:relative;
+      z-index:1;
+    }
+    
+
     .repeat-grid{
       position:relative;
       display:grid;
