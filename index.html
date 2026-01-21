@@ -330,7 +330,8 @@
       background:url("assets/ribbon-image.png") no-repeat center;
       background-size:contain;
 
-      opacity:0.9;
+      opacity:0.35;
+      filter:blur(4px); 
       pointer-events:none;
       z-index:0;
     }
@@ -404,6 +405,7 @@
     
     /* middle column text, highlighted and hanging in the middle band */
     .repeat-mid{
+      position:relative;
       display:flex;
       align-items:flex-start;  /* was: center */
       justify-content:center;
@@ -412,8 +414,11 @@
     }
 
     .repeat-mid .mid-text{
+      position:relative;
+      z-index:1;
+      
+      
       margin:0 auto;          /* center the block in the column */
-      margin-top:-10px;
       width:100%;              /* give it similar width to side titles */
       max-width:64ch;         /* cap line length so it stays readable */
       
@@ -422,7 +427,7 @@
       color:rgba(12,25,64,0.92);
       line-height:1.4;
 
-      transform: translateY(-36px);
+      transform: translateY(-42px);
     }
 
     .repeat-mid .mid-sub{
