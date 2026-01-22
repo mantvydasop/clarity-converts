@@ -561,7 +561,7 @@
       flex:1;
       display:flex;
       flex-direction:column;
-      align-items:flex-end;
+      align-items:flex-start;
       gap:24px;
     }
 
@@ -649,13 +649,28 @@
     }
 
     .audit-right-title{
-      margin:0 0 14px 0;
-      font-size:18px;
-      font-weight:600;
-      letter-spacing:0.1px;
-      color:rgba(234,240,255,0.96);
+      margin:0 0 12px 0;
+      font-size:32px;              /* match .audit-title */
+      letter-spacing:-0.4px;       /* match .audit-title */
+      line-height:1.25;            /* match .audit-title */
+      font-weight:700;
+      color:rgba(234,240,255,0.98);
     }
 
+    .audit-right-rule{
+      width:100%;
+      max-width:320px;
+      margin:0 0 20px 0;
+      height:1px;
+      background:linear-gradient(
+        90deg,
+        rgba(255,255,255,0.0),
+        rgba(255,255,255,0.40),
+        rgba(255,255,255,0.0)
+        );
+    }
+        
+    
     /* Right side visuals */
     .audit-mock{
       position:relative;
@@ -967,6 +982,7 @@
 
             <div class="audit-right" aria-hidden="true">
               <h3 class="audit-right-title">What you'll receive:</h3>
+              <div class="audit-right-rule"></div>
 
               <div class="audit-mock">
                 <div class="audit-mock-cover">48-Hour Clarity Audit</div>
