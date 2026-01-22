@@ -41,7 +41,7 @@
       margin:0;
       font-family:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
       color:var(--text);
-      background:#081b37;
+      background:none;
       overflow-x:hidden;
     }
 
@@ -50,12 +50,21 @@
       position:fixed;
       inset:-2px;
       pointer-events:none;
+      
       background:
         radial-gradient(2px 2px at 8% 14%, rgba(255,255,255,0.05) 40%, transparent 42%) repeat,
-        radial-gradient(2px 2px at 72% 60%, rgba(255,255,255,0.04) 40%, transparent 42%) repeat;
-      background-size:180px 180px;
-      opacity:0.26;
-      mix-blend-mode:overlay;
+        radial-gradient(2px 2px at 72% 60%, rgba(255,255,255,0.04) 40%, transparent 42%) repeat,
+        linear-gradient(
+          180deg,
+          #081b37 0%,
+          #061330 45%,
+          #041736 100%
+          );
+
+      background-size: 180px 180px, 180px 180px, 100% 100%;
+      
+      opacity:1;
+      mix-blend-mode:normal;
     }
 
     a{ color:inherit; text-decoration:none; }
