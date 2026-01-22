@@ -41,7 +41,12 @@
       margin:0;
       font-family:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
       color:var(--text);
-      background:#081b37;
+      background:
+        linear-gradient(
+          180deg,
+          #0a2345 0%,   /* slightly lighter at the very top */
+          #081b37 100% /* your current base color everywhere else */
+          );
       overflow-x:hidden;
     }
 
