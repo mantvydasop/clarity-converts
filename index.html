@@ -46,7 +46,7 @@
         #081b37 0%,
         #061330 45%,
         #041736 100%
-        );
+      );
       background-attachment:fixed;
       overflow-x:hidden;
     }
@@ -61,7 +61,7 @@
         radial-gradient(2px 2px at 8% 14%, rgba(255,255,255,0.05) 40%, transparent 42%) repeat,
         radial-gradient(2px 2px at 72% 60%, rgba(255,255,255,0.04) 40%, transparent 42%) repeat;
         
-      background-size: 180px 180px;
+      background-size:180px 180px;
       
       opacity:0.26;
       mix-blend-mode:overlay;
@@ -541,7 +541,217 @@
       .micro-text{
         white-space:normal;
       }
-    }    
+    }
+
+    /* Audit section */
+    .audit-section{
+      padding:80px 0 88px;
+      text-align:left;
+    }
+
+    .audit-inner{
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+    }
+
+    .audit-left{
+      flex:1.4;
+      max-width:640px;
+    }
+
+    .audit-right{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:18px;
+    }
+
+    .audit-title{
+      margin:0 0 18px 0;
+      font-size:30px;
+      letter-spacing:-0.4px;
+      line-height:1.25;
+      color:rgba(234,240,255,0.98);
+    }
+
+    .audit-rule{
+      width:100%;
+      max-width:520px;
+      margin:0 0 20px 0;
+      height:1px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.40), rgba(255,255,255,0.0));
+    }
+
+    .audit-body{
+      margin:0 0 14px 0;
+      color:rgba(234,240,255,0.82);
+      font-size:14.5px;
+      line-height:1.8;
+    }
+
+    .audit-subtitle{
+      margin:22px 0 8px 0;
+      font-size:15px;
+      font-weight:600;
+      color:rgba(234,240,255,0.92);
+    }
+
+    .audit-list{
+      margin:0 0 6px 0;
+      padding-left:20px;
+      color:rgba(234,240,255,0.90);
+      font-size:14.5px;
+      line-height:1.7;
+    }
+
+    .audit-list li + li{
+      margin-top:4px;
+    }
+
+    .audit-body-small{
+      margin-top:18px;
+      max-width:580px;
+    }
+
+    .audit-cta-block{
+      margin-top:26px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:10px;
+    }
+
+    .audit-microcopy{
+      font-size:12px;
+      color:rgba(234,240,255,0.70);
+    }
+
+    /* Right side placeholder visuals */
+    .audit-mock{
+      position:relative;
+      width:260px;
+      height:240px;
+      border-radius:12px;
+      background:rgba(7,18,52,0.96);
+      box-shadow:0 16px 40px rgba(0,0,0,0.45);
+      padding:18px 16px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      overflow:hidden;
+    }
+
+    .audit-mock-cover{
+      width:38%;
+      height:100%;
+      border-radius:10px;
+      background:linear-gradient(180deg, #102961, #050f34);
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      font-size:11px;
+      font-weight:600;
+      text-align:center;
+      padding:0 6px 10px;
+      color:rgba(234,240,255,0.85);
+    }
+
+    .audit-mock-page{
+      width:56%;
+      height:100%;
+      border-radius:10px;
+      background:#f5f7fd;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+    }
+
+    .audit-mock-page-header{
+      padding:8px 10px;
+      font-size:10px;
+      font-weight:600;
+      color:#0b1b4a;
+      background:#e2e7f5;
+    }
+
+    .audit-mock-page-body{
+      flex:1;
+      padding:10px 10px 12px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      justify-content:flex-start;
+    }
+
+    .audit-mock-pill{
+      height:12px;
+      border-radius:999px;
+      background:rgba(12,25,64,0.12);
+    }
+
+    .audit-includes{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:linear-gradient(120deg, rgba(59,130,246,0.2), rgba(59,130,246,0.5));
+      box-shadow:0 10px 26px rgba(0,0,0,0.45);
+    }
+
+    .audit-includes-icon{
+      width:26px;
+      height:26px;
+      border-radius:999px;
+      background:#f5f7fd;
+      position:relative;
+    }
+
+    .audit-includes-icon::before{
+      content:"";
+      position:absolute;
+      left:9px;
+      top:7px;
+      width:8px;
+      height:12px;
+      border-radius:2px;
+      border-style:solid;
+      border-width:6px 0 6px 8px;
+      border-color:transparent transparent transparent #3b82f6;
+    }
+
+    .audit-includes-text{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .audit-includes-label{
+      font-size:11px;
+      font-weight:600;
+      color:rgba(226,236,255,0.86);
+    }
+
+    .audit-includes-main{
+      font-size:12px;
+      font-weight:500;
+      color:#ffffff;
+    }
+
+    @media (max-width: 900px){
+      .audit-inner{
+        flex-direction:column;
+        gap:32px;
+      }
+      .audit-right{
+        align-items:flex-start;
+      }
+      .audit-mock{
+        width:100%;
+        max-width:320px;
+      }
+    }
   </style>
 </head>
 
@@ -671,6 +881,76 @@
           </div>
         </section>
         <!-- END NEXT SECTION -->
+
+        <!-- AUDIT SECTION -->
+        <section class="audit-section" aria-label="48-Hour Clarity Audit">
+          <div class="audit-inner">
+
+            <div class="audit-left">
+              <h2 class="audit-title">
+                <span>Know where buyers get confused.</span><br>
+                <span>And what to fix first.</span>
+              </h2>
+
+              <div class="audit-rule"></div>
+
+              <p class="audit-body">
+                The <strong>48-Hour Clarity Audit</strong> gives you a clear diagnosis of your homepage,
+                so that you can make decisions before redesigning, scaling, or investing in traffic.
+              </p>
+
+              <p class="audit-body">
+                For founders who want clarity before making costly or hard-to-reverse changes.
+              </p>
+
+              <h3 class="audit-subtitle">After the audit, you will understand:</h3>
+
+              <ul class="audit-list">
+                <li>Where buyers hesitate, misinterpret, or drop off</li>
+                <li>Which messages are creating unnecessary friction</li>
+                <li>What to change first to improve clarity and conversions</li>
+              </ul>
+
+              <p class="audit-body audit-body-small">
+                You receive a recorded walkthrough of your homepage, a written diagnostic, and a prioritized list
+                of recommendations. The focus is on clarity, not redesign. Everything is intended to be actionable immediately.
+              </p>
+
+              <div class="audit-cta-block">
+                <a class="btn primary" href="#contact">Book a 48-Hour Clarity Audit</a>
+                <div class="audit-microcopy">
+                  Delivery is within 48 hours. No redesign work. No long-term commitment.
+                </div>
+              </div>
+            </div>
+
+            <div class="audit-right" aria-hidden="true">
+              <div class="audit-mock">
+                <div class="audit-mock-cover">48-Hour Clarity Audit</div>
+                <div class="audit-mock-page">
+                  <div class="audit-mock-page-header">Example diagnostic format</div>
+                  <div class="audit-mock-page-body">
+                    <div class="audit-mock-pill"></div>
+                    <div class="audit-mock-pill"></div>
+                    <div class="audit-mock-pill"></div>
+                    <div class="audit-mock-pill"></div>
+                    <div class="audit-mock-pill"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="audit-includes">
+                <div class="audit-includes-icon"></div>
+                <div class="audit-includes-text">
+                  <div class="audit-includes-label">Includes</div>
+                  <div class="audit-includes-main">Recorded walkthrough (20–25 minutes)</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!-- END AUDIT SECTION -->
 
       </div>
     </section>
