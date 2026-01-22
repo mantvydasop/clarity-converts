@@ -56,13 +56,10 @@
       position:fixed;
       inset:-2px;
       pointer-events:none;
-      
       background:
         radial-gradient(2px 2px at 8% 14%, rgba(255,255,255,0.05) 40%, transparent 42%) repeat,
         radial-gradient(2px 2px at 72% 60%, rgba(255,255,255,0.04) 40%, transparent 42%) repeat;
-        
       background-size:180px 180px;
-      
       opacity:0.26;
       mix-blend-mode:overlay;
     }
@@ -222,32 +219,32 @@
     }
 
     .trust-card{
-      width: 232px;
-      background: var(--card-soft);
-      border-radius: 26px;
-      border: 1px solid var(--stroke-soft);
-      padding: 16px 10px 18px;
-      box-shadow: var(--shadow-soft);
-      text-align: center;
+      width:232px;
+      background:var(--card-soft);
+      border-radius:26px;
+      border:1px solid var(--stroke-soft);
+      padding:16px 10px 18px;
+      box-shadow:var(--shadow-soft);
+      text-align:center;
       display:flex;
       flex-direction:column;
       align-items:center;
     }
 
     .trust-visual{
-      width: 100%;
-      height: 170px;
-      margin: 4px auto 14px;
+      width:100%;
+      height:170px;
+      margin:4px auto 14px;
       display:flex;
       align-items:center;
       justify-content:center;
     }
 
     .trust-visual img{
-      width: 110%;
-      max-width: 220px;
-      height: auto;
-      object-fit: contain;
+      width:110%;
+      max-width:220px;
+      height:auto;
+      object-fit:contain;
       display:block;
     }
 
@@ -262,10 +259,10 @@
       font-size:13px;
       line-height:1.55;
       color:rgba(185,198,239,0.9);
-      max-width: 22ch;
+      max-width:22ch;
     }
 
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .trust-row{
         flex-direction:column;
         align-items:center;
@@ -275,7 +272,7 @@
         width:min(360px, 92vw);
       }
       .trust-visual{
-        height: 180px;
+        height:180px;
       }
     }
 
@@ -289,24 +286,17 @@
     .repeat-section::before{
       content:"";
       position:absolute;
-      
       left:50%;
-      transform:translateX(-50%) scaleY(0.45); /* squashes it more vertically */
-
+      transform:translateX(-50%) scaleY(0.45);
       width:100vw;
-      
       top:260px;
-      
       height:480px;
-
       background:url("assets/ribbon-image-v3-edited.png") no-repeat center;
       background-size:100% auto;
-
       opacity:0.85;
       pointer-events:none;
       z-index:0;
     }
-      
 
     .repeat-title{
       font-size:32px;
@@ -339,12 +329,11 @@
     .repeat-panel{
       position:relative;
       z-index:1;
-      
       width:min(860px, 96%);
       margin:34px auto 0;
       border-radius:12px;
       background:linear-gradient(180deg, rgba(198,208,232,0.78), rgba(168,181,212,0.78));
-      box-shadow: 0 22px 60px rgba(0,0,0,0.35);
+      box-shadow:0 22px 60px rgba(0,0,0,0.35);
       overflow:hidden;
       backdrop-filter:blur(12px);
     }
@@ -354,12 +343,11 @@
       position:relative;
       z-index:1;
     }
-    
 
     .repeat-grid{
       position:relative;
       display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns:1fr 1fr 1fr;
       min-height:310px;
     }
 
@@ -384,12 +372,11 @@
 
     .repeat-col .col-rule{
       width:84%;
-      height:0px;
+      height:0;
       margin:2px auto 12px;
       border-top:1px solid rgba(12,25,64,0.22);
     }
 
-    /* bullet lists centered vertically in their column area */
     .list-wrap{
       flex:1;
       display:flex;
@@ -402,7 +389,6 @@
       margin:0;
       padding:0;
       list-style:none;
-      
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -415,45 +401,38 @@
       text-align:center;
       font-weight:500;
     }
-    
-    /* middle column text, highlighted and hanging in the middle band */
+
     .repeat-mid{
       position:relative;
       display:flex;
-      align-items:flex-start;  /* was: center */
+      align-items:flex-start;
       justify-content:center;
       text-align:center;
-      padding:0px 18px 54px; /* you can tune 40px */
+      padding:0 18px 54px;
     }
 
     .repeat-mid .mid-text{
       position:relative;
       z-index:1;
-      
-      
-      margin:0 auto;          /* center the block in the column */
-      width:100%;              /* give it similar width to side titles */
-      max-width:64ch;         /* cap line length so it stays readable */
-      
+      margin:0 auto;
+      width:100%;
+      max-width:64ch;
       font-size:17px;
       font-weight:700;
       color:rgba(12,25,64,0.92);
       line-height:1.4;
-
-      transform: translateY(-42px);
+      transform:translateY(-42px);
     }
 
     .repeat-mid .mid-sub{
       display:block;
     }
 
-    /* vertical dividers for main columns only */
     .repeat-grid > :nth-child(2){
       border-left:1px solid rgba(12,25,64,0.22);
       border-right:1px solid rgba(12,25,64,0.22);
     }
 
-    /* bottom labels as one merged strip, no inner lines visible */
     .repeat-tags{
       position:absolute;
       left:0;
@@ -505,7 +484,7 @@
       white-space:nowrap;
     }
 
-    @media (max-width: 900px){
+    @media (max-width:900px){
       .repeat-grid{
         grid-template-columns:1fr;
       }
@@ -550,9 +529,27 @@
     }
 
     .audit-inner{
+      position:relative;
       display:flex;
       gap:40px;
       align-items:flex-start;
+    }
+
+    .audit-inner::before{
+      content:"";
+      position:absolute;
+      top:6px;
+      bottom:6px;
+      left:50%;
+      width:1px;
+      background:linear-gradient(
+        180deg,
+        rgba(255,255,255,0.00),
+        rgba(255,255,255,0.40),
+        rgba(255,255,255,0.00)
+      );
+      opacity:0.55;
+      pointer-events:none;
     }
 
     .audit-left{
@@ -570,7 +567,7 @@
 
     .audit-title{
       margin:0 0 18px 0;
-      font-size:30px;
+      font-size:32px;
       letter-spacing:-0.4px;
       line-height:1.25;
       color:rgba(234,240,255,0.98);
@@ -585,21 +582,21 @@
     }
 
     .audit-body{
-      margin:0 0 14px 0;
+      margin:0 0 18px 0;
       color:rgba(234,240,255,0.82);
-      font-size:14.5px;
-      line-height:1.8;
+      font-size:15px;
+      line-height:1.9;
     }
 
     .audit-subtitle{
-      margin:22px 0 8px 0;
+      margin:26px 0 10px 0;
       font-size:15px;
       font-weight:600;
       color:rgba(234,240,255,0.92);
     }
 
     .audit-list{
-      margin:0 0 6px 0;
+      margin:0 0 16px 0;
       padding-left:20px;
       color:rgba(234,240,255,0.90);
       font-size:14.5px;
@@ -615,17 +612,40 @@
       max-width:580px;
     }
 
+    .audit-footer-rule{
+      width:100%;
+      max-width:520px;
+      margin:26px 0 18px 0;
+      height:1px;
+      background:linear-gradient(
+        90deg,
+        rgba(255,255,255,0.0),
+        rgba(255,255,255,0.40),
+        rgba(255,255,255,0.0)
+      );
+    }
+
     .audit-cta-block{
-      margin-top:26px;
+      margin:30px auto 0;
       display:flex;
       flex-direction:column;
-      align-items:flex-start;
+      align-items:center;
       gap:10px;
+      max-width:360px;
+      text-align:center;
     }
 
     .audit-microcopy{
       font-size:12px;
       color:rgba(234,240,255,0.70);
+    }
+
+    .audit-right-title{
+      margin:0 0 14px 0;
+      font-size:18px;
+      font-weight:600;
+      letter-spacing:0.1px;
+      color:rgba(234,240,255,0.96);
     }
 
     /* Right side placeholder visuals */
@@ -739,10 +759,13 @@
       color:#ffffff;
     }
 
-    @media (max-width: 900px){
+    @media (max-width:900px){
       .audit-inner{
         flex-direction:column;
         gap:32px;
+      }
+      .audit-inner::before{
+        display:none;
       }
       .audit-right{
         align-items:flex-start;
@@ -827,7 +850,7 @@
           <div class="repeat-panel">
             <div class="repeat-grid">
               <div class="repeat-col">
-                <h3>What founders think they're showing</h3>
+                <h3>What founders think they are showing</h3>
                 <div class="col-rule"></div>
 
                 <div class="list-wrap">
@@ -916,6 +939,8 @@
                 of recommendations. The focus is on clarity, not redesign. Everything is intended to be actionable immediately.
               </p>
 
+              <div class="audit-footer-rule"></div>
+
               <div class="audit-cta-block">
                 <a class="btn primary" href="#contact">Book a 48-Hour Clarity Audit</a>
                 <div class="audit-microcopy">
@@ -925,6 +950,8 @@
             </div>
 
             <div class="audit-right" aria-hidden="true">
+              <h3 class="audit-right-title">What you will receive:</h3>
+
               <div class="audit-mock">
                 <div class="audit-mock-cover">48-Hour Clarity Audit</div>
                 <div class="audit-mock-page">
