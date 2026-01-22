@@ -530,8 +530,9 @@
 
     .audit-inner{
       position:relative;
-      display:flex;
-      gap:52px;
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      column-gap:52px;
       align-items:flex-start;
     }
 
@@ -565,20 +566,31 @@
       gap:24px;
     }
 
+    .audit-head{
+      display:grid;
+      grid-template-rows:auto auto;
+    }
+
     .audit-title{
-      margin:0 0 18px 0;
+      margin:0;
       font-size:32px;
       letter-spacing:-0.4px;
       line-height:1.25;
       color:rgba(234,240,255,0.98);
     }
 
-    .audit-rule{
+    .audit-rule,
+    .audit-right-rule{
       width:100%;
       max-width:520px;
-      margin:0 0 22px 0;
       height:1px;
-      background:linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.40), rgba(255,255,255,0.0));
+      margin:18px 0 22px 0;
+      background:linear-gradient(
+        90deg,
+        rgba(255,255,255,0.0),
+        rgba(255,255,255,0.40),
+        rgba(255,255,255,0.0)
+      );
     }
 
     .audit-divider{
@@ -649,28 +661,14 @@
     }
 
     .audit-right-title{
-      margin:0 0 18px 0;
-      font-size:32px;              /* match .audit-title */
-      letter-spacing:-0.4px;       /* match .audit-title */
-      line-height:1.25;            /* match .audit-title */
+      margin:0;
+      font-size:32px;
+      letter-spacing:-0.4px;
+      line-height:1.25;
       font-weight:700;
       color:rgba(234,240,255,0.98);
     }
 
-    .audit-right-rule{
-      width:100%;
-      max-width:520px;
-      margin:26px 0 22px 0;
-      height:1px;
-      background:linear-gradient(
-        90deg,
-        rgba(255,255,255,0.0),
-        rgba(255,255,255,0.40),
-        rgba(255,255,255,0.0)
-        );
-    }
-        
-    
     /* Right side visuals */
     .audit-mock{
       position:relative;
@@ -784,6 +782,7 @@
 
     @media (max-width:900px){
       .audit-inner{
+        display:flex;
         flex-direction:column;
         gap:32px;
       }
@@ -933,12 +932,13 @@
           <div class="audit-inner">
 
             <div class="audit-left">
-              <h2 class="audit-title">
-                <span>Know where buyers get confused.</span><br>
-                <span>And what to fix first.</span>
-              </h2>
-
-              <div class="audit-rule"></div>
+              <div class="audit-head">
+                <h2 class="audit-title">
+                  <span>Know where buyers get confused.</span><br>
+                  <span>And what to fix first.</span>
+                </h2>
+                <div class="audit-rule"></div>
+              </div>
 
               <p class="audit-body">
                 The <strong>48-Hour Clarity Audit</strong> gives you a clear diagnosis of your homepage,
@@ -981,8 +981,10 @@
             </div>
 
             <div class="audit-right" aria-hidden="true">
-              <h3 class="audit-right-title">What you'll receive:</h3>
-              <div class="audit-right-rule"></div>
+              <div class="audit-head">
+                <h3 class="audit-right-title">What you'll receive:</h3>
+                <div class="audit-right-rule"></div>
+              </div>
 
               <div class="audit-mock">
                 <div class="audit-mock-cover">48-Hour Clarity Audit</div>
