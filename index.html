@@ -543,7 +543,7 @@
     .audit-right-rule{
       right:0;
       left:auto;
-      transform: translateX(120px); /* increase/decrease this value */
+      transform: translateX(120px);
     }
 
     .audit-divider{
@@ -635,9 +635,10 @@
       display:none;
     }
 
-    /* Updated right-side visuals */
+    /* Updated right-side visuals — Layer 1, editorial artifact closed state */
     .audit-visual-box{
-      padding:32px 36px;
+      position:relative;
+      padding:32px 36px 28px;
       border-radius:18px;
       background:rgba(7,18,52,0.90);
       box-shadow:0 22px 60px rgba(0,0,0,0.45);
@@ -647,15 +648,42 @@
     }
 
     .audit-visual-stack{
-      display:flex;
-      gap:24px;
-      justify-content:center;
+      position:relative;
+      height:260px;
     }
 
     .audit-visual-stack img{
-      width:180px;
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translateX(-50%);
+      width:200px;
       border-radius:12px;
       box-shadow:0 16px 40px rgba(0,0,0,0.45);
+      display:block;
+    }
+
+    .audit-visual-stack img.toc{
+      transform:translateX(-50%) translateY(14px);
+      opacity:0.45;
+      z-index:0;
+    }
+
+    .audit-visual-stack img.book{
+      z-index:1;
+    }
+
+    .audit-visual-cta{
+      margin-top:22px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .audit-contents-btn{
+      font-size:13px;
+      padding:9px 16px;
+      background:rgba(255,255,255,0.04);
+      border-color:rgba(255,255,255,0.18);
     }
 
     .audit-walkthrough-visual{
@@ -852,7 +880,7 @@
               <div class="audit-divider"></div>
             </div>
 
-            <div class="audit-right" aria-hidden="true">
+            <div class="audit-right">
               <div class="audit-head">
                 <h3 class="audit-right-title">What you'll receive:</h3>
                 <div class="audit-right-rule"></div>
@@ -860,8 +888,12 @@
 
               <div class="audit-visual-box">
                 <div class="audit-visual-stack">
-                  <img src="assets/48-hour-clarityaudit-booklet.png" alt="48-Hour Clarity Audit booklet">
-                  <img src="assets/48-hour-clarityaudit-tableofcontents.png" alt="Audit table of contents">
+                  <img class="toc" src="assets/48-hour-clarityaudit-tableofcontents.png" alt="Audit table of contents">
+                  <img class="book" src="assets/48-hour-clarityaudit-booklet.png" alt="48-Hour Clarity Audit booklet">
+                </div>
+
+                <div class="audit-visual-cta">
+                  <button class="btn audit-contents-btn" type="button">View the contents</button>
                 </div>
               </div>
 
