@@ -545,7 +545,7 @@
       position:absolute;
       top:6px;
       bottom:260px;
-      left:50%;
+      left:calc( (100% * 1.4) / (1.4 + 1) + 26px );
       width:1px;
       background-color:var(--rule-color);
       opacity:0.55;
@@ -625,14 +625,15 @@
     }
 
     .audit-body-small{
-      margin:10px 0;
-      max-width:580px;
+      margin:10px auto 0;
+      max-width:520px;
+      text-align:center;       /* center the text itself */
     }
 
     .audit-footer-rule{
       width:100%;
       max-width:520px;
-      margin:26px 0 18px 0;
+      margin:26px auto 18px 0;
       height:1px;
       background-color:var(--rule-color);
     }
