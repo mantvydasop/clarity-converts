@@ -662,12 +662,14 @@
     }
 
     .audit-right-title{
-      margin:18px 0 0; /* push the text down */
+      margin:0;                /* no layout shift */
       font-size:32px;
       letter-spacing:-0.4px;
       line-height:1.25;
       font-weight:700;
       color:rgba(234,240,255,0.98);
+      position:relative;
+      transform:translateY(14px); /* visual-only shift; tweak 10–18px */
     }
 
 
