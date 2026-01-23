@@ -35,7 +35,6 @@
 
       --rule-width: 220px;
       --rule-color: rgba(234,240,255,0.40);
-      
     }
 
     * { box-sizing:border-box; }
@@ -545,7 +544,7 @@
       position:absolute;
       top:6px;
       bottom:260px;
-      left:50%;                 /* ← restore to center */
+      left:50%;
       width:1px;
       background-color:var(--rule-color);
       opacity:0.55;
@@ -555,7 +554,7 @@
     .audit-left{
       flex:1.4;
       max-width:640px;
-      padding-right:40px;  /* pull everything in from the center line */
+      padding-right:40px;
     }
 
     .audit-right{
@@ -583,7 +582,7 @@
     .audit-right-rule{
       position:absolute;
       left:0;
-      top:72px; /* shared horizontal plane */
+      top:72px;
       width:var(--rule-width);
       height:1px;
       margin:0;
@@ -600,7 +599,7 @@
 
     .audit-body{
       margin:10px 0;
-      max-width:520px;              /* <- key line: keeps text left of the vertical rule */
+      max-width:520px;
       color:rgba(234,240,255,0.82);
       font-size:15px;
       line-height:1.9;
@@ -626,21 +625,19 @@
     }
 
     .audit-body-small{
-      margin:10px auto 0;
+      margin:0 0 18px 0;
       max-width:520px;
-      text-align:center;       /* center the text itself */
     }
 
     .audit-footer-rule{
       width:100%;
       max-width:520px;
-      margin:26px auto 18px 0;
+      margin:0 0 24px 0;
       height:1px;
       background-color:var(--rule-color);
     }
 
     .audit-cta-block{
-      margin:30px auto 0;
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -655,16 +652,24 @@
     }
 
     .audit-right-title{
-      margin:0;                /* no layout shift */
+      margin:0;
       font-size:32px;
       letter-spacing:-0.4px;
       line-height:1.25;
       font-weight:700;
       color:rgba(234,240,255,0.98);
       position:relative;
-      transform:translateY(6px); /* visual-only shift; tweak 10–18px */
+      transform:translateY(6px);
     }
 
+    .audit-bottom{
+      grid-column:1 / -1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      margin-top:20px;
+    }
 
     /* Right side visuals */
     .audit-mock{
@@ -792,6 +797,10 @@
       .audit-mock{
         width:100%;
         max-width:320px;
+      }
+      .audit-bottom{
+        align-items:flex-start;
+        text-align:left;
       }
     }
   </style>
@@ -961,20 +970,6 @@
               </ul>
 
               <div class="audit-divider"></div>
-
-              <p class="audit-body audit-body-small">
-                You receive a recorded walkthrough of your homepage, a written diagnostic, and a prioritized list
-                of recommendations. The focus is on clarity, not redesign. Everything is intended to be actionable immediately.
-              </p>
-
-              <div class="audit-footer-rule"></div>
-
-              <div class="audit-cta-block">
-                <a class="btn primary" href="#contact">Book a 48-Hour Clarity Audit</a>
-                <div class="audit-microcopy">
-                  Delivery is within 48 hours. No redesign work. No long-term commitment.
-                </div>
-              </div>
             </div>
 
             <div class="audit-right" aria-hidden="true">
@@ -1002,6 +997,22 @@
                 <div class="audit-includes-text">
                   <div class="audit-includes-label">Includes</div>
                   <div class="audit-includes-main">Recorded walkthrough (20–25 minutes)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="audit-bottom">
+              <p class="audit-body audit-body-small">
+                You receive a recorded walkthrough of your homepage, a written diagnostic, and a prioritized list
+                of recommendations. The focus is on clarity, not redesign. Everything is intended to be actionable immediately.
+              </p>
+
+              <div class="audit-footer-rule"></div>
+
+              <div class="audit-cta-block">
+                <a class="btn primary" href="#contact">Book a 48-Hour Clarity Audit</a>
+                <div class="audit-microcopy">
+                  Delivery is within 48 hours. No redesign work. No long-term commitment.
                 </div>
               </div>
             </div>
