@@ -571,8 +571,8 @@
     }
 
     .audit-head{
-      display:grid;
-      grid-template-rows:auto auto;
+      position:relative;
+      padding-bottom:28px;
     }
 
     .audit-title{
@@ -585,9 +585,12 @@
 
     .audit-rule,
     .audit-right-rule{
+      position:absolute;
+      left:0;
+      top:72px; /* shared horizontal plane */
       width:var(--rule-width);
       height:1px;
-      margin:18px 0 22px 0;
+      margin:0;
       background-color:var(--rule-color);
     }
 
