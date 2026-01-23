@@ -1,4 +1,4 @@
-l<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -622,6 +622,13 @@ l<!doctype html>
     }
 
     /* Updated right-side visuals */
+    .audit-visual-box{
+      padding:18px;
+      border-radius:16px;
+      background:rgba(7,18,52,0.90);
+      box-shadow:0 22px 60px rgba(0,0,0,0.45);
+    }
+
     .audit-visual-stack{
       display:flex;
       gap:16px;
@@ -831,9 +838,11 @@ l<!doctype html>
                 <div class="audit-right-rule"></div>
               </div>
 
-              <div class="audit-visual-stack">
-                <img src="assets/48-hour-clarityaudit-booklet.png" alt="48-Hour Clarity Audit booklet">
-                <img src="assets/48-hour-clarityaudit-tableofcontents.png" alt="Audit table of contents">
+              <div class="audit-visual-box">
+                <div class="audit-visual-stack">
+                  <img src="assets/48-hour-clarityaudit-booklet.png" alt="48-Hour Clarity Audit booklet">
+                  <img src="assets/48-hour-clarityaudit-tableofcontents.png" alt="Audit table of contents">
+                </div>
               </div>
 
               <img class="audit-walkthrough-visual" src="assets/48-hour-clarityaudit-button.png" alt="Recorded walkthrough">
