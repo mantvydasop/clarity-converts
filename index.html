@@ -32,6 +32,10 @@
 
       --tag-bg:#cfd7ea;
       --tag-text:rgba(9,20,47,0.75);
+
+      --rule-width: 220px;
+      --rule-color: rgba(234,240,255,0.40);
+      
     }
 
     * { box-sizing:border-box; }
@@ -581,16 +585,10 @@
 
     .audit-rule,
     .audit-right-rule{
-      width:100%;
-      max-width:520px;
+      width:var(--rule-width);
       height:1px;
       margin:18px 0 22px 0;
-      background:linear-gradient(
-        90deg,
-        rgba(255,255,255,0.0),
-        rgba(255,255,255,0.40),
-        rgba(255,255,255,0.0)
-      );
+      background-color:var(--rule-color);
     }
 
     .audit-divider{
