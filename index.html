@@ -635,7 +635,7 @@
       display:none;
     }
 
-    /* Updated right-side visuals — Layer 1 + Layer 2 + Layer 3 */
+    /* Updated right-side visuals — Layer 1 + Layer 2 (+ enlarged TOC) */
     .audit-visual-box{
       position:relative;
       padding:32px 36px 28px;
@@ -662,7 +662,13 @@
       border-radius:12px;
       box-shadow:0 16px 40px rgba(0,0,0,0.45);
       display:block;
-      transition:opacity 0.25s ease, transform 0.25s ease;
+      transition:opacity 0.25s ease, transform 0.25s ease, width 0.25s ease;
+    }
+
+    .audit-visual-stack img.toc{
+      transform:translateX(-50%) translateY(14px);
+      opacity:0.45;
+      z-index:0;
     }
 
     .audit-visual-stack img.book{
@@ -670,54 +676,11 @@
       opacity:1;
     }
 
-    /* Text-based TOC panel: faint peek in closed state, full in open */
-    .toc-panel{
-      position:absolute;
-      top:0;
-      left:50%;
-      transform:translateX(-50%) translateY(14px);
-      width:240px;
-      max-height:260px;
-      padding:18px 18px 20px;
-      background:linear-gradient(180deg, #e4e9f6 0%, #d5dcef 100%);
-      border-radius:12px;
-      box-shadow:0 16px 40px rgba(0,0,0,0.45);
-      color:#0b1b4a;
-      opacity:0.45;      /* faint in closed state */
-      z-index:0;
-      overflow-y:auto;   /* so the whole TOC can be read if tall */
-      transition:opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .toc-title{
-      margin:0 0 10px 0;
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:0.4px;
-      text-transform:uppercase;
-      color:rgba(8,18,52,0.85);
-    }
-
-    .toc-list{
-      margin:0;
-      padding-left:18px;
-      list-style:disc;
-    }
-
-    .toc-list li{
-      font-size:12.5px;
-      line-height:1.5;
-      color:rgba(8,18,52,0.88);
-    }
-
-    .toc-list li + li{
-      margin-top:6px;
-    }
-
-    /* Open state styles: TOC forward, book recedes slightly */
-    .audit-visual-box.open .toc-panel{
+    /* Open state styles: TOC forward and larger, book recedes slightly */
+    .audit-visual-box.open .audit-visual-stack img.toc{
       opacity:1;
       transform:translateX(-50%);
+      width:260px;            /* make the TOC image larger when open */
       z-index:2;
     }
 
@@ -942,18 +905,7 @@
 
               <div class="audit-visual-box">
                 <div class="audit-visual-stack" id="audit-contents-panel">
-                  <div class="toc-panel" aria-label="Contents of the 48-Hour Clarity Audit">
-                    <h4 class="toc-title">What’s inside the 48-Hour Clarity Audit</h4>
-                    <ul class="toc-list">
-                      <!-- Replace / expand these with your actual TOC items -->
-                      <li>Recorded walkthrough of your homepage</li>
-                      <li>Written diagnostic of clarity leaks and message gaps</li>
-                      <li>Section-by-section notes on structure, proof, and flow</li>
-                      <li>Prioritized “fix first” recommendations</li>
-                      <li>Suggestions for what to test after the basics are fixed</li>
-                    </ul>
-                  </div>
-
+                  <img class="toc" src="assets/48-hour-clarityaudit-tableofcontents.png" alt="Audit table of contents">
                   <img class="book" src="assets/48-hour-clarityaudit-booklet.png" alt="48-Hour Clarity Audit booklet">
                 </div>
 
