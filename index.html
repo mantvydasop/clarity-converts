@@ -543,7 +543,7 @@
     .audit-right-rule{
       right:0;
       left:auto;
-      transform:translateX(80px); /* slightly left from earlier 120px */
+      transform:translateX(80px);
     }
 
     .audit-divider{
@@ -627,7 +627,7 @@
       flex-direction:column;
       align-items:center;
       text-align:center;
-      margin-top:-130px; /* pulled upward to sit closer to booklet */
+      margin-top:-130px;
     }
 
     .audit-right::before,
@@ -645,7 +645,7 @@
       width:100%;
       max-width:520px;
       margin-top:12px;
-      overflow:visible; /* allow enlarged TOC to extend beyond box */
+      overflow:visible;
     }
 
     .audit-visual-stack{
@@ -679,8 +679,8 @@
     /* Open state styles: TOC forward and larger, book recedes slightly */
     .audit-visual-box.open .audit-visual-stack img.toc{
       opacity:1;
-      transform:translateX(-50%) translateY(-40px); /* grow upward */
-      width:260px;            /* larger TOC image on open */
+      transform:translateX(-50%) translateY(-40px);
+      width:260px;
       z-index:2;
     }
 
@@ -695,7 +695,7 @@
       display:flex;
       justify-content:center;
       position:relative;
-      z-index:3; /* keep button on top of TOC */
+      z-index:3;
     }
 
     .audit-contents-btn{
@@ -781,6 +781,7 @@
       align-items:center;
       text-align:left;
       color:var(--panel-text);
+      transition:box-shadow 0.22s ease, transform 0.22s ease;
     }
 
     .clear-card-letter{
@@ -843,6 +844,64 @@
 
     .clear-bottom-text{
       white-space:nowrap;
+    }
+
+    /* --- C card expansion specifics --- */
+    .clear-card--expandable{
+      cursor:pointer;
+    }
+
+    /* Hover glow only on hover-capable devices */
+    @media (hover:hover){
+      .clear-card--expandable:hover{
+        box-shadow:
+          0 0 0 1px rgba(120,190,255,0.70),
+          0 22px 48px rgba(0,0,0,0.55);
+        transform:translateY(-2px);
+      }
+    }
+
+    .clear-card-details{
+      margin-top:16px;
+      padding-top:12px;
+      border-top:1px solid rgba(11,27,74,0.18);
+      max-height:0;
+      opacity:0;
+      overflow:hidden;
+      transition:max-height 0.25s ease, opacity 0.25s ease;
+    }
+
+    .clear-card.expanded .clear-card-details{
+      max-height:480px; /* enough room for the details copy */
+      opacity:1;
+    }
+
+    .clear-card-details p{
+      margin:0 0 10px 0;
+      font-size:13.5px;
+      line-height:1.7;
+      color:rgba(9,20,47,0.85);
+    }
+
+    .clear-card-details p.lead{
+      font-weight:600;
+      color:#172448;
+    }
+
+    .clear-card-details p.emphasis{
+      font-style:italic;
+    }
+
+    .clear-card-details ul{
+      margin:8px 0 0 18px;
+      padding:0;
+      font-size:13.5px;
+      line-height:1.7;
+      color:rgba(9,20,47,0.85);
+    }
+
+    .clear-card-details li + li{
+      margin-top:4px;
     }
 
     @media (max-width:700px){
@@ -1022,15 +1081,11 @@
 
               <h3 class="audit-subtitle">After the audit, you will understand:</h3>
 
-              <!-- removed divider under subtitle -->
-
               <ul class="audit-list">
                 <li>Where buyers hesitate, misinterpret, or drop off</li>
                 <li>Which messages are creating unnecessary friction</li>
                 <li>What to change first to improve clarity and conversions</li>
               </ul>
-
-              <!-- removed divider under bullet list -->
             </div>
 
             <div class="audit-right">
@@ -1083,7 +1138,8 @@
             </p>
 
             <div class="clear-cards">
-              <article class="clear-card">
+              <!-- C CARD WITH EXPANSION -->
+              <article class="clear-card clear-card--expandable clear-card--context" aria-expanded="false">
                 <div class="clear-card-letter">C</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
                 <div class="clear-card-body">
@@ -1091,9 +1147,28 @@
                   <div class="clear-card-text">
                     Understand the audience and their needs.
                   </div>
+
+                  <div class="clear-card-details">
+                    <p class="lead">Context sets the frame for everything that follows.</p>
+
+                    <p>Buyers decide in seconds whether your homepage reflects their reality. When the opening message names their situation clearly and precisely, they stop scanning and start paying attention.</p>
+
+                    <p class="emphasis">
+                      Context answers one core question immediately: “Is this for someone like me?”
+                    </p>
+
+                    <p><strong>Strong context creates:</strong></p>
+                    <ul>
+                      <li>Immediate relevance for the right buyer.</li>
+                      <li>A clear mental frame for the problem being addressed.</li>
+                      <li>Faster understanding of what your product is actually for.</li>
+                      <li>Lower cognitive load from the very first line.</li>
+                    </ul>
+                  </div>
                 </div>
               </article>
 
+              <!-- OTHER CARDS UNCHANGED -->
               <article class="clear-card">
                 <div class="clear-card-letter">L</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
@@ -1204,6 +1279,21 @@
 
         // Keep focus where the interaction started
         toggleBtn.focus();
+      });
+    })();
+
+    // CLEAR: C card expand/collapse
+    (function () {
+      const contextCard = document.querySelector('.clear-card--context');
+      if (!contextCard) return;
+
+      function toggleCard() {
+        const isExpanded = contextCard.classList.toggle('expanded');
+        contextCard.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      }
+
+      contextCard.addEventListener('click', function () {
+        toggleCard();
       });
     })();
   </script>
