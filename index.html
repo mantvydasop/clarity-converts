@@ -645,7 +645,7 @@
       width:100%;
       max-width:520px;
       margin-top:12px;
-      overflow:hidden;
+      overflow:visible; /* allow enlarged TOC to extend beyond box */
     }
 
     .audit-visual-stack{
@@ -679,8 +679,8 @@
     /* Open state styles: TOC forward and larger, book recedes slightly */
     .audit-visual-box.open .audit-visual-stack img.toc{
       opacity:1;
-      transform:translateX(-50%);
-      width:260px;            /* make the TOC image larger when open */
+      transform:translateX(-50%) translateY(-40px); /* grow upward */
+      width:260px;            /* larger TOC image on open */
       z-index:2;
     }
 
@@ -694,6 +694,8 @@
       margin-top:22px;
       display:flex;
       justify-content:center;
+      position:relative;
+      z-index:3; /* keep button on top of TOC */
     }
 
     .audit-contents-btn{
