@@ -635,7 +635,7 @@
       display:none;
     }
 
-    /* Updated right-side visuals — Layer 1, editorial artifact closed state */
+    /* Updated right-side visuals — Layer 1 + Layer 2 */
     .audit-visual-box{
       position:relative;
       padding:32px 36px 28px;
@@ -645,6 +645,7 @@
       width:100%;
       max-width:520px;
       margin-top:12px;
+      overflow:hidden;
     }
 
     .audit-visual-stack{
@@ -661,6 +662,7 @@
       border-radius:12px;
       box-shadow:0 16px 40px rgba(0,0,0,0.45);
       display:block;
+      transition:opacity 0.25s ease, transform 0.25s ease;
     }
 
     .audit-visual-stack img.toc{
@@ -670,6 +672,20 @@
     }
 
     .audit-visual-stack img.book{
+      z-index:1;
+      opacity:1;
+    }
+
+    /* Open state styles: TOC forward, book recedes slightly */
+    .audit-visual-box.open .audit-visual-stack img.toc{
+      opacity:1;
+      transform:translateX(-50%);
+      z-index:2;
+    }
+
+    .audit-visual-box.open .audit-visual-stack img.book{
+      opacity:0;
+      transform:translateX(-50%) scale(0.96) translateY(-6px);
       z-index:1;
     }
 
@@ -923,5 +939,20 @@
       </div>
     </section>
   </main>
+
+  <script>
+    // Layer 2: simple open/close toggle for the booklet / TOC
+    (function () {
+      const visualBox = document.querySelector('.audit-visual-box');
+      const toggleBtn  = document.querySelector('.audit-contents-btn');
+
+      if (!visualBox || !toggleBtn) return;
+
+      toggleBtn.addEventListener('click', function () {
+        const isOpen = visualBox.classList.toggle('open');
+        toggleBtn.textContent = isOpen ? 'Hide the contents' : 'View the contents';
+      });
+    })();
+  </script>
 </body>
 </html>
