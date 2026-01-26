@@ -976,6 +976,10 @@
       display:flex;
       gap:10px;
       margin-bottom:16px;
+
+      /* normalize the badge row height (card 1 has 2 badges, others 1) */
+      min-height:32px;   /* adjust if needed */
+      align-items:center;
     }
 
     .service-badge{
@@ -1004,6 +1008,12 @@
       letter-spacing:-0.4px;
       color:#12224b;
       text-align:center;
+
+      /* equal height + vertical centering for the heading */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:56px;  /* tweak 52–64px until it looks right */
     }
 
     .service-tagline{
