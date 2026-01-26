@@ -846,7 +846,7 @@
       white-space:nowrap;
     }
 
-    /* --- Expandable CLEAR cards (C, L, E) --- */
+    /* --- Expandable CLEAR cards (C, L, E, A, R) --- */
     .clear-card--expandable{
       cursor:pointer;
     }
@@ -871,7 +871,7 @@
     }
 
     .clear-card.expanded .clear-card-details{
-      max-height:600px; /* enough room for details copy */
+      max-height:600px;
       opacity:1;
     }
 
@@ -1137,7 +1137,7 @@
             </p>
 
             <div class="clear-cards">
-              <!-- C CARD WITH EXPANSION -->
+              <!-- C CARD -->
               <article class="clear-card clear-card--expandable clear-card--context" aria-expanded="false">
                 <div class="clear-card-letter">C</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
@@ -1167,7 +1167,7 @@
                 </div>
               </article>
 
-              <!-- L CARD WITH EXPANSION -->
+              <!-- L CARD -->
               <article class="clear-card clear-card--expandable clear-card--leverage" aria-expanded="false">
                 <div class="clear-card-letter">L</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
@@ -1197,7 +1197,7 @@
                 </div>
               </article>
 
-              <!-- E CARD WITH EXPANSION -->
+              <!-- E CARD -->
               <article class="clear-card clear-card--expandable clear-card--evidence" aria-expanded="false">
                 <div class="clear-card-letter">E</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
@@ -1227,8 +1227,8 @@
                 </div>
               </article>
 
-              <!-- A CARD (simple for now) -->
-              <article class="clear-card">
+              <!-- A CARD -->
+              <article class="clear-card clear-card--expandable clear-card--action" aria-expanded="false">
                 <div class="clear-card-letter">A</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
                 <div class="clear-card-body">
@@ -1236,17 +1236,53 @@
                   <div class="clear-card-text">
                     Guide the visitor toward the goal.
                   </div>
+
+                  <div class="clear-card-details">
+                    <p class="lead">A homepage should guide buyers effortlessly.</p>
+
+                    <p>They should always know where to click, what they’ll get, and what happens next. Confusion here kills momentum.</p>
+
+                    <p class="emphasis">
+                      A clear action path removes hesitation and keeps buyers moving forward.
+                    </p>
+
+                    <p><strong>A clear action path drives:</strong></p>
+                    <ul>
+                      <li>Faster movement toward the next step.</li>
+                      <li>Higher conversions through reduced friction.</li>
+                      <li>Confidence that clicking your CTA is safe and logical.</li>
+                      <li>A predictable flow that prevents buyers from drifting away.</li>
+                    </ul>
+                  </div>
                 </div>
               </article>
 
-              <!-- R CARD (simple for now) -->
-              <article class="clear-card">
+              <!-- R CARD -->
+              <article class="clear-card clear-card--expandable clear-card--reinforcement" aria-expanded="false">
                 <div class="clear-card-letter">R</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
                 <div class="clear-card-body">
                   <div class="clear-card-title">Reinforcement</div>
                   <div class="clear-card-text">
                     Enhance trust and encourage return.
+                  </div>
+
+                  <div class="clear-card-details">
+                    <p class="lead">Reinforcement strengthens conviction.</p>
+
+                    <p>It answers remaining doubts, reduces last-minute friction, and supports the decision the buyer is already leaning toward.</p>
+
+                    <p class="emphasis">
+                      This is where confidence is solidified.
+                    </p>
+
+                    <p><strong>Strong reinforcement secures:</strong></p>
+                    <ul>
+                      <li>Clarity around remaining questions or objections.</li>
+                      <li>Confidence that your product fits their situation.</li>
+                      <li>A final reminder of the core value you deliver.</li>
+                      <li>Momentum toward taking action with certainty.</li>
+                    </ul>
                   </div>
                 </div>
               </article>
@@ -1320,7 +1356,7 @@
       });
     })();
 
-    // CLEAR: Expandable cards (C, L, E)
+    // CLEAR: Expandable cards (C, L, E, A, R)
     (function () {
       const cards = document.querySelectorAll('.clear-card--expandable');
       if (!cards.length) return;
