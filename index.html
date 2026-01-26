@@ -976,8 +976,6 @@
       display:flex;
       gap:10px;
       margin-bottom:16px;
-
-      /* normalize the badge row height (card 1 has 2 badges, others 1) */
       min-height:32px;
       align-items:center;
     }
@@ -1008,8 +1006,6 @@
       letter-spacing:-0.4px;
       color:#12224b;
       text-align:center;
-
-      /* equal height + vertical centering for the heading */
       display:flex;
       align-items:center;
       justify-content:center;
@@ -1021,8 +1017,6 @@
       font-size:14px;
       line-height:1.6;
       color:rgba(11,27,74,0.88);
-
-      /* make all taglines the same height */
       min-height:52px;
       display:flex;
       align-items:center;
@@ -1040,8 +1034,6 @@
       line-height:1.75;
       color:rgba(9,20,47,0.88);
       margin:0 0 12px;
-
-      /* normalize summary height so "You get:" lines up */
       min-height:100px;
       display:flex;
       align-items:center;
@@ -1049,9 +1041,9 @@
 
     .service-middle{
       margin-top:8px;
-      flex:1;                      /* creates the vertical “empty space” */
+      flex:1;
       display:flex;
-      flex-direction:column;       /* stack “You get:” and the list */
+      flex-direction:column;
     }
 
     .service-subheading{
@@ -1097,7 +1089,7 @@
     }
 
     .service-meta-top{
-      min-height:72px; /* keeps Best for/Timeframe block same height in all cards */
+      min-height:72px;
     }
 
     .service-meta p{
@@ -1159,10 +1151,24 @@
       font-weight:600;
       color:#132756;
       text-decoration:none;
+      cursor:pointer;
     }
 
     .service-link:hover{
       text-decoration:underline;
+    }
+
+    /* Compact vs detailed content for 48-Hour card */
+    .audit-details-only{
+      display:none;
+    }
+
+    .service-card--open .audit-details-only{
+      display:block;
+    }
+
+    .service-card--open .audit-compact-only{
+      display:none;
     }
   </style>
 </head>
@@ -1553,7 +1559,7 @@
 
           <div class="services-grid">
             <!-- 48-Hour Clarity Audit -->
-            <article class="service-card">
+            <article class="service-card service-card--audit" id="service-clarity-audit">
               <div class="service-badges" aria-hidden="true">
                 <span class="service-badge service-badge--primary">Start here</span>
                 <span class="service-badge service-badge--muted">Fast diagnosis</span>
@@ -1566,23 +1572,46 @@
 
               <div class="service-rule"></div>
 
-              <p class="service-body">
+              <!-- Compact summary -->
+              <p class="service-body audit-compact-only">
                 This is a fast, high-signal diagnosis of your current homepage and messaging. You get clarity
                 without committing to a redesign.
               </p>
 
+              <!-- Detailed summary -->
+              <p class="service-body audit-details-only">
+                This is a high-signal diagnosis of your homepage messaging. You will see exactly where buyers hesitate,
+                what they assume instead, and the fastest path to remove friction without committing to a full redesign.
+              </p>
+
               <div class="service-middle">
-                <div class="service-subheading">
+                <!-- Compact subheading + list -->
+                <div class="service-subheading audit-compact-only">
                   <span>You get:</span>
                   <span class="service-subheading-rule"></span>
                 </div>
 
-                <div class="service-list-wrap">
+                <div class="service-list-wrap audit-compact-only">
                   <ul class="service-list">
                     <li><strong>A full homepage clarity review</strong> focused on buyer confusion and hesitation.</li>
                     <li><strong>Clear identification of the top conversion leaks</strong> across headline, proof, structure, and CTAs.</li>
                     <li><strong>Specific rewrite guidance</strong> for hero, subheads, value propositions, and calls to action.</li>
                     <li><strong>A prioritized action plan</strong> showing what to fix first for the highest impact.</li>
+                  </ul>
+                </div>
+
+                <!-- Detailed subheading + list -->
+                <div class="service-subheading audit-details-only">
+                  <span>What you get (deliverables):</span>
+                  <span class="service-subheading-rule"></span>
+                </div>
+
+                <div class="service-list-wrap audit-details-only">
+                  <ul class="service-list">
+                    <li><strong>A recorded walkthrough (20 to 25 minutes)</strong> showing the exact clarity leaks and why they happen.</li>
+                    <li><strong>A written diagnostic document (PDF)</strong> with annotated findings, page-level notes, and clarity gaps.</li>
+                    <li><strong>Rewrite guidance</strong> for your hero, subheads, proof, and CTAs with ready-to-use copy options.</li>
+                    <li><strong>A prioritized action plan</strong> that tells you what to change first for the highest impact.</li>
                   </ul>
                 </div>
               </div>
@@ -1601,7 +1630,7 @@
                 </div>
 
                 <div class="service-link-row">
-                  <a href="#" class="service-link">View details &gt;</a>
+                  <a href="#" class="service-link js-service-details-toggle">View details &gt;</a>
                 </div>
               </div>
             </article>
@@ -1783,6 +1812,21 @@
           const isExpanded = card.classList.toggle('expanded');
           card.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
         });
+      });
+    })();
+
+    // SERVICES: Toggle detailed view for 48-Hour Clarity Audit
+    (function () {
+      const card = document.getElementById('service-clarity-audit');
+      if (!card) return;
+
+      const toggleLink = card.querySelector('.js-service-details-toggle');
+      if (!toggleLink) return;
+
+      toggleLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        const isOpen = card.classList.toggle('service-card--open');
+        toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
       });
     })();
   </script>
