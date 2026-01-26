@@ -1062,18 +1062,27 @@
       background:rgba(11,27,74,0.16);
     }
 
-    /* "What you get (deliverables)" – custom short inline rule */
-    #service-clarity-audit .service-subheading.audit-details-only {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    #service-clarity-audit .service-subheading.audit-details-only{
+      position:relative;
     }
 
-    #service-clarity-audit .service-subheading.audit-details-only::after {
-      content: "";
-      flex: 0 0 72px;           /* length of the grey line – tweak to taste */
-      height: 1px;
-      background: rgba(11,27,74,0.16);
+    #service-clarity-audit .service-subheading.audit-details-only::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      top:50%;
+      transform:translateY(-50%);
+      height:1px;
+      background:rgba(11,27,74,0.16);
+      z-index:0;
+    }
+
+    #service-clarity-audit .service-subheading.audit-details-only span:first-child{
+      position:relative;
+      z-index:1;
+      background:#ffffff;
+      padding-right:12px;
     }
 
     /* "What you get (deliverables)" – use only the ::after rule */
