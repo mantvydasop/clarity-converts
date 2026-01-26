@@ -1062,9 +1062,18 @@
       background:rgba(11,27,74,0.16);
     }
 
-    /* "What you get (deliverables)" – keep a short inline rule */
-    #service-clarity-audit .service-subheading.audit-details-only .service-subheading-rule {
-      flex: 0 0 72px;   /* try 60–90px to taste */
+    /* "What you get (deliverables)" – custom short inline rule */
+    #service-clarity-audit .service-subheading.audit-details-only {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #service-clarity-audit .service-subheading.audit-details-only::after {
+      content: "";
+      flex: 0 0 72px;           /* length of the grey line – tweak to taste */
+      height: 1px;
+      background: rgba(11,27,74,0.16);
     }
 
     .service-list-wrap{
