@@ -1062,17 +1062,9 @@
       background:rgba(11,27,74,0.16);
     }
 
-    /* "What you get (deliverables)" – custom inline rule */
+    /* "What you get (deliverables)" – keep a short inline rule */
     #service-clarity-audit .service-subheading.audit-details-only .service-subheading-rule {
-      display: none; /* hide the span in this one heading */
-    }
-
-    #service-clarity-audit .service-subheading.audit-details-only::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      margin-left: 10px; /* space between text and line */
-      background: rgba(11,27,74,0.16);
+      flex: 0 0 72px;   /* try 60–90px to taste */
     }
 
     .service-list-wrap{
