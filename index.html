@@ -922,6 +922,207 @@
       }
     }
 
+    /* SERVICES SECTION: HOW WE CAN WORK TOGETHER (desktop-focused) */
+    .services-section{
+      padding:90px 0 110px;
+      text-align:center;
+    }
+
+    .services-title{
+      margin:0;
+      font-size:30px;
+      font-weight:700;
+      letter-spacing:-0.4px;
+      color:rgba(234,240,255,0.98);
+    }
+
+    .services-subtitle{
+      margin:12px 0 4px;
+      font-size:15px;
+      font-weight:600;
+      color:rgba(234,240,255,0.86);
+    }
+
+    .services-subtext{
+      margin:0 auto;
+      max-width:640px;
+      font-size:14.5px;
+      line-height:1.8;
+      color:rgba(234,240,255,0.80);
+    }
+
+    .services-grid{
+      margin-top:46px;
+      display:flex;
+      gap:26px;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    .service-card{
+      flex:1;
+      max-width:340px;
+      background:#ffffff;
+      border-radius:18px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.38);
+      padding:22px 24px 20px;
+      text-align:left;
+      color:#0b1b4a;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .service-badges{
+      display:flex;
+      gap:10px;
+      margin-bottom:16px;
+    }
+
+    .service-badge{
+      padding:6px 14px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:0.2px;
+      white-space:nowrap;
+    }
+
+    .service-badge--primary{
+      background:#132756;
+      color:#ffffff;
+    }
+
+    .service-badge--muted{
+      background:#e1e6f3;
+      color:#132756;
+    }
+
+    .service-name{
+      margin:0 0 6px;
+      font-size:22px;
+      font-weight:700;
+      letter-spacing:-0.4px;
+      color:#12224b;
+    }
+
+    .service-tagline{
+      margin:0 0 18px;
+      font-size:14px;
+      line-height:1.6;
+      color:rgba(11,27,74,0.88);
+    }
+
+    .service-rule{
+      width:100%;
+      height:1px;
+      margin:0 0 18px;
+      background:rgba(11,27,74,0.14);
+    }
+
+    .service-body{
+      font-size:13.5px;
+      line-height:1.75;
+      color:rgba(9,20,47,0.88);
+      margin:0 0 18px;
+    }
+
+    .service-subheading{
+      margin:0;
+      font-size:13.5px;
+      font-weight:700;
+      color:#172448;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .service-subheading-rule{
+      flex:1;
+      height:1px;
+      background:rgba(11,27,74,0.16);
+    }
+
+    .service-list{
+      margin:10px 0 20px 18px;
+      padding:0;
+      font-size:13.5px;
+      line-height:1.7;
+      color:rgba(9,20,47,0.9);
+    }
+
+    .service-list li + li{
+      margin-top:6px;
+    }
+
+    .service-meta{
+      margin-top:auto;
+      font-size:12.5px;
+      line-height:1.7;
+      color:rgba(9,20,47,0.8);
+    }
+
+    .service-meta p{
+      margin:6px 0;
+    }
+
+    .service-meta-label{
+      font-weight:600;
+      color:#132756;
+    }
+
+    .service-meta-rule{
+      width:100%;
+      height:1px;
+      margin:14px 0 16px;
+      background:rgba(11,27,74,0.14);
+    }
+
+    .service-cta{
+      margin-top:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .service-cta .btn{
+      width:100%;
+      justify-content:center;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:600;
+      border:0;
+      background:#0c1d4a;
+      color:#ffffff;
+      box-shadow:0 14px 30px rgba(0,0,0,0.40);
+    }
+
+    .service-cta .btn:hover{
+      background:#0a1a42;
+    }
+
+    .service-cta-note{
+      font-size:11.5px;
+      color:rgba(9,20,47,0.70);
+      text-align:center;
+    }
+
+    .service-link-row{
+      margin-top:14px;
+      padding-top:8px;
+      border-top:1px solid rgba(11,27,74,0.14);
+      text-align:center;
+    }
+
+    .service-link{
+      font-size:12.5px;
+      font-weight:600;
+      color:#132756;
+      text-decoration:none;
+    }
+
+    .service-link:hover{
+      text-decoration:underline;
+    }
   </style>
 </head>
 
@@ -1300,6 +1501,161 @@
           </div>
         </section>
         <!-- END CLEAR FRAMEWORK SECTION -->
+
+        <!-- SERVICES SECTION -->
+        <section class="services-section" aria-label="How we can work together">
+          <h2 class="services-title">How we can work together.</h2>
+          <p class="services-subtitle">Built for clarity and speed.</p>
+          <p class="services-subtext">
+            Each engagement gives you precision insight, clear messaging, and a homepage that pulls its weight.
+          </p>
+
+          <div class="services-grid">
+            <!-- 48-Hour Clarity Audit -->
+            <article class="service-card">
+              <div class="service-badges" aria-hidden="true">
+                <span class="service-badge service-badge--primary">Start here</span>
+                <span class="service-badge service-badge--muted">Fast diagnosis</span>
+              </div>
+
+              <h3 class="service-name">48-Hour Clarity Audit</h3>
+              <p class="service-tagline">
+                Know exactly where buyers get confused and what to fix first.
+              </p>
+
+              <div class="service-rule"></div>
+
+              <p class="service-body">
+                This is a fast, high-signal diagnosis of your current homepage and messaging. You get clarity
+                without committing to a redesign.
+              </p>
+
+              <div class="service-subheading">
+                <span>You get:</span>
+                <span class="service-subheading-rule"></span>
+              </div>
+
+              <ul class="service-list">
+                <li><strong>A full homepage clarity review</strong> focused on buyer confusion and hesitation.</li>
+                <li><strong>Clear identification of the top conversion leaks</strong> across headline, proof, structure, and CTAs.</li>
+                <li><strong>Specific rewrite guidance</strong> for hero, subheads, value propositions, and calls to action.</li>
+                <li><strong>A prioritized action plan</strong> showing what to fix first for the highest impact.</li>
+              </ul>
+
+              <div class="service-meta">
+                <p><span class="service-meta-label">Best for:</span> Founders before redesigning, scaling or investing in traffic.</p>
+                <p><span class="service-meta-label">Timeframe:</span> Delivered within 48 hours.</p>
+
+                <div class="service-meta-rule"></div>
+
+                <div class="service-cta">
+                  <a href="#contact" class="btn">Book a 48-Hour Clarity Audit</a>
+                  <div class="service-cta-note">Clear next steps. No redesign required.</div>
+                </div>
+
+                <div class="service-link-row">
+                  <a href="#" class="service-link">View details &gt;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Homepage Rewrite -->
+            <article class="service-card">
+              <div class="service-badges" aria-hidden="true">
+                <span class="service-badge service-badge--primary">Ship-ready copy</span>
+              </div>
+
+              <h3 class="service-name">Homepage Rewrite</h3>
+              <p class="service-tagline">
+                A complete homepage revamp, end to end, ready to ship.
+              </p>
+
+              <div class="service-rule"></div>
+
+              <p class="service-body">
+                This is a full rebuild of your homepage messaging. The goal is a clear, buyer-led narrative that
+                design and development can execute with confidence.
+              </p>
+
+              <div class="service-subheading">
+                <span>You get:</span>
+                <span class="service-subheading-rule"></span>
+              </div>
+
+              <ul class="service-list">
+                <li><strong>A complete homepage rewrite</strong> covering hero, subheads, narrative sections, proof blocks, feature explanations, and CTAs.</li>
+                <li><strong>A clear message hierarchy and page flow</strong> aligned with how buyers scan and decide.</li>
+                <li><strong>Copy delivered in a wireframe style layout</strong> so structure, emphasis, and sequence are unmistakable.</li>
+                <li><strong>Section-by-section rationale</strong> explaining why each message exists and how it reduces buyer hesitation.</li>
+                <li><strong>Two refinement passes</strong> to align tone, positioning, and decision flow.</li>
+              </ul>
+
+              <div class="service-meta">
+                <p><span class="service-meta-label">Best for:</span> Teams ready to rebuild the homepage in one focused sprint.</p>
+                <p><span class="service-meta-label">Timeframe:</span> Confirmed after kickoff.</p>
+
+                <div class="service-meta-rule"></div>
+
+                <div class="service-cta">
+                  <a href="#contact" class="btn">Request a Homepage Rewrite</a>
+                  <div class="service-cta-note">You’ll get a clear plan, timeline, and next steps.</div>
+                </div>
+
+                <div class="service-link-row">
+                  <a href="#" class="service-link">View details &gt;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Conversion Messaging System -->
+            <article class="service-card">
+              <div class="service-badges" aria-hidden="true">
+                <span class="service-badge service-badge--primary">Messaging backbone</span>
+              </div>
+
+              <h3 class="service-name">Conversion Messaging System</h3>
+              <p class="service-tagline">
+                One clear narrative used consistently across product, marketing, and sales.
+              </p>
+
+              <div class="service-rule"></div>
+
+              <p class="service-body">
+                This creates a shared messaging backbone that removes confusion across teams and surfaces
+                the real reasons buyers say yes.
+              </p>
+
+              <div class="service-subheading">
+                <span>You get:</span>
+                <span class="service-subheading-rule"></span>
+              </div>
+
+              <ul class="service-list">
+                <li><strong>Buyer insight synthesis</strong> from multiple sources, including sales calls, demos, support tickets, onboarding feedback, CRM notes, reviews, win–loss data, and competitive analysis.</li>
+                <li><strong>A complete positioning narrative</strong> aligned with how buyers evaluate, compare, and decide.</li>
+                <li><strong>A messaging hierarchy</strong> for homepage, product pages, onboarding, sales, and marketing.</li>
+                <li><strong>A centralized message bank</strong> teams can pull from to stay consistent.</li>
+              </ul>
+
+              <div class="service-meta">
+                <p><span class="service-meta-label">Best for:</span> B2B SaaS and AI teams that need one shared source of truth.</p>
+                <p><span class="service-meta-label">Timeframe:</span> Confirmed after scope review.</p>
+
+                <div class="service-meta-rule"></div>
+
+                <div class="service-cta">
+                  <a href="#contact" class="btn">Strengthen Your Messaging Foundation</a>
+                  <div class="service-cta-note">One system your whole team can actually use.</div>
+                </div>
+
+                <div class="service-link-row">
+                  <a href="#" class="service-link">View details &gt;</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- END SERVICES SECTION -->
 
       </div>
     </section>
