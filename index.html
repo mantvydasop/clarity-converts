@@ -978,7 +978,7 @@
       margin-bottom:16px;
 
       /* normalize the badge row height (card 1 has 2 badges, others 1) */
-      min-height:32px;   /* adjust if needed */
+      min-height:32px;
       align-items:center;
     }
 
@@ -1013,7 +1013,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      min-height:56px;  /* tweak 52–64px until it looks right */
+      min-height:56px;
     }
 
     .service-tagline{
@@ -1022,11 +1022,10 @@
       line-height:1.6;
       color:rgba(11,27,74,0.88);
 
-       /* New: make all taglines the same height */
-
-      min-height:52px;      /* tweak 48–60px until the lines line up nicely */
+      /* make all taglines the same height */
+      min-height:52px;
       display:flex;
-      align-items:center;   /* vertically centers the text inside this block */
+      align-items:center;
     }
 
     .service-rule{
@@ -1042,10 +1041,10 @@
       color:rgba(9,20,47,0.88);
       margin:0 0 12px;
 
-      /* new: normalize summary height so "You get:" lines up */
-      min-height:100px;       /* tweak this number up/down until all 3 align nicely */
+      /* normalize summary height so "You get:" lines up */
+      min-height:100px;
       display:flex;
-      align-items:center;     /* vertically centers the paragraph inside this block */
+      align-items:center;
     }
 
     .service-subheading{
@@ -1072,7 +1071,7 @@
       color:rgba(9,20,47,0.9);
 
       /* normalize list height so the grey rule under “You get:” lines up */
-      min-height:210px;   /* try 200–220px until all three cards match */
+      min-height:220px;
     }
 
     .service-list li + li{
@@ -1084,6 +1083,10 @@
       font-size:12.5px;
       line-height:1.7;
       color:rgba(9,20,47,0.8);
+    }
+
+    .service-meta-top{
+      min-height:72px; /* keeps Best for/Timeframe block same height in all cards */
     }
 
     .service-meta p{
@@ -1110,12 +1113,12 @@
     }
 
     .service-cta .btn{
-      width:260px;              /* universal width for all three buttons */
-      margin:0 auto;            /* centers the button inside each card */
+      width:260px;
+      margin:0 auto;
       justify-content:center;
       border-radius:999px;
-      font-size:12px;           /* slightly smaller text */
-      line-height:1.25;         /* tighter line spacing so 2-line text looks centered */
+      font-size:12px;
+      line-height:1.25;
       font-weight:600;
       border:0;
       background:#0c1d4a;
@@ -1570,8 +1573,10 @@
               </ul>
 
               <div class="service-meta">
-                <p><span class="service-meta-label">Best for:</span> Founders before redesigning, scaling or investing in traffic.</p>
-                <p><span class="service-meta-label">Timeframe:</span> Delivered within 48 hours.</p>
+                <div class="service-meta-top">
+                  <p><span class="service-meta-label">Best for:</span> Founders before redesigning, scaling or investing in traffic.</p>
+                  <p><span class="service-meta-label">Timeframe:</span> Delivered within 48 hours.</p>
+                </div>
 
                 <div class="service-meta-rule"></div>
 
@@ -1618,8 +1623,10 @@
               </ul>
 
               <div class="service-meta">
-                <p><span class="service-meta-label">Best for:</span> Teams ready to rebuild the homepage in one focused sprint.</p>
-                <p><span class="service-meta-label">Timeframe:</span> Confirmed after kickoff.</p>
+                <div class="service-meta-top">
+                  <p><span class="service-meta-label">Best for:</span> Teams ready to rebuild the homepage in one focused sprint.</p>
+                  <p><span class="service-meta-label">Timeframe:</span> Confirmed after kickoff.</p>
+                </div>
 
                 <div class="service-meta-rule"></div>
 
@@ -1665,8 +1672,10 @@
               </ul>
 
               <div class="service-meta">
-                <p><span class="service-meta-label">Best for:</span> B2B SaaS and AI teams that need one shared source of truth.</p>
-                <p><span class="service-meta-label">Timeframe:</span> Confirmed after scope review.</p>
+                <div class="service-meta-top">
+                  <p><span class="service-meta-label">Best for:</span> B2B SaaS and AI teams that need one shared source of truth.</p>
+                  <p><span class="service-meta-label">Timeframe:</span> Confirmed after scope review.</p>
+                </div>
 
                 <div class="service-meta-rule"></div>
 
