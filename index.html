@@ -1049,6 +1049,9 @@
 
     .service-middle{
       margin-top:8px;
+      flex:1;                      /* creates the vertical “empty space” */
+      display:flex;
+      flex-direction:column;       /* stack “You get:” and the list */
     }
 
     .service-subheading{
@@ -1068,9 +1071,10 @@
     }
 
     .service-list-wrap{
-      min-height:260px;
       display:flex;
       align-items:center;
+      margin-top:auto;
+      margin-bottom:auto;
     }
 
     .service-list{
