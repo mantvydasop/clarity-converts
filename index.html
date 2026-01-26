@@ -955,7 +955,7 @@
       margin-top:46px;
       display:flex;
       gap:26px;
-      align-items:flex-start;
+      align-items:stretch;      /* NEW: stretch all cards to the same height */
       justify-content:center;
     }
 
@@ -1071,7 +1071,7 @@
       color:rgba(9,20,47,0.9);
 
       /* normalize list height so the grey rule under “You get:” lines up */
-      min-height:220px;
+      min-height:260px;         /* or 240px/280px depending on your eye */
     }
 
     .service-list li + li{
