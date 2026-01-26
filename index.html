@@ -955,7 +955,7 @@
       margin-top:46px;
       display:flex;
       gap:26px;
-      align-items:stretch;      /* NEW: stretch all cards to the same height */
+      align-items:stretch;
       justify-content:center;
     }
 
@@ -1063,15 +1063,18 @@
       background:rgba(11,27,74,0.16);
     }
 
+    .service-list-wrap{
+      min-height:260px;
+      display:flex;
+      align-items:center;
+    }
+
     .service-list{
       margin:10px 0 20px 18px;
       padding:0;
       font-size:13.5px;
       line-height:1.7;
       color:rgba(9,20,47,0.9);
-
-      /* normalize list height so the grey rule under “You get:” lines up */
-      min-height:260px;         /* or 240px/280px depending on your eye */
     }
 
     .service-list li + li{
@@ -1565,12 +1568,14 @@
                 <span class="service-subheading-rule"></span>
               </div>
 
-              <ul class="service-list">
-                <li><strong>A full homepage clarity review</strong> focused on buyer confusion and hesitation.</li>
-                <li><strong>Clear identification of the top conversion leaks</strong> across headline, proof, structure, and CTAs.</li>
-                <li><strong>Specific rewrite guidance</strong> for hero, subheads, value propositions, and calls to action.</li>
-                <li><strong>A prioritized action plan</strong> showing what to fix first for the highest impact.</li>
-              </ul>
+              <div class="service-list-wrap">
+                <ul class="service-list">
+                  <li><strong>A full homepage clarity review</strong> focused on buyer confusion and hesitation.</li>
+                  <li><strong>Clear identification of the top conversion leaks</strong> across headline, proof, structure, and CTAs.</li>
+                  <li><strong>Specific rewrite guidance</strong> for hero, subheads, value propositions, and calls to action.</li>
+                  <li><strong>A prioritized action plan</strong> showing what to fix first for the highest impact.</li>
+                </ul>
+              </div>
 
               <div class="service-meta">
                 <div class="service-meta-top">
@@ -1614,13 +1619,15 @@
                 <span class="service-subheading-rule"></span>
               </div>
 
-              <ul class="service-list">
-                <li><strong>A complete homepage rewrite</strong> covering hero, subheads, narrative sections, proof blocks, feature explanations, and CTAs.</li>
-                <li><strong>A clear message hierarchy and page flow</strong> aligned with how buyers scan and decide.</li>
-                <li><strong>Copy delivered in a wireframe style layout</strong> so structure, emphasis, and sequence are unmistakable.</li>
-                <li><strong>Section-by-section rationale</strong> explaining why each message exists and how it reduces buyer hesitation.</li>
-                <li><strong>Two refinement passes</strong> to align tone, positioning, and decision flow.</li>
-              </ul>
+              <div class="service-list-wrap">
+                <ul class="service-list">
+                  <li><strong>A complete homepage rewrite</strong> covering hero, subheads, narrative sections, proof blocks, feature explanations, and CTAs.</li>
+                  <li><strong>A clear message hierarchy and page flow</strong> aligned with how buyers scan and decide.</li>
+                  <li><strong>Copy delivered in a wireframe style layout</strong> so structure, emphasis, and sequence are unmistakable.</li>
+                  <li><strong>Section-by-section rationale</strong> explaining why each message exists and how it reduces buyer hesitation.</li>
+                  <li><strong>Two refinement passes</strong> to align tone, positioning, and decision flow.</li>
+                </ul>
+              </div>
 
               <div class="service-meta">
                 <div class="service-meta-top">
@@ -1664,12 +1671,14 @@
                 <span class="service-subheading-rule"></span>
               </div>
 
-              <ul class="service-list">
-                <li><strong>Buyer insight synthesis</strong> from multiple sources, including sales calls, demos, support tickets, onboarding feedback, CRM notes, reviews, win–loss data, and competitive analysis.</li>
-                <li><strong>A complete positioning narrative</strong> aligned with how buyers evaluate, compare, and decide.</li>
-                <li><strong>A messaging hierarchy</strong> for homepage, product pages, onboarding, sales, and marketing.</li>
-                <li><strong>A centralized message bank</strong> teams can pull from to stay consistent.</li>
-              </ul>
+              <div class="service-list-wrap">
+                <ul class="service-list">
+                  <li><strong>Buyer insight synthesis</strong> from multiple sources, including sales calls, demos, support tickets, onboarding feedback, CRM notes, reviews, win–loss data, and competitive analysis.</li>
+                  <li><strong>A complete positioning narrative</strong> aligned with how buyers evaluate, compare, and decide.</li>
+                  <li><strong>A messaging hierarchy</strong> for homepage, product pages, onboarding, sales, and marketing.</li>
+                  <li><strong>A centralized message bank</strong> teams can pull from to stay consistent.</li>
+                </ul>
+              </div>
 
               <div class="service-meta">
                 <div class="service-meta-top">
