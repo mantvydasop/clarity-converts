@@ -846,12 +846,11 @@
       white-space:nowrap;
     }
 
-    /* --- C card expansion specifics --- */
+    /* --- Expandable CLEAR cards (C, L, E) --- */
     .clear-card--expandable{
       cursor:pointer;
     }
 
-    /* Hover glow only on hover-capable devices */
     @media (hover:hover){
       .clear-card--expandable:hover{
         box-shadow:
@@ -872,7 +871,7 @@
     }
 
     .clear-card.expanded .clear-card-details{
-      max-height:480px; /* enough room for the details copy */
+      max-height:600px; /* enough room for details copy */
       opacity:1;
     }
 
@@ -1168,8 +1167,8 @@
                 </div>
               </article>
 
-              <!-- OTHER CARDS UNCHANGED -->
-              <article class="clear-card">
+              <!-- L CARD WITH EXPANSION -->
+              <article class="clear-card clear-card--expandable clear-card--leverage" aria-expanded="false">
                 <div class="clear-card-letter">L</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
                 <div class="clear-card-body">
@@ -1177,10 +1176,29 @@
                   <div class="clear-card-text">
                     Utilize strengths and assets effectively.
                   </div>
+
+                  <div class="clear-card-details">
+                    <p class="lead">Leverage is your strategic angle.</p>
+
+                    <p>It explains why your solution is the obvious choice instead of just another option. Without leverage, your product blends into the category and competes on surface-level features.</p>
+
+                    <p class="emphasis">
+                      Leverage clarifies why this matters now and why your approach is different.
+                    </p>
+
+                    <p><strong>Strong leverage clarifies:</strong></p>
+                    <ul>
+                      <li>The specific advantage your product holds.</li>
+                      <li>Why your solution is superior to alternatives.</li>
+                      <li>How you change the buyer’s current way of doing things.</li>
+                      <li>What makes your value immediately compelling.</li>
+                    </ul>
+                  </div>
                 </div>
               </article>
 
-              <article class="clear-card">
+              <!-- E CARD WITH EXPANSION -->
+              <article class="clear-card clear-card--expandable clear-card--evidence" aria-expanded="false">
                 <div class="clear-card-letter">E</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
                 <div class="clear-card-body">
@@ -1188,9 +1206,28 @@
                   <div class="clear-card-text">
                     Support claims with clear proof.
                   </div>
+
+                  <div class="clear-card-details">
+                    <p class="lead">Evidence turns claims into conviction.</p>
+
+                    <p>Buyers expect proof early. When evidence is missing or buried, trust erodes and hesitation grows.</p>
+
+                    <p class="emphasis">
+                      Evidence shows that your product works in the real world, not just in theory.
+                    </p>
+
+                    <p><strong>Strong evidence reinforces:</strong></p>
+                    <ul>
+                      <li>That your product delivers real outcomes.</li>
+                      <li>That your claims are backed by proof, not hype.</li>
+                      <li>That others like them have succeeded with your solution.</li>
+                      <li>That choosing you carries lower perceived risk.</li>
+                    </ul>
+                  </div>
                 </div>
               </article>
 
+              <!-- A CARD (simple for now) -->
               <article class="clear-card">
                 <div class="clear-card-letter">A</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
@@ -1202,6 +1239,7 @@
                 </div>
               </article>
 
+              <!-- R CARD (simple for now) -->
               <article class="clear-card">
                 <div class="clear-card-letter">R</div>
                 <div class="clear-card-divider" aria-hidden="true"></div>
@@ -1282,18 +1320,18 @@
       });
     })();
 
-    // CLEAR: C card expand/collapse
+    // CLEAR: Expandable cards (C, L, E)
     (function () {
-      const contextCard = document.querySelector('.clear-card--context');
-      if (!contextCard) return;
+      const cards = document.querySelectorAll('.clear-card--expandable');
+      if (!cards.length) return;
 
-      function toggleCard() {
-        const isExpanded = contextCard.classList.toggle('expanded');
-        contextCard.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-      }
+      cards.forEach(function(card){
+        card.setAttribute('aria-expanded', 'false');
 
-      contextCard.addEventListener('click', function () {
-        toggleCard();
+        card.addEventListener('click', function () {
+          const isExpanded = card.classList.toggle('expanded');
+          card.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        });
       });
     })();
   </script>
