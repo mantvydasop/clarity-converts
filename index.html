@@ -1401,6 +1401,178 @@
       text-decoration:underline;
     }
 
+    /* EcoVedo expanded breakdown (desktop) */
+    .case-card--ecovedo .case-expanded{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid rgba(11,27,74,0.16);
+      font-size:13.5px;
+      line-height:1.7;
+      color:#0b1b4a;
+      display:none;
+    }
+
+    .case-card--ecovedo.case-card--open .case-expanded{
+      display:block;
+    }
+
+    .case-expanded-heading{
+      font-size:15.5px;
+      font-weight:700;
+      color:#12224b;
+      margin:0 0 8px;
+    }
+
+    .case-expanded-divider{
+      width:100%;
+      height:1px;
+      background:rgba(11,27,74,0.16);
+      margin:14px 0 18px;
+    }
+
+    .case-expanded p{
+      margin:0 0 10px;
+    }
+
+    .case-expanded p + p{
+      margin-top:6px;
+    }
+
+    .case-expanded-small{
+      font-size:12.5px;
+      color:rgba(9,20,47,0.70);
+      margin-top:6px;
+    }
+
+    .case-expanded-wireframe{
+      text-align:center;
+      margin-bottom:22px;
+    }
+
+    .case-expanded-wireframe-visual{
+      width:100%;
+      border-radius:18px;
+      overflow:hidden;
+      background:#e3e8f1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 18px;
+    }
+
+    .case-expanded-wireframe-placeholder{
+      width:100%;
+      aspect-ratio:16 / 9;
+      position:relative;
+      background:linear-gradient(135deg, #e5ecf7, #cfd7ea);
+      border-radius:18px;
+    }
+
+    .case-expanded-wireframe-placeholder::after{
+      content:"EcoVedo homepage wireframe";
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:13px;
+      font-weight:500;
+      color:#5a6485;
+    }
+
+    .case-expanded-wireframe .btn{
+      padding:12px 28px;
+      border-radius:999px;
+      font-size:13.5px;
+      font-weight:600;
+      background:#12224b;
+      border-color:#12224b;
+      color:#ffffff;
+      box-shadow:0 14px 30px rgba(0,0,0,0.35);
+    }
+
+    .case-expanded-wireframe .btn:hover{
+      background:#0e1c3c;
+    }
+
+    .case-ppp-panel{
+      margin-top:8px;
+      background:#102651;
+      color:#ffffff;
+      border-radius:18px;
+      padding:18px 22px 20px;
+    }
+
+    .case-ppp-row{
+      display:flex;
+      align-items:flex-start;
+      gap:18px;
+      padding:10px 0;
+    }
+
+    .case-ppp-row + .case-ppp-row{
+      border-top:1px solid rgba(255,255,255,0.16);
+    }
+
+    .case-ppp-label{
+      flex:0 0 70px;
+      font-weight:700;
+      font-size:13.5px;
+    }
+
+    .case-ppp-body{
+      flex:1;
+      font-size:13px;
+      line-height:1.7;
+    }
+
+    .case-ppp-body ul{
+      margin:0;
+      padding-left:18px;
+    }
+
+    .case-ppp-body li + li{
+      margin-top:4px;
+    }
+
+    .case-expanded-list{
+      margin:6px 0 0 18px;
+      padding:0;
+    }
+
+    .case-expanded-list li + li{
+      margin-top:4px;
+    }
+
+    .case-expanded-cta{
+      margin-top:22px;
+      text-align:center;
+    }
+
+    .case-expanded-cta .btn{
+      padding:13px 30px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:600;
+      background:#12224b;
+      border-color:#12224b;
+      color:#ffffff;
+      box-shadow:0 16px 34px rgba(0,0,0,0.40);
+      width:260px;
+      max-width:100%;
+      justify-content:center;
+    }
+
+    .case-expanded-cta .btn:hover{
+      background:#0e1c3c;
+    }
+
+    .case-expanded-cta-note{
+      margin-top:8px;
+      font-size:12.5px;
+      color:rgba(9,20,47,0.72);
+    }
+
     @media (max-width:768px){
       .case-grid{
         grid-template-columns:1fr;
@@ -2065,7 +2237,91 @@
                 </ul>
 
                 <div class="case-link">
-                  <a href="#contact">View breakdown &gt;</a>
+                  <a href="#" class="js-case-toggle" aria-expanded="false" aria-controls="ecovedo-breakdown">View breakdown &gt;</a>
+                </div>
+
+                <div class="case-expanded" id="ecovedo-breakdown" hidden>
+                  <div class="case-expanded-wireframe">
+                    <div class="case-expanded-wireframe-visual">
+                      <div class="case-expanded-wireframe-placeholder" aria-hidden="true"></div>
+                    </div>
+                    <a href="#" class="btn">Open full-page wireframe</a>
+                    <div class="case-expanded-small">Scroll the full page, from top to bottom.</div>
+                  </div>
+
+                  <div class="case-expanded-block">
+                    <h4 class="case-expanded-heading">The clarity problem</h4>
+                    <p>
+                      EcoVedo is built on trust. But the homepage still asked visitors to infer what makes the rating credible
+                      and what happens after the first click. When trust is the product, any ambiguity in the first scroll
+                      creates hesitation.
+                    </p>
+                  </div>
+
+                  <div class="case-expanded-divider"></div>
+
+                  <div class="case-expanded-block">
+                    <h4 class="case-expanded-heading">What changed</h4>
+
+                    <div class="case-ppp-panel">
+                      <div class="case-ppp-row">
+                        <div class="case-ppp-label">Promise</div>
+                        <div class="case-ppp-body">
+                          <ul>
+                            <li>Clarified the core promise in the first screen so it can be repeated without explanation.</li>
+                            <li>Reduced competing messages so the page feels decisive, not promotional.</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="case-ppp-row">
+                        <div class="case-ppp-label">Proof</div>
+                        <div class="case-ppp-body">
+                          <ul>
+                            <li>Made trust signals visible earlier so claims feel supported, not asserted.</li>
+                            <li>Reinforced credibility before asking for action.</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="case-ppp-row">
+                        <div class="case-ppp-label">Path</div>
+                        <div class="case-ppp-body">
+                          <ul>
+                            <li>Simplified the next step into one obvious action.</li>
+                            <li>Structured the page so scanning leads naturally into “how it works”, then proof, then the CTA.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="case-expanded-divider"></div>
+
+                  <div class="case-expanded-block">
+                    <h4 class="case-expanded-heading">Why it mattered</h4>
+                    <ul class="case-expanded-list">
+                      <li>The page reduces assumption-making in the first scroll, which is where trust either forms or breaks.</li>
+                      <li>Claims feel safer because proof shows up earlier in the scan.</li>
+                      <li>The next step becomes clearer, which lowers decision friction.</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-expanded-divider"></div>
+
+                  <div class="case-expanded-block">
+                    <h4 class="case-expanded-heading">Delivered</h4>
+                    <ul class="case-expanded-list">
+                      <li>A complete homepage rewrite from top to bottom, delivered as a wireframe-ready narrative.</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-expanded-cta">
+                    <a href="#contact" class="btn">Book a short call</a>
+                    <div class="case-expanded-cta-note">
+                      We’ll look at your homepage and decide what the next step should be.
+                    </div>
+                  </div>
                 </div>
               </article>
 
@@ -2211,6 +2467,66 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+      });
+    })();
+
+    // CASES: EcoVedo expanded breakdown toggle
+    (function () {
+      const ecoCard = document.querySelector('.case-card--ecovedo');
+      if (!ecoCard) return;
+
+      const toggleLink = ecoCard.querySelector('.js-case-toggle');
+      const expanded = ecoCard.querySelector('.case-expanded');
+      if (!toggleLink || !expanded) return;
+
+      // Ensure initial collapsed state
+      ecoCard.classList.remove('case-card--open');
+      expanded.setAttribute('hidden', '');
+      toggleLink.setAttribute('aria-expanded', 'false');
+
+      function closeCaseCard(card) {
+        card.classList.remove('case-card--open');
+        const localExpanded = card.querySelector('.case-expanded');
+        const localToggle = card.querySelector('.js-case-toggle');
+
+        if (localExpanded) {
+          localExpanded.setAttribute('hidden', '');
+        }
+
+        if (localToggle) {
+          localToggle.textContent = 'View breakdown >';
+          localToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+
+      function openEcoVedo() {
+        // Close any other case cards in the grid
+        const allCards = document.querySelectorAll('.case-grid .case-card');
+        allCards.forEach(function(card){
+          if (card !== ecoCard) {
+            closeCaseCard(card);
+          }
+        });
+
+        ecoCard.classList.add('case-card--open');
+        expanded.removeAttribute('hidden');
+        toggleLink.textContent = 'Hide breakdown ▲';
+        toggleLink.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeEcoVedo() {
+        closeCaseCard(ecoCard);
+      }
+
+      toggleLink.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const isOpen = ecoCard.classList.contains('case-card--open');
+        if (isOpen) {
+          closeEcoVedo();
+        } else {
+          openEcoVedo();
+        }
       });
     })();
   </script>
