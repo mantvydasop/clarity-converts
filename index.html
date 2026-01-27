@@ -1648,6 +1648,168 @@
         margin-right:auto;
       }
     }
+
+    /* ABOUT / THINKING SECTION */
+    .about-section{
+      padding:90px 0 110px;
+    }
+
+    .about-inner{
+      max-width:920px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap:32px;
+      align-items:stretch;
+    }
+
+    .about-photo{
+      border-radius:24px;
+      overflow:hidden;
+      background:#0c1d4a;
+      display:flex;
+      align-items:stretch;
+      justify-content:center;
+      box-shadow:0 18px 40px rgba(0,0,0,0.40);
+    }
+
+    .about-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .about-card{
+      background:#ffffff;
+      border-radius:22px;
+      padding:28px 30px 26px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.40);
+      color:#0b1b4a;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .about-title{
+      margin:0 0 18px;
+      font-size:28px;
+      font-weight:700;
+      letter-spacing:-0.4px;
+      color:#12224b;
+    }
+
+    .about-title em{
+      font-style:italic;
+    }
+
+    .about-divider{
+      width:100%;
+      height:1px;
+      margin:0 0 18px;
+      background:rgba(11,27,74,0.16);
+    }
+
+    .about-subhead{
+      margin:0 0 18px;
+      font-size:15px;
+      line-height:1.7;
+      font-weight:700;
+      color:#12224b;
+    }
+
+    .about-body{
+      margin:0 0 20px;
+      font-size:14px;
+      line-height:1.75;
+      color:rgba(9,20,47,0.9);
+    }
+
+    .about-subsection-title{
+      margin:0 0 10px;
+      font-size:14.5px;
+      font-weight:700;
+      color:#12224b;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .about-subsection-rule{
+      flex:1;
+      height:1px;
+      background:rgba(11,27,74,0.18);
+    }
+
+    .about-list{
+      margin:0 0 20px 18px;
+      padding:0;
+      font-size:14px;
+      line-height:1.75;
+      color:rgba(9,20,47,0.9);
+    }
+
+    .about-list li + li{
+      margin-top:4px;
+    }
+
+    .about-divider--bottom{
+      margin:10px 0 18px;
+    }
+
+    .about-closing{
+      margin:0 0 20px;
+      font-size:15px;
+      font-weight:700;
+      color:#12224b;
+    }
+
+    .about-cta{
+      margin-top:auto;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+    }
+
+    .about-cta .btn{
+      border-radius:999px;
+      padding:13px 26px;
+      font-size:14px;
+      font-weight:600;
+      background:#12224b;
+      border-color:#12224b;
+      color:#ffffff;
+      box-shadow:0 14px 30px rgba(0,0,0,0.35);
+    }
+
+    .about-cta .btn:hover{
+      background:#0e1c3c;
+    }
+
+    .about-cta-note{
+      font-size:12.5px;
+      color:rgba(9,20,47,0.70);
+    }
+
+    @media (max-width:960px){
+      .about-inner{
+        grid-template-columns:1fr;
+        max-width:520px;
+      }
+      .about-photo{
+        max-width:360px;
+        margin:0 auto;
+      }
+    }
+
+    @media (max-width:600px){
+      .about-card{
+        padding:22px 20px 22px;
+      }
+      .about-title{
+        font-size:24px;
+      }
+    }
   </style>
 </head>
 
@@ -2505,6 +2667,55 @@
           </div>
         </section>
         <!-- END CASE STUDY / BREAKDOWNS SECTION -->
+
+        <!-- ABOUT / THINKING SECTION -->
+        <section class="about-section" aria-label="The thinking behind the clarity">
+          <div class="about-inner">
+            <div class="about-photo">
+              <img src="assets/mantvydas-profile.png" alt="Mantvydas, B2B conversion copywriter">
+            </div>
+
+            <article class="about-card">
+              <h2 class="about-title"><em>The thinking</em> behind the clarity.</h2>
+
+              <div class="about-divider"></div>
+
+              <p class="about-subhead">
+                Conversion-focused messaging for B2B SaaS and AI teams, built around how buyers actually think, hesitate, and decide.
+              </p>
+
+              <div class="about-divider"></div>
+
+              <p class="about-body">
+                I help turn complex products into clear, actionable messaging that buyers can quickly understand. With a background in sales and firsthand
+                experience with real objections and real decision triggers, I approach every page through the buyer’s eyes so the right message becomes obvious.
+              </p>
+
+              <div class="about-subsection-title">
+                <span>What I bring to your team</span>
+                <span class="about-subsection-rule"></span>
+              </div>
+
+              <ul class="about-list">
+                <li>Messaging built around clarity, relevance, and momentum.</li>
+                <li>A deep understanding of how buyers scan, assume, and make decisions.</li>
+                <li>Close collaboration with founders and product teams to keep messaging accurate and actionable.</li>
+              </ul>
+
+              <div class="about-divider about-divider--bottom"></div>
+
+              <p class="about-closing">
+                If this way of thinking resonates, we should talk.
+              </p>
+
+              <div class="about-cta">
+                <a href="#contact" class="btn">See how we can work together</a>
+                <div class="about-cta-note">No pressure. Start with clarity, not commitment.</div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- END ABOUT / THINKING SECTION -->
 
       </div>
     </section>
