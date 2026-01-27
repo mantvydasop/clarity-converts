@@ -402,12 +402,14 @@
       text-align:center;
       padding:0 18px 54px;
 
-      background:
-        radial-gradient(
-          circle at 50% 60%,
-          transparent 0 80px,
-          rgba(198,208,232,0.78) 81px 120%
-          );
+      /* Top part stays as a card, bottom is a clear window */
+      background:linear-gradient(
+        to bottom,
+        rgba(198,208,232,0.78) 0%,
+        rgba(198,208,232,0.78) 46%,
+        transparent 46%,
+        transparent 100%
+        );
     }
 
     .repeat-mid .mid-text{
