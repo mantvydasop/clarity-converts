@@ -1292,6 +1292,12 @@
       flex-direction:column;
     }
 
+    .case-top{
+      min-height:170px;
+      display:flex;
+      flex-direction:column;
+    }
+
     .case-tag{
       display:inline-flex;
       align-items:center;
@@ -1349,6 +1355,7 @@
       padding-top:60%;
       position:relative;
       background:linear-gradient(135deg, #e5ecf7, #cfd7ea);
+      border-radius:18px;
     }
 
     .case-image-placeholder::after{
@@ -1358,7 +1365,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:12px;
+      font-size:13px;
       font-weight:500;
       color:#5a6485;
     }
@@ -1369,6 +1376,7 @@
       font-size:13.5px;
       line-height:1.7;
       color:rgba(9,20,47,0.86);
+      min-height:120px;
     }
 
     .case-bullets li + li{
@@ -2038,12 +2046,14 @@
             <div class="case-grid">
               <!-- EcoVedo -->
               <article class="case-card case-card--ecovedo">
-                <div class="case-tag">Trust &amp; Transparency</div>
+                <div class="case-top">
+                  <div class="case-tag">Trust &amp; Transparency</div>
 
-                <h3 class="case-name">EcoVedo</h3>
-                <p class="case-desc">Helping buyers verify claims instead of guessing.</p>
+                  <h3 class="case-name">EcoVedo</h3>
+                  <p class="case-desc">Helping buyers verify claims instead of guessing.</p>
 
-                <div class="case-divider"></div>
+                  <div class="case-divider"></div>
+                </div>
 
                 <div class="case-image">
                   <div class="case-image-placeholder" aria-hidden="true"></div>
@@ -2062,12 +2072,14 @@
 
               <!-- Founder'sMood -->
               <article class="case-card case-card--founders">
-                <div class="case-tag">Founder Momentum</div>
+                <div class="case-top">
+                  <div class="case-tag">Founder Momentum</div>
 
-                <h3 class="case-name">FOUNDER’SMOOD</h3>
-                <p class="case-desc">Guiding founders from overwhelm to action.</p>
+                  <h3 class="case-name">FOUNDER’SMOOD</h3>
+                  <p class="case-desc">Guiding founders from overwhelm to action.</p>
 
-                <div class="case-divider"></div>
+                  <div class="case-divider"></div>
+                </div>
 
                 <div class="case-image">
                   <div class="case-image-placeholder" aria-hidden="true"></div>
