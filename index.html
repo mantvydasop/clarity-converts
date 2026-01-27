@@ -1198,6 +1198,100 @@
     .service-card--open .audit-compact-only{
       display:none;
     }
+
+    /* HOMEPAGE REWRITE DETAILS SECTION */
+    .rewrite-details-section{
+      padding:90px 0 110px;
+      text-align:left;
+    }
+
+    .rewrite-details-inner{
+      max-width:860px;
+      margin:0 auto;
+    }
+
+    .rewrite-details-label{
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:rgba(234,240,255,0.70);
+      margin:0 0 10px 0;
+    }
+
+    .rewrite-details-title{
+      margin:0;
+      font-size:30px;
+      font-weight:700;
+      letter-spacing:-0.4px;
+      color:rgba(234,240,255,0.98);
+    }
+
+    .rewrite-details-rule{
+      width:min(520px, 80%);
+      margin:18px 0 20px;
+      height:1px;
+      background:linear-gradient(90deg, rgba(234,240,255,0.00), rgba(234,240,255,0.40), rgba(234,240,255,0.00));
+    }
+
+    .rewrite-details-lead{
+      margin:0 0 16px 0;
+      font-size:15px;
+      line-height:1.9;
+      color:rgba(234,240,255,0.86);
+      max-width:640px;
+    }
+
+    .rewrite-details-body{
+      margin:0 0 24px 0;
+      font-size:14.5px;
+      line-height:1.85;
+      color:rgba(234,240,255,0.82);
+      max-width:640px;
+    }
+
+    .rewrite-details-subtitle{
+      margin:0 0 10px 0;
+      font-size:15px;
+      font-weight:600;
+      color:rgba(234,240,255,0.94);
+    }
+
+    .rewrite-details-list{
+      margin:0 0 24px 18px;
+      padding:0;
+      font-size:14px;
+      line-height:1.8;
+      color:rgba(234,240,255,0.86);
+      max-width:640px;
+    }
+
+    .rewrite-details-list li + li{
+      margin-top:6px;
+    }
+
+    .rewrite-details-cta{
+      margin-top:26px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      align-items:flex-start;
+    }
+
+    .rewrite-details-cta .btn{
+      background:#0c1d4a;
+      border:0;
+      box-shadow:0 16px 40px rgba(0,0,0,0.45);
+    }
+
+    .rewrite-details-cta .btn:hover{
+      background:#0a1a42;
+    }
+
+    .rewrite-details-note{
+      font-size:12px;
+      color:rgba(234,240,255,0.74);
+    }
   </style>
 </head>
 
@@ -1712,7 +1806,7 @@
                 </div>
 
                 <div class="service-link-row">
-                  <a href="#" class="service-link">View details &gt;</a>
+                  <a href="#homepage-rewrite-details" class="service-link">View details &gt;</a>
                 </div>
               </div>
             </article>
@@ -1772,6 +1866,43 @@
           </div>
         </section>
         <!-- END SERVICES SECTION -->
+
+        <!-- HOMEPAGE REWRITE DETAILS SECTION -->
+        <section class="rewrite-details-section" id="homepage-rewrite-details" aria-label="Homepage Rewrite details">
+          <div class="rewrite-details-inner">
+            <p class="rewrite-details-label">Service details</p>
+            <h2 class="rewrite-details-title">Homepage Rewrite</h2>
+            <div class="rewrite-details-rule"></div>
+
+            <p class="rewrite-details-lead">
+              A complete rebuild of your homepage narrative and conversion flow, so buyers can repeat the promise,
+              see proof early, and know exactly what happens next.
+            </p>
+
+            <p class="rewrite-details-body">
+              The Homepage Rewrite is for teams who are ready to ship a new version of their homepage in one focused
+              sprint. Instead of moving blocks around or rewriting isolated lines, we rebuild the story from top to bottom:
+              how you introduce the offer, where proof shows up, and how the next step is framed.
+            </p>
+
+            <h3 class="rewrite-details-subtitle">What you get (deliverables):</h3>
+            <ul class="rewrite-details-list">
+              <li><strong>A complete homepage rewrite</strong> covering hero, subheads, narrative sections, proof blocks, feature explanations, and CTAs.</li>
+              <li><strong>A clear message hierarchy and page flow</strong> aligned with how buyers scan, compare options, and decide.</li>
+              <li><strong>Copy delivered in a wireframe-style layout</strong> so structure, emphasis, and sequence are unmistakable for design and development.</li>
+              <li><strong>A short rationale document</strong> explaining what changed, why each section exists, and how it reduces buyer hesitation.</li>
+              <li><strong>Two refinement passes</strong> to adjust tone, positioning, and decision flow once you have internal feedback.</li>
+            </ul>
+
+            <div class="rewrite-details-cta">
+              <a href="#contact" class="btn">Request a Homepage Rewrite</a>
+              <div class="rewrite-details-note">
+                You’ll receive a clear plan, timeline, and what I need from you before we start.
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- END HOMEPAGE REWRITE DETAILS SECTION -->
 
       </div>
     </section>
