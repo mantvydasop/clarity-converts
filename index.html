@@ -1810,6 +1810,107 @@
         font-size:24px;
       }
     }
+
+    /* CONTACT / GET IN TOUCH SECTION */
+    .contact-section{
+      padding:96px 0 110px;
+      text-align:center;
+    }
+
+    .contact-title{
+      margin:0;
+      font-size:30px;
+      font-weight:700;
+      letter-spacing:-0.4px;
+      color:rgba(234,240,255,0.98);
+    }
+
+    .contact-sub{
+      margin:14px auto 0;
+      max-width:620px;
+      font-size:14.5px;
+      line-height:1.8;
+      color:rgba(234,240,255,0.80);
+    }
+
+    .contact-grid{
+      margin-top:40px;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:24px;
+    }
+
+    .contact-card{
+      background:var(--card-soft);
+      border-radius:20px;
+      border:1px solid var(--stroke-soft);
+      padding:22px 20px 20px;
+      box-shadow:var(--shadow-soft);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+
+    .contact-visual{
+      width:100%;
+      height:110px;
+      border-radius:14px;
+      margin-bottom:16px;
+      background:linear-gradient(135deg, rgba(199,210,255,0.16), rgba(120,190,255,0.32));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:500;
+      color:rgba(234,240,255,0.85);
+      border:1px solid rgba(255,255,255,0.20);
+    }
+
+    .contact-card h3{
+      margin:0 0 8px;
+      font-size:17px;
+      font-weight:600;
+      color:rgba(234,240,255,0.98);
+    }
+
+    .contact-card p{
+      margin:0;
+      font-size:13.5px;
+      line-height:1.7;
+      color:rgba(185,198,239,0.90);
+    }
+
+    @media (max-width:960px){
+      .contact-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width:600px){
+      .contact-section{
+        padding:72px 0 90px;
+      }
+      .contact-title{
+        font-size:26px;
+      }
+      .contact-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+      }
+    }
+
+    /* SITE FOOTER */
+    .site-footer{
+      padding:28px 0 32px;
+      text-align:center;
+      font-size:12.5px;
+      color:rgba(234,240,255,0.60);
+    }
+
+    .site-footer-inner{
+      opacity:0.9;
+    }
   </style>
 </head>
 
@@ -2717,9 +2818,53 @@
         </section>
         <!-- END ABOUT / THINKING SECTION -->
 
+        <!-- CONTACT / GET IN TOUCH SECTION -->
+        <section class="contact-section" id="contact" aria-label="Contact and next steps">
+          <h2 class="contact-title">Ready when you are.</h2>
+          <p class="contact-sub">
+            Share your homepage or reach out directly.<br>
+            I’ll help you find the clearest path to stronger messaging and fewer conversion blockers.
+          </p>
+
+          <div class="contact-grid">
+            <article class="contact-card">
+              <div class="contact-visual">Call icon / visual</div>
+              <h3>15-minute clarity call</h3>
+              <p>Share your homepage, get an initial read on the biggest clarity leaks, and see if a 48-Hour Clarity Audit is the right next step.</p>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-visual">Email icon / visual</div>
+              <h3>Email</h3>
+              <p>Prefer to write it out? Send over your homepage URL and a bit of context, and I’ll reply with thoughts and possible paths.</p>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-visual">LinkedIn icon / visual</div>
+              <h3>LinkedIn</h3>
+              <p>Connect and start a short conversation. Share what you are building and where your homepage feels unclear.</p>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-visual">Flag / location visual</div>
+              <h3>Vilnius based, working globally.</h3>
+              <p>Based in Vilnius, collaborating remotely with B2B SaaS and AI teams across time zones.</p>
+            </article>
+          </div>
+        </section>
+        <!-- END CONTACT / GET IN TOUCH SECTION -->
+
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="site-footer-inner">
+        © 2026 clarity-converts.com
+      </div>
+    </div>
+  </footer>
 
   <script>
     // Layer 2.5: behavior polish for the booklet / TOC
