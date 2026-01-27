@@ -1211,6 +1211,19 @@
     #service-homepage-rewrite.service-card--open .homepage-compact-only{
       display:none;
     }
+
+    /* Compact vs detailed content for Conversion Messaging System card */
+    #service-messaging-system .messaging-details-only{
+      display:none;
+    }
+
+    #service-messaging-system.service-card--open .messaging-details-only{
+      display:block;
+    }
+
+    #service-messaging-system.service-card--open .messaging-compact-only{
+      display:none;
+    }
   </style>
 </head>
 
@@ -1754,7 +1767,7 @@
             </article>
 
             <!-- Conversion Messaging System -->
-            <article class="service-card">
+            <article class="service-card" id="service-messaging-system">
               <div class="service-badges" aria-hidden="true">
                 <span class="service-badge service-badge--primary">Messaging backbone</span>
               </div>
@@ -1766,23 +1779,47 @@
 
               <div class="service-rule"></div>
 
-              <p class="service-body">
+              <!-- Compact summary -->
+              <p class="service-body messaging-compact-only">
                 This creates a shared messaging backbone that removes confusion across teams and surfaces
                 the real reasons buyers say yes.
               </p>
 
+              <!-- Detailed summary -->
+              <p class="service-body messaging-details-only">
+                This is how you stop mixed messages across pages, teams, and channels. We build a single
+                source of truth that explains what you do, who it is for, why it is better, and what to say when buyers hesitate.
+              </p>
+
               <div class="service-middle">
-                <div class="service-subheading">
+                <!-- Compact subheading + list -->
+                <div class="service-subheading messaging-compact-only">
                   <span>You get:</span>
                   <span class="service-subheading-rule"></span>
                 </div>
 
-                <div class="service-list-wrap">
+                <div class="service-list-wrap messaging-compact-only">
                   <ul class="service-list">
                     <li><strong>Buyer insight synthesis</strong> from multiple sources, including sales calls, demos, support tickets, onboarding feedback, CRM notes, reviews, win–loss data, and competitive analysis.</li>
                     <li><strong>A complete positioning narrative</strong> aligned with how buyers evaluate, compare, and decide.</li>
                     <li><strong>A messaging hierarchy</strong> for homepage, product pages, onboarding, sales, and marketing.</li>
                     <li><strong>A centralized message bank</strong> teams can pull from to stay consistent.</li>
+                  </ul>
+                </div>
+
+                <!-- Detailed subheading + list -->
+                <div class="service-subheading messaging-details-only">
+                  <span>What you get (deliverables):</span>
+                  <span class="service-subheading-rule"></span>
+                </div>
+
+                <div class="service-list-wrap messaging-details-only">
+                  <ul class="service-list">
+                    <li><strong>A documented buyer insight summary</strong> synthesizing motivations, objections, decision criteria, and language patterns from multiple sources, including internal materials, customer-facing teams, and relevant public discussions where your buyers are active.</li>
+                    <li><strong>A complete positioning narrative document</strong> defining your core promise, differentiation, and strategic angle, aligned with how buyers evaluate, compare, and decide.</li>
+                    <li><strong>A clear messaging hierarchy</strong> that shows what to say first, what supports it, and what comes next across homepage, product pages, onboarding, marketing, and sales surfaces.</li>
+                    <li><strong>A centralized message bank document</strong> with approved headlines, value statements, proof points, and objection responses that teams can reuse without rewriting or drifting off-message.</li>
+                    <li><strong>A clarity architecture overview</strong> explaining how each message reinforces trust, reduces cognitive load, and prevents buyer hesitation.</li>
                   </ul>
                 </div>
               </div>
@@ -1801,7 +1838,7 @@
                 </div>
 
                 <div class="service-link-row">
-                  <a href="#" class="service-link">View details &gt;</a>
+                  <a href="#" class="service-link js-messaging-details-toggle">View details &gt;</a>
                 </div>
               </div>
             </article>
@@ -1900,6 +1937,21 @@
       if (!card) return;
 
       const toggleLink = card.querySelector('.js-homepage-details-toggle');
+      if (!toggleLink) return;
+
+      toggleLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        const isOpen = card.classList.toggle('service-card--open');
+        toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+      });
+    })();
+
+    // SERVICES: Toggle detailed view for Conversion Messaging System (inside the card)
+    (function () {
+      const card = document.getElementById('service-messaging-system');
+      if (!card) return;
+
+      const toggleLink = card.querySelector('.js-messaging-details-toggle');
       if (!toggleLink) return;
 
       toggleLink.addEventListener('click', function (event) {
