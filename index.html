@@ -1401,8 +1401,8 @@
       text-decoration:underline;
     }
 
-    /* EcoVedo expanded breakdown (desktop) */
-    .case-card--ecovedo .case-expanded{
+    /* Case breakdown expanded content (desktop) */
+    .case-card .case-expanded{
       margin-top:18px;
       padding-top:18px;
       border-top:1px solid rgba(11,27,74,0.16);
@@ -1412,8 +1412,71 @@
       display:none;
     }
 
-    .case-card--ecovedo.case-card--open .case-expanded{
+    .case-card.case-card--open .case-expanded{
       display:block;
+    }
+
+    .case-tag--founders{
+      background:#101320;
+    }
+
+    .case-card--founders .case-tag--founders{
+      background:#101320;
+    }
+
+    .case-card--founders .case-expanded-heading{
+      color:#12224b;
+    }
+
+    .case-card--founders .case-expanded-divider{
+      background:rgba(11,27,74,0.16);
+    }
+
+    .case-card--founders .case-ppp-panel{
+      background:#102651;
+    }
+
+    .case-card--founders .case-expanded-cta .btn{
+      background:#12224b;
+      border-color:#12224b;
+    }
+
+    .case-card--founders .case-expanded-cta .btn:hover{
+      background:#0e1c3c;
+    }
+
+    .case-card--founders .case-expanded-small{
+      color:rgba(9,20,47,0.70);
+    }
+
+    /* EcoVedo expanded breakdown (desktop) */
+    .case-card--ecovedo .case-tag{
+      background:#208450;
+    }
+
+    .case-card--ecovedo .case-expanded-heading{
+      color:#12224b;
+    }
+
+    .case-card--ecovedo .case-expanded-divider{
+      background:rgba(11,27,74,0.16);
+    }
+
+    .case-card--ecovedo .case-ppp-panel{
+      background:#102651;
+    }
+
+    .case-card--ecovedo .case-expanded-cta .btn{
+      background:#12224b;
+      border-color:#12224b;
+    }
+
+    .case-card--ecovedo .case-expanded-cta .btn:hover{
+      background:#0e1c3c;
+    }
+
+    .case-card--ecovedo .case-expanded-small{
+      color:rgba(9,20,47,0.70);
     }
 
     .case-expanded-heading{
@@ -1478,6 +1541,10 @@
       font-size:13px;
       font-weight:500;
       color:#5a6485;
+    }
+
+    .case-card--founders .case-expanded-wireframe-placeholder::after{
+      content:"FOUNDER’SMOOD homepage wireframe";
     }
 
     .case-expanded-wireframe .btn{
@@ -2347,7 +2414,91 @@
                 </ul>
 
                 <div class="case-link">
-                  <a href="#contact">View breakdown &gt;</a>
+                  <a href="#" class="js-case-toggle" aria-expanded="false" aria-controls="foundersmood-breakdown">View breakdown &gt;</a>
+                </div>
+
+                <div class="case-expanded" id="foundersmood-breakdown" hidden>
+                  <div class="case-expanded-wireframe">
+                    <div class="case-expanded-wireframe-visual">
+                      <div class="case-expanded-wireframe-placeholder" aria-hidden="true"></div>
+                    </div>
+                    <a href="#" class="btn">Open full-page wireframe</a>
+                    <div class="case-expanded-small">Scroll the full page, from top to bottom.</div>
+                  </div>
+
+                  <div class="case-expanded-block">
+                    <h4 class="case-expanded-heading">The clarity problem</h4>
+                    <p>
+                      FOUNDER’SMOOD helps founders make progress instead of consuming endless advice. But the homepage still
+                      made visitors work to understand what the product is, who it is for, and what to do first. When founders
+                      already feel overloaded, extra interpretation slows momentum.
+                    </p>
+                  </div>
+
+                  <div class="case-expanded-divider"></div>
+
+                  <div class="case-expanded-block">
+                    <h4 class="case-expanded-heading">What changed</h4>
+
+                    <div class="case-ppp-panel">
+                      <div class="case-ppp-row">
+                        <div class="case-ppp-label">Promise</div>
+                        <div class="case-ppp-body">
+                          <ul>
+                            <li>Clarified the primary promise so founders can quickly explain what the product does.</li>
+                            <li>Reduced competing messages so the page feels focused, not broad.</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="case-ppp-row">
+                        <div class="case-ppp-label">Proof</div>
+                        <div class="case-ppp-body">
+                          <ul>
+                            <li>Made credibility signals easier to notice without turning the page into a wall of text.</li>
+                            <li>Reinforced “built by founders” through structure and examples, not slogans.</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="case-ppp-row">
+                        <div class="case-ppp-label">Path</div>
+                        <div class="case-ppp-body">
+                          <ul>
+                            <li>Simplified the page flow into a clear sequence that matches how founders scan.</li>
+                            <li>Made the first action feel obvious and low-risk.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="case-expanded-divider"></div>
+
+                  <div class="case-expanded-block">
+                    <h4 class="case-expanded-heading">Why it mattered</h4>
+                    <ul class="case-expanded-list">
+                      <li>Founders can quickly understand whether the product fits their situation.</li>
+                      <li>The page reduces hesitation by removing unnecessary choices.</li>
+                      <li>Momentum increases when the next step is clear and consistent.</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-expanded-divider"></div>
+
+                  <div class="case-expanded-block">
+                    <h4 class="case-expanded-heading">Delivered</h4>
+                    <ul class="case-expanded-list">
+                      <li>A complete homepage rewrite from top to bottom.</li>
+                    </ul>
+                  </div>
+
+                  <div class="case-expanded-cta">
+                    <a href="#contact" class="btn">Book a short call</a>
+                    <div class="case-expanded-cta-note">
+                      We’ll look at your homepage and decide what the next step should be.
+                    </div>
+                  </div>
                 </div>
               </article>
             </div>
@@ -2470,63 +2621,47 @@
       });
     })();
 
-    // CASES: EcoVedo expanded breakdown toggle
+    // CASES: Generic expanded breakdown toggle for case cards
     (function () {
-      const ecoCard = document.querySelector('.case-card--ecovedo');
-      if (!ecoCard) return;
+      const caseCards = document.querySelectorAll('.case-grid .case-card');
+      if (!caseCards.length) return;
 
-      const toggleLink = ecoCard.querySelector('.js-case-toggle');
-      const expanded = ecoCard.querySelector('.case-expanded');
-      if (!toggleLink || !expanded) return;
+      caseCards.forEach(function (card) {
+        const toggleLink = card.querySelector('.js-case-toggle');
+        const expanded = card.querySelector('.case-expanded');
 
-      // Ensure initial collapsed state
-      ecoCard.classList.remove('case-card--open');
-      expanded.setAttribute('hidden', '');
-      toggleLink.setAttribute('aria-expanded', 'false');
+        if (!toggleLink || !expanded) return;
 
-      function closeCaseCard(card) {
+        // Initial collapsed state
         card.classList.remove('case-card--open');
-        const localExpanded = card.querySelector('.case-expanded');
-        const localToggle = card.querySelector('.js-case-toggle');
+        expanded.setAttribute('hidden', '');
+        toggleLink.setAttribute('aria-expanded', 'false');
 
-        if (localExpanded) {
-          localExpanded.setAttribute('hidden', '');
-        }
+        toggleLink.addEventListener('click', function (event) {
+          event.preventDefault();
 
-        if (localToggle) {
-          localToggle.textContent = 'View breakdown >';
-          localToggle.setAttribute('aria-expanded', 'false');
-        }
-      }
+          const isOpen = card.classList.contains('case-card--open');
 
-      function openEcoVedo() {
-        // Close any other case cards in the grid
-        const allCards = document.querySelectorAll('.case-grid .case-card');
-        allCards.forEach(function(card){
-          if (card !== ecoCard) {
-            closeCaseCard(card);
+          // Close all cards first
+          caseCards.forEach(function (otherCard) {
+            const otherToggle = otherCard.querySelector('.js-case-toggle');
+            const otherExpanded = otherCard.querySelector('.case-expanded');
+            if (!otherToggle || !otherExpanded) return;
+
+            otherCard.classList.remove('case-card--open');
+            otherExpanded.setAttribute('hidden', '');
+            otherToggle.textContent = 'View breakdown >';
+            otherToggle.setAttribute('aria-expanded', 'false');
+          });
+
+          // If the clicked card was not open, open it
+          if (!isOpen) {
+            card.classList.add('case-card--open');
+            expanded.removeAttribute('hidden');
+            toggleLink.textContent = 'Hide breakdown ▲';
+            toggleLink.setAttribute('aria-expanded', 'true');
           }
         });
-
-        ecoCard.classList.add('case-card--open');
-        expanded.removeAttribute('hidden');
-        toggleLink.textContent = 'Hide breakdown ▲';
-        toggleLink.setAttribute('aria-expanded', 'true');
-      }
-
-      function closeEcoVedo() {
-        closeCaseCard(ecoCard);
-      }
-
-      toggleLink.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        const isOpen = ecoCard.classList.contains('case-card--open');
-        if (isOpen) {
-          closeEcoVedo();
-        } else {
-          openEcoVedo();
-        }
       });
     })();
   </script>
