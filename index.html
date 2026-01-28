@@ -340,6 +340,25 @@
       min-height:310px;
     }
 
+    .repeat-grid::before,
+    .repeat-grid::after{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:42px; /* stops above the intent / assumption / exit row */
+      width:1px;
+      background:rgba(12,25,64,0.22); /* same grey as title underline */
+      z-index:2;
+    }
+
+    .repeat-grid::before{
+      left:33.3333%;
+    }
+
+    .repeat-grid::after{
+      left:66.6666%;
+    }
+
     .repeat-col{
       padding:26px 22px 54px;
       text-align:left;
@@ -443,11 +462,6 @@
 
     .repeat-mid .mid-sub{
       display:block;
-    }
-
-    .repeat-grid > :nth-child(2){
-      border-left:1px solid rgba(12,25,64,0.22);
-      border-right:1px solid rgba(12,25,64,0.22);
     }
 
     .repeat-tags{
