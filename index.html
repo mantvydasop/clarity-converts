@@ -325,7 +325,6 @@
       background:transparent; /* was the gradient */
       box-shadow:0 22px 60px rgba(0,0,0,0.35);
       overflow:hidden;
-      backdrop-filter:blur(12px);
     }
 
     .repeat-grid,
@@ -348,7 +347,24 @@
       display:flex;
       flex-direction:column;
 
+      position:relative;
+      overflow:hidden;
+      background:transparent;    /* gradient moves to ::before */
+    }
+
+    .repeat-col::before{
+      content:"";
+      position:absolute;
+      inset:0;
       background:linear-gradient(180deg, rgba(198,208,232,0.78), rgba(168,181,212,0.78));
+      backdrop-filter:blur(12px);
+      z-index:0;
+    }
+
+    /* Make sure content sits above the glass layer */
+    .repeat-col > *{
+      position:relative;
+      z-index:1;
     }
 
     .repeat-col h3{
@@ -402,14 +418,14 @@
       text-align:center;
       padding:0 18px 54px;
 
-      /* Top part stays as a card, bottom is a clear window */
-      background:linear-gradient(
-        to bottom,
-        rgba(198,208,232,0.78) 0%,
-        rgba(198,208,232,0.78) 46%,
-        transparent 46%,
-        transparent 100%
-        );
+      background:transparent;
+    }
+
+    .repeat-mid::before{
+      top:0;
+      left:0;
+      right:0;
+      height:46%;
     }
 
     .repeat-mid .mid-text{
