@@ -3024,12 +3024,41 @@
     })();
 
     // SERVICES: helper to switch grid into "free" mode when any card is open
+    // and freeze the heights of CLOSED cards so they don't jump
     function updateServicesGridMode() {
       const grid = document.querySelector('.services-grid');
       if (!grid) return;
 
-      const anyOpen = !!grid.querySelector('.service-card.service-card--open');
-      grid.classList.toggle('services-grid--free', anyOpen);
+      const cards = Array.from(grid.querySelectorAll('.service-card'));
+      const anyOpen = cards.some(card => card.classList.contains('service-card--open'));
+
+      if (anyOpen) {
+        // Free mode: stop flexbox from stretching everyone
+        grid.classList.add('services-grid--free');
+
+        cards.forEach(card => {
+          if (card.classList.contains('service-card--open')) {
+            // Open card: let it grow naturally (no locked min-height)
+            card.style.minHeight = '';
+            delete card.dataset.lockedHeight;
+          } else {
+            // Closed card: lock its current visual height so it doesn't move
+            if (!card.dataset.lockedHeight) {
+              const h = card.offsetHeight;          // current rendered height
+              card.style.minHeight = h + 'px';      // freeze it
+              card.dataset.lockedHeight = '1';
+            }
+          }
+        });
+      } else {
+        // No open cards: go back to normal equal-height behavior
+        grid.classList.remove('services-grid--free');
+
+        cards.forEach(card => {
+          card.style.minHeight = '';               // let CSS (640px + stretch) take over again
+          delete card.dataset.lockedHeight;
+        });
+      }
     }
       
 
