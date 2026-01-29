@@ -1316,8 +1316,8 @@
     }
 
     @media (min-width: 961px){
-      /* In free mode, remove the forced equal height */
-      .services-grid--free .service-card{
+      /* In free mode, only the OPEN card can grow taller than 640px */
+      .services-grid--free .service-card.service-card--open{
         min-height:auto;
       }
     }
