@@ -701,6 +701,7 @@
       margin-top:24px;
       display:flex;
       justify-content:center;
+      align-self:flex-start;
     }
 
     .audit-visual-stack img{
@@ -742,11 +743,12 @@
     .audit-visual-cta{
       margin-top:8px;
       display:flex;
-      justify-content:flex-start;
+      justify-content:center;
       position:relative;
       z-index:3;
       width:100%;
-      max-width:320px;
+      max-width:360px;
+      align-self:flex-start;
     }
 
     .audit-contents-btn{
@@ -763,17 +765,6 @@
       box-shadow:none;
       background:none;
       margin-top:-120px;
-    }
-
-    /* Move the booklet / TOC stack and button toward the left column edge */
-    .audit-visual-stack,
-    .audit-visual-cta{
-      align-self:flex-start;
-    }
-
-    .audit-visual-cta{
-      width:100%;
-      max-width:320px; /* match the visual width so button lines up under it */
     }
 
     @media (max-width:900px){
