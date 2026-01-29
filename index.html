@@ -859,6 +859,12 @@
       display:flex;
       flex-direction:column;
       gap:4px;
+      justify-content:center;   /* vertically center the title + short line */
+      min-height:60px;          /* gives enough vertical space to see the centering */
+    }
+
+    .clear-card.expanded .clear-card-body{
+      justify-content:flex-start;
     }
 
     .clear-card-title{
