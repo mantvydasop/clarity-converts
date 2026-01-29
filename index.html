@@ -1310,6 +1310,18 @@
         }
     }
 
+    /* When any card is open, let each card size itself instead of stretching */
+    .services-grid--free {
+      align-items: flex-start;   /* stop stretching to tallest card */
+    }
+
+    @media (min-width: 961px){
+      /* In free mode, remove the forced equal height */
+      .services-grid--free .service-card{
+        min-height:auto;
+      }
+    }
+
     /* CASE STUDY / BREAKDOWNS SECTION */
     .case-section{
       padding:80px 0 96px;
@@ -3011,6 +3023,16 @@
       });
     })();
 
+    // SERVICES: helper to switch grid into "free" mode when any card is open
+    function updateServicesGridMode() {
+      const grid = document.querySelector('.services-grid');
+      if (!grid) return;
+
+      const anyOpen = !!grid.querySelector('.service-card.service-card--open');
+      grid.classList.toggle('services-grid--free', anyOpen);
+    }
+      
+
     // SERVICES: Toggle detailed view for 48-Hour Clarity Audit
     (function () {
       const card = document.getElementById('service-clarity-audit');
@@ -3023,6 +3045,8 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+
+        updateServicesGridMode();
       });
     })();
 
@@ -3038,6 +3062,8 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+
+        updateServicesGridMode();
       });
     })();
 
@@ -3053,6 +3079,8 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+
+        updateServicesGridMode();
       });
     })();
 
