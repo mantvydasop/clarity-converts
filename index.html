@@ -830,7 +830,7 @@
       box-shadow:0 18px 40px rgba(0,0,0,0.35);
       padding:18px 26px;
       display:flex;
-      align-items:center;
+      align-items:stretch;       /* <-- changed */
       text-align:left;
       color:var(--panel-text);
       transition:box-shadow 0.22s ease, transform 0.22s ease;
@@ -919,18 +919,30 @@
     }
 
     .clear-card-details{
-      margin-top:16px;
-      padding-top:12px;
-      border-top:1px solid rgba(11,27,74,0.18);
       max-height:0;
       opacity:0;
       overflow:hidden;
-      transition:max-height 0.25s ease, opacity 0.25s ease;
+
+      /* collapsed: no vertical footprint */
+      margin-top:0;
+      padding-top:0;
+      border-top:0;
+
+      transition:
+        max-height 0.25s ease,
+        opacity 0.25s ease,
+        margin-top 0.25s ease,
+        padding-top 0.25s ease;
     }
 
     .clear-card.expanded .clear-card-details{
       max-height:600px;
       opacity:1;
+
+      /* only in open state */
+      margin-top:16px;
+      padding-top:12px;
+      border-top:1px solid rgba(11,27,74,0.18);
     }
 
     .clear-card-details p{
