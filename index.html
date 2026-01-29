@@ -3006,6 +3006,52 @@
       });
     })();
 
+    // SERVICES: keep closed cards at their original height when one is expanded
+    (function () {
+      const grid = document.querySelector('.services-grid');
+      if (!grid) return;
+
+      // Desktop only – on stacked mobile we don't want fixed heights
+      if (window.innerWidth < 960) return;
+
+      const cards = Array.from(grid.querySelectorAll('.service-card'));
+      if (!cards.length) return;
+
+      // Measure the "all closed" baseline height (they're all closed on load)
+      let closedHeight = 0;
+      cards.forEach(card => {
+        const h = card.offsetHeight;
+        if (h > closedHeight) closedHeight = h;
+      });
+
+      function applyHeights() {
+        const anyOpen = grid.querySelector('.service-card.service-card--open');
+
+        if (!anyOpen) {
+          // All closed → everyone goes back to the baseline height
+          cards.forEach(card => {
+            card.style.height = closedHeight + 'px';
+          });
+        } else {
+          cards.forEach(card => {
+            if (card.classList.contains('service-card--open')) {
+              // Open card is free to grow with its content
+              card.style.height = 'auto';
+            } else {
+              // Closed cards stay at the original height, untouched
+              card.style.height = closedHeight + 'px';
+            }
+          });
+        }
+      }
+
+      // Lock initial equal height
+      applyHeights();
+
+      // Tiny hook for the toggle handlers
+      window.syncServiceCardHeights = applyHeights;
+    })();
+  
     // SERVICES: Toggle detailed view for 48-Hour Clarity Audit
     (function () {
       const card = document.getElementById('service-clarity-audit');
@@ -3018,6 +3064,8 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+
+        if (window.syncServiceCardHeights) window.syncServiceCardHeights();
       });
     })();
 
@@ -3033,6 +3081,8 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+
+        if (window.syncServiceCardHeights) window.syncServiceCardHeights();
       });
     })();
 
@@ -3048,6 +3098,8 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+
+        if (window.syncServiceCardHeights) window.syncServiceCardHeights();
       });
     })();
 
