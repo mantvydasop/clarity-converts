@@ -1029,11 +1029,7 @@
       justify-content:center;
     }
 
-    /* When any card is open, stop forcing equal heights */
-    .services-grid.services-grid--free{
-      align-items:flex-start;
-    }
-
+    
     .service-card{
       flex:1;
       max-width:380px;
@@ -3010,14 +3006,6 @@
       });
     })();
 
-    function updateServicesGridMode() {
-      const grid = document.querySelector('.services-grid');
-      if (!grid) return;
-
-      const anyOpen = grid.querySelector('.service-card.service-card--open');
-      grid.classList.toggle('services-grid--free', !!anyOpen);
-    }
-
     // SERVICES: Toggle detailed view for 48-Hour Clarity Audit
     (function () {
       const card = document.getElementById('service-clarity-audit');
@@ -3030,8 +3018,6 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
-
-        updateServicesGridMode();
       });
     })();
 
@@ -3047,8 +3033,6 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
-
-        updateServicesGridMode();
       });
     })();
 
@@ -3064,8 +3048,6 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
-
-        updateServicesGridMode();
       });
     })();
 
