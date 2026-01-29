@@ -1025,7 +1025,7 @@
       margin-top:36px;
       display:flex;
       gap:24px;
-      align-items:stretch;        /* or explicitly set this */
+      align-items:flex-start;     /* let each card keep its own height */
       justify-content:center;
     }
 
@@ -1308,18 +1308,6 @@
         .service-card{
           min-height:640px; /* tweak this value until all three bottoms line up */
         }
-    }
-
-    /* When any card is open, let each card size itself instead of stretching */
-    .services-grid--free {
-      align-items: flex-start;   /* stop stretching to tallest card */
-    }
-
-    @media (min-width: 961px){
-      /* In free mode, only the OPEN card can grow taller than 640px */
-      .services-grid--free .service-card.service-card--open{
-        min-height:auto;
-      }
     }
 
     /* CASE STUDY / BREAKDOWNS SECTION */
@@ -3023,41 +3011,6 @@
       });
     })();
 
-    // SERVICES: helper to switch grid into "free" mode when any card is open
-    // and freeze the heights of CLOSED cards so they don't jump
-    function updateServicesGridMode() {
-      const grid = document.querySelector('.services-grid');
-      if (!grid) return;
-
-      const cards = Array.from(grid.querySelectorAll('.service-card'));
-      const anyOpen = cards.some(card => card.classList.contains('service-card--open'));
-
-      if (anyOpen) {
-        // 1) While we're still in "stretch" mode, freeze CLOSED cards
-        cards.forEach(card => {
-          if (card.classList.contains('service-card--open')) {
-            // Open card: let CSS handle it (min-height: auto in .services-grid--free)
-            card.style.minHeight = '';
-          } else {
-            // Closed card: lock its current stretched height
-            const h = card.offsetHeight;
-            card.style.minHeight = h + 'px';
-          }
-        });
-
-        // 2) Now switch the grid to free mode
-        grid.classList.add('services-grid--free');
-      } else {
-        // No open cards: go back to normal equal-height behavior
-        grid.classList.remove('services-grid--free');
-
-        cards.forEach(card => {
-          // Clear any inline overrides so the 640px min-height + stretch applies again
-          card.style.minHeight = '';
-        });
-      }
-    }
-
     // SERVICES: Toggle detailed view for 48-Hour Clarity Audit
     (function () {
       const card = document.getElementById('service-clarity-audit');
@@ -3070,8 +3023,6 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
-
-        updateServicesGridMode();
       });
     })();
 
@@ -3087,8 +3038,6 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
-
-        updateServicesGridMode();
       });
     })();
 
@@ -3104,8 +3053,6 @@
         event.preventDefault();
         const isOpen = card.classList.toggle('service-card--open');
         toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
-
-        updateServicesGridMode();
       });
     })();
 
