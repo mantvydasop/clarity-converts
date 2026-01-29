@@ -1364,6 +1364,39 @@
       display:flex;
       flex-direction:column;
     }
+    
+    /* --- Compact default state for case cards (closed only) --- */
+    .case-card:not(.case-card--open) .case-top{
+      min-height:120px;
+    }
+
+    .case-card:not(.case-card--open) .case-divider{
+      margin:12px 0 12px;
+    }
+
+    .case-card:not(.case-card--open) .case-image{
+      margin-bottom:12px;
+    }
+
+    .case-card:not(.case-card--open) .case-bullets{
+      min-height:80px;
+      margin:0 0 14px 0;
+    }
+
+    .case-card:not(.case-card--open) .case-link{
+      padding-top:10px;
+    }
+
+    /* Case breakdown expanded content (desktop) */
+    .case-card .case-expanded{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid rgba(11,27,74,0.16);
+      font-size:13.5px;
+      line-height:1.7;
+      color:#0b1b4a;
+      display:none;
+    }
 
     .case-tag{
       display:inline-flex;
