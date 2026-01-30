@@ -559,7 +559,8 @@
     .audit-left{
       flex:1.4;
       max-width:640px;
-      padding-right:20px;
+      padding-right:32px;   /* small buffer from the divider */
+      justify-self:end;      /* new: push the whole column toward the divider */
     }
 
     .audit-right{
