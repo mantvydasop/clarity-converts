@@ -3000,6 +3000,22 @@
       window.syncServiceCardHeights = applyHeights;
     })();
 
+    function closeOtherServiceCards(activeCard) {
+      const allCards = document.querySelectorAll('.services-grid .service-card');
+
+      allCards.forEach(function (card) {
+        if (card === activeCard) return;
+
+        card.classList.remove('service-card--open');
+
+        const toggle = card.querySelector('.service-link');
+        
+        if (toggle) {
+          toggle.textContent = 'View details >';
+        }
+      });
+    }
+
     (function () {
       const card = document.getElementById('service-clarity-audit');
       if (!card) return;
@@ -3009,10 +3025,22 @@
 
       toggleLink.addEventListener('click', function (event) {
         event.preventDefault();
-        const isOpen = card.classList.toggle('service-card--open');
-        toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+        
+        const isOpen = card.classList.contains('service-card--open');
+        if (isOpen) {
+          // Close this card
+          card.classList.remove('service-card--open');
+          toggleLink.textContent = 'View details >';
+        } else {
+          // Open this card and close the others
+          closeOtherServiceCards(card);
+          card.classList.add('service-card--open');
+          toggleLink.textContent = 'Hide details ▲';
+        }
 
-        if (window.syncServiceCardHeights) window.syncServiceCardHeights();
+        if (window.syncServiceCardHeights) {
+          window.syncServiceCardHeights();
+        }
       });
     })();
 
@@ -3025,10 +3053,20 @@
 
       toggleLink.addEventListener('click', function (event) {
         event.preventDefault();
-        const isOpen = card.classList.toggle('service-card--open');
-        toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+        
+        const isOpen = card.classList.contains('service-card--open');
+        if (isOpen) {
+          card.classList.remove('service-card--open');
+          toggleLink.textContent = 'View details >';
+        } else {
+          closeOtherServiceCards(card);
+          card.classList.add('service-card--open');
+          toggleLink.textContent = 'Hide details ▲';
+        }
 
-        if (window.syncServiceCardHeights) window.syncServiceCardHeights();
+        if (window.syncServiceCardHeights) {
+          window.syncServiceCardHeights();
+        }
       });
     })();
 
@@ -3041,10 +3079,20 @@
 
       toggleLink.addEventListener('click', function (event) {
         event.preventDefault();
-        const isOpen = card.classList.toggle('service-card--open');
-        toggleLink.textContent = isOpen ? 'Hide details ▲' : 'View details >';
+        
+        const isOpen = card.classList.contains('service-card--open');
+        if (isOpen) {
+          card.classList.remove('service-card--open');
+          toggleLink.textContent = 'View details >';
+        } else {
+          closeOtherServiceCards(card);
+          card.classList.add('service-card--open');
+          toggleLink.textContent = 'Hide details ▲';
+        }
 
-        if (window.syncServiceCardHeights) window.syncServiceCardHeights();
+        if (window.syncServiceCardHeights) {
+          window.syncServiceCardHeights();
+        }
       });
     })();
 
