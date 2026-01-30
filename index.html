@@ -35,6 +35,9 @@
 
       --rule-width: 520px;
       --rule-color: rgba(234,240,255,0.40);
+
+      /* NEW */
+      --section-space: 96px;
     }
 
     * { box-sizing:border-box; }
@@ -133,12 +136,11 @@
 
     /* Hero */
     main{
-      padding-bottom:88px;
+      padding-bottom:var(--section-space);
     }
 
     .hero{
-      padding-top:56px;
-      padding-bottom:44px;
+      padding:var(--section-space) 0;
       text-align:center;
     }
 
@@ -268,7 +270,7 @@
     /* Section 2: Repeatability */
     .repeat-section{
       position:relative;
-      padding-top:62px;
+      padding:var(--section-space) 0;
       text-align:center;
     }
 
@@ -517,7 +519,7 @@
 
     /* Audit section */
     .audit-section{
-      padding:80px 0 70px;
+      padding:var(--section-space) 0;
       text-align:left;
     }
 
@@ -785,7 +787,7 @@
 
     /* CLEAR FRAMEWORK SECTION */
     .clear-section{
-      padding:96px 0 110px;
+      padding:var(--section-space) 0;
       text-align:center;
     }
 
@@ -994,7 +996,7 @@
 
     /* SERVICES SECTION: HOW WE CAN WORK TOGETHER (desktop-focused) */
     .services-section{
-      padding:80px 0 96px;
+      padding:var(--section-space) 0;
       text-align:center;
     }
 
@@ -1307,7 +1309,7 @@
 
     /* CASE STUDY / BREAKDOWNS SECTION */
     .case-section{
-      padding:80px 0 96px;
+      padding:var(--section-space) 0;
       text-align:center;
     }
 
@@ -1733,7 +1735,7 @@
 
     /* ABOUT / THINKING SECTION */
     .about-section{
-      padding:90px 0 110px;
+      padding:var(--section-space) 0;
     }
 
     .about-inner{
@@ -1898,7 +1900,7 @@
 
     /* CONTACT / GET IN TOUCH SECTION */
     .contact-section{
-      padding:96px 0 110px;
+      padding:var(--section-space) 0;
       text-align:center;
     }
 
