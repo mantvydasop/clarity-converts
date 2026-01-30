@@ -540,14 +540,16 @@
       position:relative;
       display:grid;
       grid-template-columns:1.4fr 1fr;
-      column-gap:52px;
+      column-gap:40px;           /* was 52px – narrows the middle gap a bit */
       align-items:flex-start;
     }
 
+    /* vertical divider stays as-is, we’ll just make it full height for safety */
     .audit-inner::before{
       content:"";
       position:absolute;
-      top:6px;
+      top:0;
+      bottom:0;                  /* instead of hard-coded height */
       left:50%;
       width:1px;
       height:550px;
@@ -557,10 +559,9 @@
     }
 
     .audit-left{
-      flex:1.4;
       max-width:640px;
-      padding-right:32px;   /* small buffer from the divider */
-      justify-self:end;      /* new: push the whole column toward the divider */
+      padding-right:20px;        /* was 32px – gives you a bit more room */
+      justify-self:auto;         /* or just delete this line entirely */
     }
 
     .audit-right{
