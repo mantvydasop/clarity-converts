@@ -2056,35 +2056,6 @@
       margin:0 0 18px;
     }
 
-    /* Additional mobile-focused tweaks */
-    @media (max-width:768px){
-      .repeat-grid{
-        grid-template-columns:1fr;
-        min-height:auto;
-      }
-
-      .repeat-grid::before,
-      .repeat-grid::after{
-        display:none;
-      }
-
-      .repeat-col,
-      .repeat-mid{
-        padding:20px 18px 48px;
-      }
-
-      .repeat-mid .mid-text{
-        transform:translateY(-20px);
-      }
-
-      .repeat-tags{
-        position:static;
-        height:auto;
-        padding:10px 8px;
-        gap:12px;
-      }
-    }
-
     @media (max-width:600px){
       :root{
         --section-space:72px;
@@ -2279,6 +2250,71 @@
       .trust-text{
         font-size:12px;
         max-width:24ch;
+      }
+    }
+
+    @media (max-width:600px){
+      /* Repeatability panel: keep the desktop slab, just scale it down */
+
+      .repeat-title{
+        font-size:22px;
+        margin-bottom:12px;
+      }
+
+      .repeat-sub{
+        font-size:13px;
+        line-height:1.7;
+      }
+
+      .repeat-panel{
+        width:100%;
+        margin-top:18px;
+        box-shadow:0 14px 40px rgba(0,0,0,0.35);
+      }
+
+      .repeat-grid{
+        grid-template-columns:repeat(3, minmax(0,1fr)); /* force 3 columns on phones */
+        min-height:260px;
+      }
+
+      .repeat-col{
+        padding:18px 8px 40px;
+      }
+
+      .repeat-col h3{
+        font-size:13px;
+        width:100%;
+        max-width:none;
+      }
+
+      .repeat-col li{
+        font-size:11px;
+        line-height:1.4;
+      }
+
+      .repeat-mid{
+        padding:0 8px 40px;
+      }
+
+      .repeat-mid .mid-text{
+        font-size:13px;
+        line-height:1.35;
+        transform:translateY(-40px); /* still floating over the ribbon, just a bit less extreme */
+      }
+
+      .repeat-tags{
+        height:36px;
+      }
+
+      .repeat-tag{
+        font-size:11px;
+      }
+
+      /* Ribbon alignment tweak so it still sits behind the middle band */
+      .repeat-section::before{
+        top:250px;
+        height:380px;
+        background-size:140% auto;
       }
     }
       
