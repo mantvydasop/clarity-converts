@@ -1475,6 +1475,11 @@
       border-radius:18px;
     }
 
+    /* When a case card is open, hide the static homepage preview and rely on the full-page wireframe instead. */
+    .case-card--open .case-image{
+      display:none;
+    }
+
     .case-image-placeholder::after{
       content:"Homepage preview";
       position:absolute;
