@@ -2176,6 +2176,46 @@
     }
 
     @media (max-width:600px){
+      /* Header: compact + symmetric on mobile */
+      header{
+        padding-top:6px;
+      }
+
+      .wrap{
+        padding:0 14px;
+      }
+
+      .header-inner{
+        padding:6px 12px;
+      }
+
+      .header-row{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:6px;
+      }
+
+      .brand-name{
+        font-size:14px;
+        left:0;                 /* remove the -6px desktop nudge */
+        white-space:nowrap;
+      }
+      
+      .header-divider{
+        height:18px;
+        width:1px;
+        opacity:0.6;
+      }
+
+      .nav-links{
+        font-size:12px;
+        gap:8px;
+      }
+
+      .nav-links a{
+        padding:4px 8px;
+      }
+            
       .hero{
         padding-top:64px;          /* was 72px */
         padding-bottom:48px;       /* a bit less height */
