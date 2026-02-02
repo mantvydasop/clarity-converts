@@ -2055,6 +2055,125 @@
     .contact-title{
       margin:0 0 18px;
     }
+
+    /* Additional mobile-focused tweaks */
+    @media (max-width:768px){
+      .repeat-grid{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+
+      .repeat-grid::before,
+      .repeat-grid::after{
+        display:none;
+      }
+
+      .repeat-col,
+      .repeat-mid{
+        padding:20px 18px 48px;
+      }
+
+      .repeat-mid .mid-text{
+        transform:translateY(-20px);
+      }
+
+      .repeat-tags{
+        position:static;
+        height:auto;
+        padding:10px 8px;
+        gap:12px;
+      }
+    }
+
+    @media (max-width:600px){
+      :root{
+        --section-space:72px;
+      }
+
+      body{
+        font-size:15px;
+        line-height:1.7;
+      }
+
+      h1{
+        font-size:clamp(32px, 9vw, 40px);
+        line-height:1.08;
+      }
+
+      .hero{
+        padding-top:72px;
+      }
+
+      .hero-sub{
+        font-size:14.5px;
+      }
+
+      .header-inner{
+        padding:8px 14px;
+      }
+
+      .brand-name{
+        font-size:16px;
+      }
+
+      .trust-row{
+        flex-direction:column;
+        align-items:stretch;
+        gap:18px;
+        margin-top:36px;
+      }
+
+      .trust-card{
+        width:100%;
+      }
+
+      .audit-left{
+        margin-left:0;
+        padding-right:0;
+      }
+
+      .audit-head{
+        padding-bottom:24px;
+      }
+
+      .audit-title{
+        font-size:20px;
+        transform:translateY(10px);
+      }
+
+      .audit-visual-stack{
+        height:320px;
+      }
+
+      .clear-card{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .clear-card-letter{
+        flex:0 0 auto;
+        font-size:40px;
+        margin-bottom:4px;
+      }
+
+      .clear-card-divider{
+        width:100%;
+        height:1px;
+        margin:8px 0;
+      }
+
+      .service-card{
+        padding:16px 16px 18px;
+      }
+
+      .service-list{
+        font-size:12.5px;
+      }
+
+      .service-cta .btn{
+        width:100%;
+      }
+    }
   </style>
 </head>
 
@@ -2117,7 +2236,7 @@
       </div>
     </section>
     <!-- PART 1 END -->
-    <!-- PART 2 START -->
+        <!-- PART 2 START -->
     <section class="repeat-section page-section" aria-label="If buyers cannot repeat it">
       <div class="wrap">
         <h2 class="repeat-title">If buyers cannot repeat it, they will not buy it.</h2>
