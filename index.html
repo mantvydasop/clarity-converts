@@ -2252,9 +2252,6 @@
         overflow-x:auto;              /* allow sideways scroll if needed */
         padding-bottom:4px;           /* space so shadow isn't cut off */
         -webkit-overflow-scrolling:touch;
-
-        padding-left: calc((100vw - 190px) / 2 - 190px);
-        padding-right: calc((100vw - 190px) / 2);
       }
 
       .trust-card{
@@ -3442,6 +3439,27 @@
             toggleLink.setAttribute('aria-expanded', 'true');
           }
         });
+      });
+    })();
+    (function () {
+      // Center the middle trust card on mobile
+      const isMobile = window.matchMedia('(max-width: 600px)').matches;
+      if (!isMobile) return;
+
+      window.addEventListener('load', function () {
+        const row = document.querySelector('.trust-row');
+        if (!row) return;
+
+        const cards = row.querySelectorAll('.trust-card');
+        if (cards.length < 2) return;
+
+        const middleIndex = Math.floor(cards.length / 2);
+        const middleCard = cards[middleIndex];
+
+        const middleCenter =
+          middleCard.offsetLeft + middleCard.offsetWidth / 2;
+
+        row.scrollLeft = middleCenter - row.clientWidth / 2;
       });
     })();
   </script>
