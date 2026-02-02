@@ -2178,7 +2178,7 @@
     @media (max-width:600px){
       .hero{
         padding-top:64px;          /* was 72px */
-        padding-bottom:56px;       /* a bit less height */
+        padding-bottom:48px;       /* a bit less height */
       }
 
       .hero-sub{
@@ -2201,24 +2201,32 @@
 
       .trust-row{
         margin-top:28px;           /* was 36px */
-        gap:14px;
+        display:flex;
+        flex-wrap:nowrap;             /* keep them in one row */
+        justify-content:flex-start;
+        
+        gap:12px;
+        overflow-x:auto;              /* allow sideways scroll if needed */
+        padding-bottom:6px;           /* space so shadow isn't cut off */
+        -webkit-overflow-scrolling:touch;
       }
 
       .trust-card{
-        width:100%;
-        border-radius:18px;        /* a bit less pill-y */
-        padding:10px 12px 12px;    /* less padding */
-        box-shadow:0 10px 24px rgba(0,0,0,0.30);
+        flex:0 0 230px;               /* fixed-ish width instead of 100% */
+        max-width:230px;
+        border-radius:16px;
+        padding:10px 10px 12px;
+        box-shadow:0 8px 18px rgba(0,0,0,0.28);
       }
 
       .trust-visual{
-        height:90px;   
-        margin:0 auto 8px;
+        height:80px;   
+        margin:0 auto 6px;
       }
 
       .trust-visual img{
-        width:78%;
-        max-width:150px;
+        width:80%;
+        max-width:140px;
       }
 
       .trust-title{
@@ -2227,7 +2235,7 @@
 
       .trust-text{
         font-size:12px;
-        max-width:26ch;
+        max-width:24ch;
       }
     }
       
