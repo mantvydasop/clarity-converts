@@ -1154,6 +1154,38 @@
       display: none;
     }
 
+    #service-homepage-rewrite .service-subheading.homepage-details-only,
+    #service-messaging-system .service-subheading.messaging-details-only{
+      position:relative;
+    }
+
+    #service-homepage-rewrite .service-subheading.homepage-details-only::after,
+    #service-messaging-system .service-subheading.messaging-details-only::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      top:50%;
+      transform:translateY(-50%);
+      height:1px;
+      background:rgba(11,27,74,0.16);
+      z-index:0;
+    }
+
+    #service-homepage-rewrite .service-subheading.homepage-details-only span:first-child,
+    #service-messaging-system .service-subheading.messaging-details-only span:first-child{
+      position:relative;
+      z-index:1;
+      background:#ffffff;
+      padding-right:12px;
+    }
+
+    #service-homepage-rewrite .service-subheading.homepage-details-only .service-subheading-rule,
+    #service-messaging-system .service-subheading.messaging-details-only .service-subheading-rule{
+      display:none;
+    }
+    
+
     .service-list-wrap{
       display:flex;
       align-items:center;
