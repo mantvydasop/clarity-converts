@@ -2497,6 +2497,17 @@
 
         appearance:none;
         -webkit-appearance:none;
+
+        /* kill the tiny bounce animation on mobile */
+        transition:none;
+      }
+
+      .audit-contents-btn:hover,
+      .audit-contents-btn:active,
+      .audit-contents-btn:focus{
+        /* make sure hover/active/focus don't move it either */
+        transform:none;
+        box-shadow:0 8px 18px rgba(0,0,0,0.45);
       }
 
       /* Shorter left-column dividers on mobile so they don't hit the center line */
