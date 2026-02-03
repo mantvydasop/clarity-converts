@@ -2393,14 +2393,10 @@
       /* --- Symmetric headings + grey rule under them --- */
       .audit-left .audit-head,
       .audit-right .audit-head{
-        padding-bottom:0;
+        padding-bottom:32px; /* ← THIS is the change */
         margin-bottom:0;
         text-align:center;
-
-        /* Make both sides the same height so the rule can sit on a shared baseline */
-        display:flex;
-        flex-direction:column;
-         align-items:center;
+        position:relative;
       }
 
       .audit-title,
@@ -2415,17 +2411,21 @@
 
       .audit-rule,
       .audit-right-rule{
-        position:static !important;
+        position:absolute !important;
+        top:52px;                /* 👈 both rules sit on the same horizontal line */
+        left:50% !important;
+        right:auto !important;
+        transform:translateX(-50%) !important;
+        
         width:56% !important;         /* short underline */
         max-width:120px !important;
         height:1px !important;
 
         /* Push the rule to the bottom of the heading block and center it */
-        margin:auto auto 0 auto !important;
+        margin:0 !important;
         
         background-color:var(--rule-color) !important;
         opacity:0.75;
-        transform:none !important;      /* 👈 stop the 105px desktop offset */
       }
 
       /* --- Smaller text in both columns --- */
