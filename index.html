@@ -2372,7 +2372,7 @@
         position:absolute;
         /* vertical divider visible again */
         top:0;
-        bottom:0;
+        bottom:40px;  /* was 0; raises the end of the line */
         left:50%;
         width:1px;
         background-color:var(--rule-color);
@@ -2411,6 +2411,10 @@
         text-align:center;
         margin:0;            /* no extra margin, we will control spacing with the rule */
         transform:none; /* remove desktop offset */
+      }
+
+      .audit-right-title{
+        transform:translateY(6px);  /* adjust 4–8px to taste */
       }
 
       .audit-rule,
