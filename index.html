@@ -2404,7 +2404,7 @@
         font-size:16px;
         line-height:1.35;
         text-align:center;
-        margin:0;
+        margin:0 0 6px 0;       /* 👈 add bottom margin for BOTH headings */
         transform:none; /* remove desktop offset */
       }
 
@@ -2414,14 +2414,10 @@
         width:56% !important;         /* short underline */
         max-width:120px !important;
         height:1px !important;
-        margin:4px auto 0 !important; /* sits tight under the heading */
+        margin:0 auto !important;   /* 👈 no top margin – rely on heading margin */
         background-color:var(--rule-color) !important;
         opacity:0.75;
         transform:none !important;      /* 👈 stop the 105px desktop offset */
-      }
-
-      .audit-right-rule{
-        margin-top:8px !important;
       }
 
       /* --- Smaller text in both columns --- */
