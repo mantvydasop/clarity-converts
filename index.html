@@ -2274,11 +2274,11 @@
 
       .repeat-grid{
         grid-template-columns:repeat(3, minmax(0,1fr)); /* force 3 columns on phones */
-        min-height:230px;
+        min-height:250px;
       }
 
       .repeat-col{
-        padding:14px 8px 30px;
+        padding:14px 8px 36px;         /* was 30px bottom */
       }
 
       .repeat-col h3{
@@ -2308,7 +2308,7 @@
       }
 
       .repeat-mid{
-        padding:0 6px 30px;
+        padding:0 6px 36px;            /* was 30px bottom */
       }
 
       .repeat-mid .mid-text{
@@ -2327,9 +2327,9 @@
 
       /* Ribbon alignment tweak so it still sits behind the middle band */
       .repeat-section::before{
-        top:250px;
-        height:380px;
-        background-size:140% auto;
+        top:270px;
+        height:420px;
+        background-size:190% auto;
       }
     }
       
