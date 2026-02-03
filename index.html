@@ -2444,6 +2444,11 @@
         line-height:1.55;
       }
 
+      /* Pull content under the left heading closer */
+      .audit-left .audit-body:first-of-type{
+        margin-top:4px;   /* was 10px from the global .audit-body rule */
+      }
+
       /* Right side: “What you’ll receive” + book visual */
       .audit-right{
         align-items:center;
@@ -2451,7 +2456,7 @@
       }
 
       .audit-visual-stack{
-        margin-top:24px;        /* a bit lower under the heading */
+        margin-top:12px;        /* a bit lower under the heading */
         padding-top:12px;       /* pushes both images down inside the box */
         height:210px;           /* slightly shorter container */
         max-width:170px;        /* narrower overall */
@@ -2474,6 +2479,13 @@
         padding:8px 16px;
         transform:none;              /* remove the -50px float */
         box-shadow:0 8px 18px rgba(0,0,0,0.45);
+      }
+
+      /* Shorter left-column dividers on mobile so they don't hit the center line */
+      .audit-divider{
+        width:78%;                 /* shorten from the right side */
+        max-width:none;            /* ignore desktop max-width:520px */
+        margin:18px auto 18px 0;   /* left-aligned, same vertical spacing */
       }
 
       /* Bottom paragraph + CTA */
