@@ -2393,9 +2393,14 @@
       /* --- Symmetric headings + grey rule under them --- */
       .audit-left .audit-head,
       .audit-right .audit-head{
-        padding-bottom:4px;
+        padding-bottom:0;
         margin-bottom:0;
         text-align:center;
+
+        /* Make both sides the same height so the rule can sit on a shared baseline */
+        display:flex;
+        flex-direction:column;
+         align-items:center;
       }
 
       .audit-title,
@@ -2404,7 +2409,7 @@
         font-size:16px;
         line-height:1.35;
         text-align:center;
-        margin:0 0 6px 0;       /* 👈 add bottom margin for BOTH headings */
+        margin:0;            /* no extra margin, we will control spacing with the rule */
         transform:none; /* remove desktop offset */
       }
 
@@ -2414,7 +2419,10 @@
         width:56% !important;         /* short underline */
         max-width:120px !important;
         height:1px !important;
-        margin:0 auto !important;   /* 👈 no top margin – rely on heading margin */
+
+        /* Push the rule to the bottom of the heading block and center it */
+        margin:auto auto 0 auto !important;
+        
         background-color:var(--rule-color) !important;
         opacity:0.75;
         transform:none !important;      /* 👈 stop the 105px desktop offset */
