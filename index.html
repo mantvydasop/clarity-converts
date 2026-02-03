@@ -2370,14 +2370,14 @@
         content:"";
         position:absolute;
         /* vertical divider visible again */
-        top:64px;
-        bottom:24px;
+        top:96px;
+        bottom:28px;
         left:50%;
         width:1px;
         background-color:var(--rule-color);
         opacity:0.55;
         pointer-events:none;
-        display:block;
+        z-index:0; /* put divider behind column content */
       }
 
       .audit-left,
@@ -2389,7 +2389,9 @@
       /* --- Symmetric headings + grey rule under them --- */
       .audit-left .audit-head,
       .audit-right .audit-head{
-        padding-bottom:12px;
+        position:relative;
+        z-index:1;          /* above the vertical divider */
+        padding-bottom:10px;
         text-align:center;
       }
 
@@ -2404,8 +2406,9 @@
 
       .audit-rule,
       .audit-right-rule{
-        position:static;
-        width:70%;
+        position:relative;  /* not absolute on mobile */
+        z-index:1;          /* make sure lines sit on top of divider */
+        width:72%;
         max-width:180px;
         height:1px;
         margin:8px auto 0;
@@ -2414,18 +2417,18 @@
 
       /* --- Smaller text in both columns --- */
       .audit-body{
-        font-size:12.5px;
-        line-height:1.6;
+        font-size:12px;     /* smaller than before */
+        line-height:1.55;
       }
 
       .audit-subtitle{
-        font-size:13px;
-        margin-top:14px;
+        font-size:12.5px;
+        margin-top:12px;
       }
 
       .audit-list{
-        font-size:12.5px;
-        line-height:1.6;
+        font-size:12px;
+        line-height:1.55;
       }
 
       /* Right side: “What you’ll receive” + book visual */
@@ -2435,26 +2438,26 @@
       }
 
       .audit-visual-stack{
-        margin-top:10px;
-        height:210px;
-        max-width:190px;
+        margin-top:8px;
+        height:200px
+        max-width:180px;
         align-self:center;
       }
 
       .audit-visual-stack img{
-        width:180px;
+        width:170px;
       }
 
       .audit-visual-cta{
         margin-top:6px;
-        max-width:190px;
+        max-width:180px;
         align-self:center;
         justify-content:center;
       }
 
       .audit-contents-btn{
-        font-size:12px;
-        padding:8px 18px;
+        font-size:11.5px;
+        padding:8px 16px;
         transform:none;              /* remove the -50px float */
         box-shadow:0 8px 18px rgba(0,0,0,0.45);
       }
@@ -2473,7 +2476,7 @@
       }
 
       .audit-footer-rule{
-        margin:16px 0 16px;
+        margin:16px 0;
       }
 
       .audit-cta-block .btn.primary{
