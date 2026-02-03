@@ -2337,6 +2337,144 @@
         transform:translateX(-50%) scaleY(0.65);  /* override base scale, make it “thicker” */
       }
     }
+
+    @media (max-width:600px){
+      /* AUDIT SECTION – mobile layout */
+
+      /* Top contrast heading + subheading */
+      .audit-contrast{
+        margin-bottom:20px;
+        text-align:left;
+      }
+
+      .audit-contrast .case-title{
+        font-size:22px;
+        line-height:1.35;
+      }
+
+      .audit-contrast .case-sub{
+        font-size:13.5px;
+        line-height:1.7;
+      }
+
+      .audit-inner{
+        gap:24px;
+      }
+
+      .audit-left{
+        margin-left:0;
+        padding-right:0;
+      }
+
+      .audit-head{
+        padding-bottom:18px;
+      }
+
+      .audit-title{
+        max-width:none;
+        font-size:18px;
+        line-height:1.5;
+        text-align:left;
+        transform:none;              /* remove desktop vertical nudge */
+      }
+
+      .audit-rule{
+        position:static;
+        width:100%;
+        max-width:none;
+        margin:12px 0 16px;
+      }
+
+      .audit-body{
+        font-size:13.5px;
+        line-height:1.7;
+      }
+
+      .audit-subtitle{
+        font-size:14px;
+      }
+
+      .audit-list{
+        font-size:13px;
+      }
+
+      /* Right side: “What you’ll receive” + book visual */
+
+      .audit-right{
+        align-items:center;
+        width:100%;
+      }
+
+      .audit-right .audit-head{
+        padding-bottom:10px;
+        text-align:center;
+        width:100%;
+      }
+
+      .audit-right-title{
+        font-size:18px;
+        line-height:1.4;
+        transform:none;              /* kill the desktop translate(-58px,40px) */
+      }
+
+      .audit-right-rule{
+        position:static;
+        width:100%;
+        max-width:320px;
+        margin:10px auto 0;
+        transform:none;              /* remove the translateX(105px) */
+      }
+
+      .audit-visual-stack{
+        margin-top:16px;
+        height:260px;
+        max-width:260px;
+        align-self:center;
+      }
+
+      .audit-visual-stack img{
+        width:220px;
+      }
+
+      .audit-visual-cta{
+        margin-top:8px;
+        max-width:260px;
+        align-self:center;
+        justify-content:center;
+      }
+
+      .audit-contents-btn{
+        font-size:13px;
+        padding:10px 20px;
+        transform:none;              /* remove the -50px float */
+        box-shadow:0 10px 24px rgba(0,0,0,0.45);
+      }
+
+      /* Bottom paragraph + CTA */
+      .audit-bottom{
+        margin-top:16px;
+        align-items:flex-start;
+        text-align:left;
+      }
+
+      .audit-body-small{
+        font-size:13.5px;
+        line-height:1.7;
+      }
+
+      .audit-footer-rule{
+        margin:18px 0 18px;
+      }
+
+      .audit-cta-block .btn.primary{
+        width:100%;
+      }
+
+      .audit-microcopy{
+        font-size:11.5px;
+      }
+    }
+
       
   </style>
 </head>
