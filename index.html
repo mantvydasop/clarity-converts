@@ -2372,11 +2372,12 @@
         position:absolute;
         /* vertical divider visible again */
         top:0;
-        bottom:100px;  /* was 0; raises the end of the line */
+        bottom:auto;        /* override desktop bottom:0 */
         left:50%;
         width:1px;
 
-        height:auto;        /* 👈 THIS is the critical fix */
+        height:420px;       /* ↓ shorter than the desktop 550px */
+        /* tweak: try 400–460px until it visually lands where you want */
         
         background-color:var(--rule-color);
         opacity:0.55;
