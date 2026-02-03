@@ -2613,7 +2613,153 @@
       .clear-bottom-line{
         max-width:120px;        /* prevents lines from pushing text offscreen */
       }
-      
+    }
+
+    @media (max-width:600px){
+      /* SERVICES SECTION – mobile alignment with Repeatability / Audit / CLEAR */
+
+      .services-section{
+        padding-top:72px;
+        padding-bottom:72px;
+        text-align:left;                  /* feels closer to CLEAR / Audit tone */
+      }
+
+      .services-title{
+        font-size:20px;                   /* match Repeatability / CLEAR titles */
+        line-height:1.35;
+        margin-bottom:10px;
+        text-align:center;
+      }
+
+      .services-subtitle{
+        font-size:13px;
+        line-height:1.4;
+        margin:4px 0 2px;
+        text-align:center;
+      }
+
+      .services-subtext{
+        font-size:12.5px;                 /* same ballpark as CLEAR subcopy */
+        line-height:1.6;
+        max-width:520px;
+        
+        margin:0 auto;
+        text-align:center;
+      }
+
+      .services-grid{
+        margin-top:24px;                  /* was 36px → less vertical weight */
+        gap:16px;                         /* tighter gap between cards */
+        max-width:520px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .service-card{
+        padding:14px 14px 16px;           /* slightly smaller than current */
+        border-radius:14px;
+        box-shadow:0 10px 26px rgba(0,0,0,0.32);
+      }
+
+      .service-badges{
+        margin-bottom:10px;
+        gap:6px;
+        min-height:auto;
+      }
+
+      .service-badge{
+        padding:4px 10px;
+        font-size:11px;
+        letter-spacing:0.15px;
+      }
+
+      .service-name{
+        font-size:16px;                   /* similar to CLEAR card titles */
+        line-height:1.3;
+        min-height:auto;
+        margin-bottom:2px;
+      }
+
+      .service-tagline{
+        font-size:12px;
+        line-height:1.5;
+        min-height:auto;
+        margin-bottom:10px;
+      }
+
+      .service-rule{
+        margin-bottom:10px;
+      }
+
+      .service-body{
+        font-size:11.5px;
+        line-height:1.55;
+        margin:0 0 8px;
+        min-height:auto;                  /* remove forced height */
+      }
+
+      .service-middle{
+        margin-top:6px;
+      }
+
+      .service-subheading{
+        font-size:12px;
+      }
+
+      .service-list-wrap{
+        margin-top:4px;
+      }
+
+      .service-list{
+        font-size:11.5px;
+        line-height:1.55;
+        margin:4px 0 10px 16px;
+      }
+
+      .service-list li + li{
+        margin-top:3px;
+      }
+
+      .service-meta{
+        font-size:11.5px;
+        line-height:1.55;
+      }
+
+      .service-meta-top{
+        min-height:auto;
+      }
+
+      .service-meta p{
+        margin:4px 0;
+      }
+
+      .service-meta-rule{
+        margin:10px 0 10px;
+      }
+
+      .service-cta{
+        gap:4px;
+      }
+
+      .service-cta .btn{
+        width:100%;                       /* already set, but reiterating here */
+        font-size:11.5px;
+        padding:10px 16px;
+      }
+
+      .service-cta-note{
+        font-size:11px;
+        line-height:1.5;
+      }
+
+      .service-link-row{
+        margin-top:8px;
+        padding-top:4px;
+      }
+
+      .service-link{
+        font-size:11.5px;
+      }
     }
 
       
