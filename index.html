@@ -2561,11 +2561,30 @@
       }
 
       .clear-card{
+        flex-direction:row;          /* restore row layout */
+        align-items:stretch;
         padding:16px 16px;
       }
 
       .clear-card-letter{
-        font-size:30px;          /* still prominent, slightly smaller than tablet */
+        flex:0 0 44px;               /* same column feel as tablet */
+        font-size:30px;              /* smaller for mobile but still prominent */
+        margin-bottom:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+
+      .clear-card-divider{
+        flex:0 0 1px;
+        width:1px;                   /* vertical line */
+        height:auto;
+        align-self:stretch;
+        margin:0 12px;
+      }
+
+      .clear-card-body{
+        min-height:60px;
       }
 
       .clear-card-title{
