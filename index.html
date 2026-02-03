@@ -2358,7 +2358,10 @@
       }
 
       .audit-inner{
-        gap:24px;
+        display:grid;  /* override the flex/column from the 900px media query */
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        column-gap:24px;
+        align-items:flex-start;
       }
 
       .audit-left{
