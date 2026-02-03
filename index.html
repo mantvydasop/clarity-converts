@@ -2417,6 +2417,7 @@
         margin:4px auto 0 !important; /* sits tight under the heading */
         background-color:var(--rule-color) !important;
         opacity:0.75;
+        transform:none !important;      /* 👈 stop the 105px desktop offset */
       }
 
       /* --- Smaller text in both columns --- */
@@ -2442,14 +2443,15 @@
       }
 
       .audit-visual-stack{
-        margin-top:20px;
-        height:230px;        /* smaller */
-        max-width:190px;     /* narrower */
+        margin-top:24px;        /* a bit lower under the heading */
+        padding-top:12px;       /* pushes both images down inside the box */
+        height:210px;           /* slightly shorter container */
+        max-width:170px;        /* narrower overall */
         align-self:center;
       }
 
       .audit-visual-stack img{
-        width:170px;         /* shrink booklet */
+        width:150px;         /* shrink booklet */
       }
 
       .audit-visual-cta{
