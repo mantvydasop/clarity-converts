@@ -2361,17 +2361,18 @@
       .audit-inner{
         position:relative;
         display:grid;  /* override the flex/column from the 900px media query */
-        grid-template-columns:minmax(0, 1.1fr) minmax(0, 0.9fr);
-        column-gap:16px;
+        grid-template-columns:minmax(0, 1.05fr) minmax(0, 0.95fr);
+        column-gap:12px;
         align-items:flex-start;
+        overflow:visible;
       }
 
       .audit-inner::before{
         content:"";
         position:absolute;
         /* vertical divider visible again */
-        top:96px;
-        bottom:28px;
+        top:0;
+        bottom:0;
         left:50%;
         width:1px;
         background-color:var(--rule-color);
@@ -2384,14 +2385,15 @@
       .audit-right{
         margin:0;
         padding:0;
+        position:relative;
+        z-index:1; /* make sure content sits above the divider */
       }
 
       /* --- Symmetric headings + grey rule under them --- */
       .audit-left .audit-head,
       .audit-right .audit-head{
-        position:relative;
-        z-index:1;          /* above the vertical divider */
-        padding-bottom:10px;
+        padding-bottom:4px;
+        margin-bottom:0;
         text-align:center;
       }
 
@@ -2401,18 +2403,19 @@
         font-size:16px;
         line-height:1.35;
         text-align:center;
+        margin:0;
         transform:none; /* remove desktop offset */
       }
 
       .audit-rule,
       .audit-right-rule{
-        position:relative;  /* not absolute on mobile */
-        z-index:1;          /* make sure lines sit on top of divider */
-        width:72%;
-        max-width:180px;
-        height:1px;
-        margin:8px auto 0;
-        background-color:var(--rule-color);
+        position:static !important;
+        width:56% !important;         /* short underline */
+        max-width:120px !important;
+        height:1px !important;
+        margin:4px auto 0 !important; /* sits tight under the heading */
+        background-color:var(--rule-color) !important;
+        opacity:0.75;
       }
 
       /* --- Smaller text in both columns --- */
@@ -2438,14 +2441,15 @@
       }
 
       .audit-visual-stack{
-        margin-top:8px;
-        height:200px
-        max-width:180px;
+        margin-top:16px;
+        height:180px;        /* smaller */
+        max-width:160px;     /* narrower */
         align-self:center;
       }
 
       .audit-visual-stack img{
-        width:170px;
+        width:150px;         /* shrink booklet */
+        transform:translateY(8px); /* nudge down for symmetry */
       }
 
       .audit-visual-cta{
