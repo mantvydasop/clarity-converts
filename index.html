@@ -2274,11 +2274,11 @@
 
       .repeat-grid{
         grid-template-columns:repeat(3, minmax(0,1fr)); /* force 3 columns on phones */
-        min-height:210px;
+        min-height:230px;
       }
 
       .repeat-col{
-        padding:12px 6px 26px;
+        padding:14px 8px 30px;
       }
 
       .repeat-col h3{
@@ -2286,10 +2286,20 @@
         line-height:1.3;
         width:100%;
         max-width:none;
+
+        min-height:3.6em;              /* forces all headings to occupy same block height */
+        display:flex;
+        align-items:flex-end;          /* text drops to bottom of that block */
+        justify-content:center;
+        margin:0 auto 6px;             /* small, consistent gap before the rule */
+        text-align:center;
       }
 
       .repeat-col .col-rule{
-        margin:4px auto 8px;
+        width:84%;
+        height:0;
+        margin:2px auto 8px;           /* same on both columns */
+        border-top:1px solid rgba(12,25,64,0.22);
       }
 
       .repeat-col li{
@@ -2298,13 +2308,13 @@
       }
 
       .repeat-mid{
-        padding:0 6px 26px;
+        padding:0 6px 30px;
       }
 
       .repeat-mid .mid-text{
         font-size:11.5px;
         line-height:1.3;
-        transform:translateY(-32px); /* still floating over the ribbon, just a bit less extreme */
+        transform:translateY(-30px); /* still floating over the ribbon, just a bit less extreme */
       }
 
       .repeat-tags{
