@@ -2599,8 +2599,21 @@
       }
 
       .clear-bottom-text{
-        font-size:12.5px;
+        font-size:12px;          /* match audit / repeatability microcopy */
+        line-height:1.6;
+        white-space:normal;     /* allow wrapping */
+        text-align:center;
+        max-width:280px;        /* prevents edge-to-edge overflow */
       }
+
+      .clear-bottom-rule-row{
+        gap:10px;               /* tighter spacing on mobile */
+      }
+
+      .clear-bottom-line{
+        max-width:120px;        /* prevents lines from pushing text offscreen */
+      }
+      
     }
 
       
