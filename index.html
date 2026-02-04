@@ -2504,6 +2504,7 @@
       .audit-right{
         align-items:center;
         width:100%;
+        position:relative; /* make it the positioning context for the mobile pill */
       }
 
       .audit-visual-stack{
@@ -2599,7 +2600,11 @@
 
       .audit-recorded-mobile{
         display:block;
-        transform: translateY(28px); /* visual move only, no layout impact */
+        position:absolute;
+        left:50%;
+        bottom:-8px;              /* move it slightly below the right column */
+        transform:translateX(-50%);
+        z-index:2;                /* sit above the background + divider */
       }
       
     }
