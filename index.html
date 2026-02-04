@@ -817,72 +817,6 @@
     .audit-contents-btn:hover{
       transform: translateY(-52px);
     }
-
-    /* iPhone 15 Pro landscape (and similar): treat the Audit section like a compact desktop two-column layout */
-    @media (max-width:900px) and (min-width:700px) and (orientation:landscape) and (pointer:coarse) {
-      /* Put the Audit layout back into two columns */
-      .audit-inner{
-        display:grid;
-        grid-template-columns:1.4fr 1fr;
-        column-gap:32px;
-        align-items:flex-start;
-        position:relative;
-      }
-
-      /* Bring the vertical divider back */
-      .audit-inner::before{
-        display:block;
-        content:"";
-        position:absolute;
-        top:12px;
-        bottom:0;
-        left:50%;
-        width:1px;
-        background-color:var(--rule-color);
-        opacity:0.55;
-        pointer-events:none;
-      }
-
-      /* Left column — get rid of the mobile-column feel */
-      .audit-left{
-        margin-left:0;
-        padding-right:20px;
-      }
-
-      /* Right column — center things a bit more nicely */
-      .audit-right{
-        align-items:center;
-      }
-
-      /* Nudge the right title so it doesn’t look “thrown” */
-      .audit-right-title{
-        transform:translate(-20px, 24px);
-        font-size:20px;
-      }
-
-      /* Tighten the visual stack so it doesn’t dominate the whole section */
-      .audit-visual-stack{
-        max-width:260px;
-        height:320px;
-        margin-top:16px;
-      }
-
-      .audit-visual-stack img{
-        width:220px;
-      }
-
-      /* Make the bottom copy feel more like desktop (centered, spanning both columns) */
-      .audit-bottom{
-        grid-column:1 / -1;
-        align-items:center;
-        text-align:center;
-        margin-top:8px;
-      }
-
-      .audit-body-small{
-        max-width:640px;
-      }
-    }
     
     /* CLEAR FRAMEWORK SECTION */
     .clear-section{
@@ -3129,7 +3063,426 @@
         background-attachment:scroll;
       }
     }
-    
+
+    /* iPhone 15 Pro (and similar) – landscape typography + audit layout */
+    @media (min-width:700px) and (max-width:900px) and (orientation:landscape) and (pointer:coarse) {
+      /* ---------- GLOBAL TYPE SCALE ---------- */
+
+      /* Base reading size – close to portrait, not desktop-big */
+      body {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      /* Hero */
+      h1 {
+        font-size: clamp(36px, 5vw, 44px); /* hero > section titles, but not shouting */
+        line-height: 1.05;
+      }
+
+      .hero-sub {
+        font-size: 14.5px;
+        line-height: 1.8;
+      }
+
+      .hero-ctas .btn {
+        font-size: 13px;
+      }
+
+      /* Section titles (Repeat, Services, CLEAR, Case, About, Contact, Audit top) */
+      .repeat-title,
+      .case-title,
+      .services-title,
+      .clear-title,
+      .about-title,
+      .contact-title {
+        font-size: 22px;
+        line-height: 1.35;
+      }
+
+      .audit-contrast .case-title {
+        font-size: 22px;
+        line-height: 1.35;
+      }
+
+      .audit-title,
+      .audit-right-title {
+        font-size: 20px;
+        line-height: 1.35;
+        transform: none; /* remove desktop nudge here */
+      }
+
+      /* Section subcopy / intros */
+      .repeat-sub,
+      .case-sub,
+      .services-subtext,
+      .clear-sub,
+      .contact-sub,
+      .about-subhead,
+      .audit-contrast .case-sub {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .services-subtitle {
+        font-size: 13.5px;
+      }
+
+      .case-note {
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+
+      /* Trust cards */
+      .trust-title {
+        font-size: 15px;
+      }
+
+      .trust-text {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      /* CLEAR cards */
+      .clear-card-title {
+        font-size: 17px;
+      }
+
+      .clear-card-text,
+      .clear-card-details p,
+      .clear-card-details ul {
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .clear-bottom-text {
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+
+      /* Services cards */
+      .service-name {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      .service-tagline {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .service-body,
+      .service-list,
+      .service-meta {
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .service-cta .btn {
+        font-size: 12.5px;
+      }
+
+      .service-cta-note,
+      .service-link {
+        font-size: 12px;
+      }
+
+      .service-badge {
+        font-size: 11.5px;
+      }
+
+      /* Repeatability panel */
+      .repeat-col h3 {
+        font-size: 15px;
+      }
+
+      .repeat-col li {
+        font-size: 12.5px;
+        line-height: 1.5;
+      }
+
+      .repeat-mid .mid-text {
+        font-size: 15px;
+        line-height: 1.4;
+      }
+
+      .repeat-tag {
+        font-size: 11.5px;
+      }
+
+      .repeat-micro {
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+
+      /* Case / portfolio cards */
+      .case-name {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      .case-desc {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .case-bullets {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .case-link {
+        font-size: 12.5px;
+      }
+
+      .case-expanded {
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .case-expanded-heading {
+        font-size: 14px;
+      }
+
+      .case-ppp-label {
+        font-size: 13px;
+      }
+
+      .case-ppp-body {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .case-expanded-cta .btn {
+        font-size: 13px;
+      }
+
+      .case-expanded-cta-note {
+        font-size: 12.5px;
+      }
+
+      /* About section */
+      .about-body,
+      .about-list {
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .about-closing {
+        font-size: 14px;
+      }
+
+      .about-cta .btn {
+        font-size: 13px;
+      }
+
+      .about-cta-note {
+        font-size: 12.5px;
+      }
+
+      /* Contact cards */
+      .contact-card h3 {
+        font-size: 15px;
+      }
+
+      .contact-card p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      .site-footer {
+        font-size: 13px;
+      }
+
+      /* ---------- AUDIT SECTION – LAYOUT + TYPE ---------- */
+
+      /* Two-column compact desktop-like layout for this breakpoint */
+      .audit-inner {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        column-gap: 32px;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      /* Vertical divider down the middle */
+      .audit-inner::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 12px;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        background-color: var(--rule-color);
+        opacity: 0.55;
+        pointer-events: none;
+      }
+
+      /* Left column – keep it tidy and slightly away from the divider */
+      .audit-left {
+        margin-left: 0;
+        padding-right: 20px;
+      }
+
+      /* Right column – centered stack */
+      .audit-right {
+        align-items: center;
+      }
+
+      /* Headings */
+      .audit-head {
+        position: relative;
+        padding-bottom: 32px;
+        text-align: center;
+      }
+
+      .audit-title,
+      .audit-right-title {
+        max-width: 520px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* Grey rules under headings, symmetrical */
+      .audit-rule,
+      .audit-right-rule {
+        position: absolute;
+        top: 86px;
+        width: var(--rule-width);
+        max-width: 260px;
+        height: 1px;
+        margin: 0 auto;
+        background-color: var(--rule-color);
+        opacity: 0.75;
+      }
+
+      .audit-rule {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .audit-right-rule {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Audit body copy, lists, microcopy */
+      .audit-body,
+      .audit-body-small {
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .audit-subtitle {
+        font-size: 13.5px;
+      }
+
+      .audit-list {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .audit-microcopy {
+        font-size: 12px;
+      }
+
+      .audit-contents-btn {
+        font-size: 12.5px;
+      }
+
+      /* Divider lines in left column */
+      .audit-divider {
+        width: 100%;
+        max-width: 520px;
+        margin: 18px 0;
+        height: 1px;
+        background-color: var(--rule-color);
+      }
+
+      /* Visual stack on the right side: shrink a bit compared to desktop */
+      .audit-visual-stack {
+        max-width: 260px;
+        height: 320px;
+        margin-top: 16px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-self: flex-start;
+      }
+
+      .audit-visual-stack img {
+        width: 220px;
+      }
+
+      /* TOC state when open (slightly toned down vs desktop) */
+      .audit-visual-stack.open img.toc {
+        transform: translateX(-50%) translateY(-70px) scale(1.35);
+      }
+
+      /* CTA button under the visuals */
+      .audit-visual-cta {
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        max-width: 260px;
+        align-self: flex-start;
+      }
+
+      .audit-contents-btn {
+        padding: 10px 22px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+        transform: none;
+      }
+
+      .audit-contents-btn:hover {
+        transform: none;
+      }
+
+      /* Bottom copy + CTA spanning both columns */
+      .audit-bottom {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .audit-body-small {
+        max-width: 640px;
+        margin: 0 auto 8px auto;
+      }
+
+      .audit-footer-rule {
+        width: 100%;
+        max-width: 520px;
+        margin: 8px 0 18px 0;
+        height: 1px;
+        background-color: var(--rule-color);
+      }
+
+      .audit-cta-block .btn.primary {
+        width: 260px;
+        font-size: 13px;
+        padding: 11px 22px;
+      }
+
+      /* Hide desktop-only recorded button, keep layout clean */
+      .audit-recorded-btn {
+        display: none;
+      }
+
+      /* Keep the mobile version hidden at this breakpoint too */
+      .audit-recorded-mobile {
+        display: none;
+      }
+    }
   </style>
 </head>
 
