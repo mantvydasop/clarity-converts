@@ -661,6 +661,18 @@
       border-radius:0;      /* image, not UI */
     }
 
+    /* Mobile-only recorded walkthrough image (right column) */
+    .audit-recorded-mobile{
+      display:none;       /* hidden by default, enabled in mobile query */
+      max-width:220px;
+    }
+
+    .audit-recorded-mobile img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
     /* Show only on desktop */
     @media (min-width:901px){
       .audit-recorded-btn{
@@ -2578,7 +2590,18 @@
       .audit-visual-stack.open img.toc{
         width:160px;
         transform:translateX(-64%) translateY(-72px) scale(1.45);
-      }      
+      }
+
+      /* Swap desktop button image for the right-column one on mobile */
+      .audit-recorded-btn{
+        display:none;
+      }
+
+      .audit-recorded-mobile{
+        display:block;
+        transform: translateY(28px); /* visual move only, no layout impact */
+      }
+      
     }
 
     @media (max-width:600px){
@@ -3334,6 +3357,14 @@
             <div class="audit-visual-cta">
               <button class="btn audit-contents-btn" type="button">View the contents</button>
             </div>
+
+            <div class="audit-recorded-mobile">
+              <img
+                src="assets/48-hour-clarityaudit-button.png"
+                alt="Recorded Walkthrough (20 to 25 minutes)"
+                >
+            </div>
+            
           </div>
 
           <div class="audit-bottom">
