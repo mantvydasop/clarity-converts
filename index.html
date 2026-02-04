@@ -673,6 +673,22 @@
       display:block;
     }
 
+    /* Show only on *larger* desktops */
+    @media (min-width:1361px){
+      .audit-recorded-btn{
+        display:block;
+      }
+    }
+
+    /* Tablet landscape desktop-mode adjustment (Galaxy Tab S9 Ultra) */
+    @media (min-width:1361px) and (max-width:2000px) and (orientation:landscape) and (pointer: coarse) {
+      .audit-recorded-btn{
+        transform: translateY(270px);
+      }
+    }
+    
+    
+    
     .audit-list li + li{
       margin-top:4px;
     }
@@ -802,6 +818,72 @@
       transform: translateY(-52px);
     }
 
+    /* iPhone 15 Pro landscape (and similar): treat the Audit section like a compact desktop two-column layout */
+    @media (max-width:900px) and (min-width:700px) and (orientation:landscape) and (pointer:coarse) {
+      /* Put the Audit layout back into two columns */
+      .audit-inner{
+        display:grid;
+        grid-template-columns:1.4fr 1fr;
+        column-gap:32px;
+        align-items:flex-start;
+        position:relative;
+      }
+
+      /* Bring the vertical divider back */
+      .audit-inner::before{
+        display:block;
+        content:"";
+        position:absolute;
+        top:12px;
+        bottom:0;
+        left:50%;
+        width:1px;
+        background-color:var(--rule-color);
+        opacity:0.55;
+        pointer-events:none;
+      }
+
+      /* Left column — get rid of the mobile-column feel */
+      .audit-left{
+        margin-left:0;
+        padding-right:20px;
+      }
+
+      /* Right column — center things a bit more nicely */
+      .audit-right{
+        align-items:center;
+      }
+
+      /* Nudge the right title so it doesn’t look “thrown” */
+      .audit-right-title{
+        transform:translate(-20px, 24px);
+        font-size:20px;
+      }
+
+      /* Tighten the visual stack so it doesn’t dominate the whole section */
+      .audit-visual-stack{
+        max-width:260px;
+        height:320px;
+        margin-top:16px;
+      }
+
+      .audit-visual-stack img{
+        width:220px;
+      }
+
+      /* Make the bottom copy feel more like desktop (centered, spanning both columns) */
+      .audit-bottom{
+        grid-column:1 / -1;
+        align-items:center;
+        text-align:center;
+        margin-top:8px;
+      }
+
+      .audit-body-small{
+        max-width:640px;
+      }
+    }
+    
     /* CLEAR FRAMEWORK SECTION */
     .clear-section{
       text-align:center;
@@ -982,6 +1064,25 @@
 
     .clear-card-details li + li{
       margin-top:4px;
+    }
+
+    @media (max-width:700px){
+      .clear-card{
+        padding:16px 18px;
+      }
+      .clear-card-letter{
+        flex:0 0 44px;
+        font-size:34px;
+      }
+      .clear-card-divider{
+        margin:0 12px;
+      }
+      .clear-card-title{
+        font-size:16px;
+      }
+      .clear-card-text{
+        font-size:13px;
+      }
     }
 
     /* SERVICES SECTION */
@@ -1328,6 +1429,15 @@
 
     #service-messaging-system.service-card--open .messaging-compact-only{
       display:none;
+    }
+
+    @media (max-width:960px){
+      .services-grid{
+        flex-direction:column;
+        max-width:520px;
+        margin-left:auto;
+        margin-right:auto;
+      }
     }
 
     /* CASE STUDY / BREAKDOWNS SECTION */
@@ -1743,6 +1853,15 @@
       color:rgba(9,20,47,0.72);
     }
 
+    @media (max-width:768px){
+      .case-grid{
+        grid-template-columns:1fr;
+        max-width:420px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+    }
+
     /* ABOUT / THINKING SECTION */
     .about-section{
     }
@@ -1887,6 +2006,17 @@
       text-align:center;
     }
 
+    @media (max-width:960px){
+      .about-inner{
+        grid-template-columns:1fr;
+        max-width:520px;
+      }
+      .about-photo{
+        max-width:360px;
+        margin:0 auto;
+      }
+    }
+
     /* CONTACT / GET IN TOUCH SECTION */
     .contact-section{
       text-align:center;
@@ -1973,6 +2103,12 @@
       color:rgba(185,198,239,0.90);
     }
 
+    @media (max-width:960px){
+      .contact-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+    }
+
     /* SITE FOOTER */
     .site-footer{
       padding:28px 0 32px;
@@ -1992,61 +2128,6 @@
     .about-title,
     .contact-title{
       margin:0 0 18px;
-    }
-<!-- PART 1 END -->
-<!-- PART 2 START -->
-    @media (max-width:960px){
-      .services-grid{
-        flex-direction:column;
-        max-width:520px;
-        margin-left:auto;
-        margin-right:auto;
-      }
-    }
-
-    @media (max-width:768px){
-      .case-grid{
-        grid-template-columns:1fr;
-        max-width:420px;
-        margin-left:auto;
-        margin-right:auto;
-      }
-    }
-
-    @media (max-width:960px){
-      .about-inner{
-        grid-template-columns:1fr;
-        max-width:520px;
-      }
-      .about-photo{
-        max-width:360px;
-        margin:0 auto;
-      }
-    }
-
-    @media (max-width:960px){
-      .contact-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width:700px){
-      .clear-card{
-        padding:16px 18px;
-      }
-      .clear-card-letter{
-        flex:0 0 44px;
-        font-size:34px;
-      }
-      .clear-card-divider{
-        margin:0 12px;
-      }
-      .clear-card-title{
-        font-size:16px;
-      }
-      .clear-card-text{
-        font-size:13px;
-      }
     }
 
     @media (max-width:600px){
@@ -2087,12 +2168,12 @@
 
       .brand-name{
         font-size:14px;
-        left:0;
+        left:0;                 /* remove the -6px desktop nudge */
         white-space:nowrap;
-        margin-right:4px;
+        margin-right:4px; /* 👈 creates breathing room from the divider */
         transform: translateX(-4px);
       }
-
+      
       .header-divider{
         height:18px;
         width:1px;
@@ -2107,10 +2188,10 @@
       .nav-links a{
         padding:4px 8px;
       }
-
+            
       .hero{
-        padding-top:64px;
-        padding-bottom:48px;
+        padding-top:64px;          /* was 72px */
+        padding-bottom:48px;       /* a bit less height */
       }
 
       .hero-sub{
@@ -2132,19 +2213,20 @@
       }
 
       .trust-row{
-        margin-top:22px;
+        margin-top:22px;           /* was 36px */
         display:flex;
-        flex-direction:row;
-        flex-wrap:nowrap;
+        flex-direction:row;        /* override the earlier column */
+        flex-wrap:nowrap;             /* keep them in one row */
         justify-content:flex-start;
+        
         gap:10px;
-        overflow-x:auto;
-        padding-bottom:4px;
+        overflow-x:auto;              /* allow sideways scroll if needed */
+        padding-bottom:4px;           /* space so shadow isn't cut off */
         -webkit-overflow-scrolling:touch;
       }
 
       .trust-card{
-        flex:0 0 190px;
+        flex:0 0 190px;               /* fixed-ish width instead of 100% */
         max-width:190px;
         border-radius:16px;
         padding:10px 10px 12px;
@@ -2152,7 +2234,7 @@
       }
 
       .trust-visual{
-        height:72px;
+        height:72px;   
         margin:0 auto 6px;
       }
 
@@ -2191,12 +2273,12 @@
       }
 
       .repeat-grid{
-        grid-template-columns:repeat(3, minmax(0,1fr));
+        grid-template-columns:repeat(3, minmax(0,1fr)); /* force 3 columns on phones */
         min-height:250px;
       }
 
       .repeat-col{
-        padding:14px 8px 36px;
+        padding:14px 8px 36px;         /* was 30px bottom */
       }
 
       .repeat-col h3{
@@ -2204,11 +2286,12 @@
         line-height:1.3;
         width:100%;
         max-width:none;
-        min-height:3.6em;
+
+        min-height:3.6em;              /* forces all headings to occupy same block height */
         display:flex;
-        align-items:flex-end;
+        align-items:flex-end;          /* text drops to bottom of that block */
         justify-content:center;
-        margin:0 auto 6px;
+        margin:0 auto 6px;             /* small, consistent gap before the rule */
         text-align:center;
       }
 
@@ -2219,7 +2302,7 @@
       .repeat-col .col-rule{
         width:84%;
         height:0;
-        margin:2px auto 8px;
+        margin:2px auto 8px;           /* same on both columns */
         border-top:1px solid rgba(12,25,64,0.22);
       }
 
@@ -2229,13 +2312,13 @@
       }
 
       .repeat-mid{
-        padding:0 6px 36px;
+        padding:0 6px 36px;            /* was 30px bottom */
       }
 
       .repeat-mid .mid-text{
         font-size:11.5px;
         line-height:1.3;
-        transform:translateY(-50px);
+        transform:translateY(-50px); /* still floating over the ribbon, just a bit less extreme */
       }
 
       .repeat-tags{
@@ -2246,17 +2329,19 @@
         font-size:10px;
       }
 
+      /* Ribbon alignment tweak so it still sits behind the middle band */
       .repeat-section::before{
         top:270px;
         height:480px;
         background-size:220% auto;
-        transform:translateX(-50%) scaleY(0.65);
+        transform:translateX(-50%) scaleY(0.65);  /* override base scale, make it “thicker” */
       }
     }
 
     @media (max-width:600px){
       /* AUDIT SECTION – mobile layout */
 
+      /* Top contrast heading + subheading */
       .audit-contrast{
         margin-bottom:18px;
         text-align:center;
@@ -2272,9 +2357,10 @@
         line-height:1.6;
       }
 
+      /* --- Two-column layout + vertical divider --- */
       .audit-inner{
         position:relative;
-        display:grid;
+        display:grid;  /* override the flex/column from the 900px media query */
         grid-template-columns:minmax(0, 1.05fr) minmax(0, 0.95fr);
         column-gap:12px;
         align-items:flex-start;
@@ -2284,16 +2370,20 @@
       .audit-inner::before{
         content:"";
         position:absolute;
+        /* vertical divider visible again */
         top:0;
-        bottom:auto;
+        bottom:auto;        /* override desktop bottom:0 */
         left:50%;
         width:1px;
-        height:520px;
+
+        height:520px;       /* ↓ shorter than the desktop 550px */
+        /* tweak: try 400–460px until it visually lands where you want */
+        
         background-color:var(--rule-color);
         opacity:0.55;
         pointer-events:none;
-        z-index:0;
-        display:block;
+        z-index:0; /* put divider behind column content */
+        display:block;          /* 👈 override the 900px rule that sets display:none */
       }
 
       .audit-left,
@@ -2301,16 +2391,17 @@
         margin:0;
         padding:0;
         position:relative;
-        z-index:1;
+        z-index:1; /* make sure content sits above the divider */
       }
 
       .audit-left{
-        padding-right:18px;
+        padding-right:18px;   /* new: pulls text slightly away from the center line */
       }
 
+      /* --- Symmetric headings + grey rule under them --- */
       .audit-left .audit-head,
       .audit-right .audit-head{
-        padding-bottom:32px;
+        padding-bottom:32px; /* ← THIS is the change */
         margin-bottom:0;
         text-align:center;
         position:relative;
@@ -2322,31 +2413,36 @@
         font-size:15px;
         line-height:1.35;
         text-align:center;
-        margin:0;
-        transform:none;
+        margin:0;            /* no extra margin, we will control spacing with the rule */
+        transform:none; /* remove desktop offset */
       }
 
       .audit-right-title{
-        transform:translateY(18px);
+        transform:translateY(18px);  /* adjust 4–8px to taste */
       }
 
       .audit-rule,
       .audit-right-rule{
         position:absolute !important;
-        top:78px;
+        top:78px;                /* 👈 both rules sit on the same horizontal line */
         left:50% !important;
         right:auto !important;
         transform:translateX(-50%) !important;
-        width:80% !important;
+        
+        width:80% !important;     /* grows left + right equally from center */
         max-width:185px !important;
         height:1px !important;
+
+        /* Push the rule to the bottom of the heading block and center it */
         margin:0 !important;
+        
         background-color:var(--rule-color) !important;
         opacity:0.75;
       }
 
+      /* --- Smaller text in both columns --- */
       .audit-body{
-        font-size:11.5px;
+        font-size:11.5px;     /* smaller than before */
         line-height:1.55;
       }
 
@@ -2360,30 +2456,33 @@
         line-height:1.55;
       }
 
+      /* Pull content under the left heading closer */
       .audit-left .audit-body:first-of-type{
-        margin-top:4px;
+        margin-top:4px;   /* was 10px from the global .audit-body rule */
       }
 
+      /* Right side: “What you’ll receive” + book visual */
       .audit-right{
         align-items:center;
         width:100%;
-        position:relative;
+        position:relative; /* make it the positioning context for the mobile pill */
       }
 
       .audit-visual-stack{
-        margin-top:12px;
-        padding-top:12px;
-        height:210px;
-        max-width:170px;
+        margin-top:12px;        /* a bit lower under the heading */
+        padding-top:12px;       /* pushes both images down inside the box */
+        height:210px;           /* slightly shorter container */
+        max-width:170px;        /* narrower overall */
         align-self:center;
       }
 
       .audit-visual-stack img{
-        width:150px;
+        width:150px;         /* shrink booklet */
       }
 
       .audit-visual-cta{
-        margin-top:-26px;
+        margin-top:-26px;          /* tweak -20 / -30 to taste */
+        
         max-width:190px;
         align-self:center;
         justify-content:center;
@@ -2392,40 +2491,47 @@
       .audit-contents-btn{
         font-size:11.5px;
         padding:8px 16px;
-        transform:none;
+        transform:none;              /* remove the -50px float */
         box-shadow:0 8px 18px rgba(0,0,0,0.45);
+        
         -webkit-tap-highlight-color: transparent;
         touch-action: manipulation;
+
         appearance:none;
         -webkit-appearance:none;
+
+        /* kill the tiny bounce animation on mobile */
         transition:none;
       }
 
       .audit-contents-btn:hover,
       .audit-contents-btn:active,
       .audit-contents-btn:focus{
+        /* make sure hover/active/focus don't move it either */
         transform:none;
         box-shadow:0 8px 18px rgba(0,0,0,0.45);
       }
 
+      /* Shorter left-column dividers on mobile so they don't hit the center line */
       .audit-divider{
-        width:100%;
-        max-width:none;
-        margin:18px auto 18px 0;
+        width:100%;                 /* shorten from the right side */
+        max-width:none;            /* ignore desktop max-width:520px */
+        margin:18px auto 18px 0;   /* left-aligned, same vertical spacing */
       }
 
+      /* Bottom paragraph + CTA */
       .audit-bottom{
         grid-column:1 / -1;
-        margin-top:-12px;
-        align-items:center;
-        text-align:center;
+        margin-top:-12px;          /* was 16px → pulls the whole bottom section upward */
+        align-items:center;      /* center the CTA block horizontally */
+        text-align:center;       /* center text inside this bottom area */
       }
 
       .audit-body-small{
         font-size:12px;
         line-height:1.6;
-        text-align:center;
-        margin:0 auto 4px auto;
+        text-align:center;       /* ensure the paragraph itself is centered */
+        margin:0 auto 4px auto;   /* tighter gap above the grey line */
       }
 
       .audit-footer-rule{
@@ -2442,11 +2548,13 @@
         font-size:11px;
       }
 
+      /* Make the TOC more visible when expanded on mobile */
       .audit-visual-stack.open img.toc{
         width:160px;
         transform:translateX(-64%) translateY(-72px) scale(1.45);
       }
 
+      /* Swap desktop button image for the right-column one on mobile */
       .audit-recorded-btn{
         display:none;
       }
@@ -2455,9 +2563,9 @@
         display:block;
         position:absolute;
         left:50%;
-        bottom:-8px;
+        bottom:-8px;              /* move it slightly below the right column */
         transform:translateX(-50%);
-        z-index:2;
+        z-index:2;                /* sit above the background + divider */
       }
 
       .audit-recorded-mobile img{
@@ -2468,24 +2576,24 @@
     @media (max-width:600px){
       /* CLEAR section – mobile sizing */
       .clear-title{
-        font-size:20px;
+        font-size:20px;          /* matches .repeat-title and audit .case-title */
         line-height:1.35;
       }
 
       .clear-sub{
-        font-size:12.5px;
+        font-size:12.5px;   /* sits between repeat (12) and audit (13) */
         line-height:1.6;
       }
 
       .clear-card{
-        flex-direction:row;
+        flex-direction:row;          /* restore row layout */
         align-items:stretch;
         padding:16px 16px;
       }
 
       .clear-card-letter{
-        flex:0 0 44px;
-        font-size:40px;
+        flex:0 0 44px;               /* same column feel as tablet */
+        font-size:40px;              /* smaller for mobile but still prominent */
         margin-bottom:0;
         display:flex;
         align-items:center;
@@ -2494,7 +2602,7 @@
 
       .clear-card-divider{
         flex:0 0 1px;
-        width:1px;
+        width:1px;                   /* vertical line */
         height:auto;
         align-self:stretch;
         margin:0 12px;
@@ -2505,7 +2613,7 @@
       }
 
       .clear-card-title{
-        font-size:15px;
+        font-size:15px;          /* closer to service and about titles on mobile */
       }
 
       .clear-card-text,
@@ -2516,19 +2624,19 @@
       }
 
       .clear-bottom-text{
-        font-size:12px;
+        font-size:12px;          /* match audit / repeatability microcopy */
         line-height:1.6;
-        white-space:normal;
+        white-space:normal;     /* allow wrapping */
         text-align:center;
-        max-width:280px;
+        max-width:280px;        /* prevents edge-to-edge overflow */
       }
 
       .clear-bottom-rule-row{
-        gap:10px;
+        gap:10px;               /* tighter spacing on mobile */
       }
 
       .clear-bottom-line{
-        max-width:120px;
+        max-width:120px;        /* prevents lines from pushing text offscreen */
       }
     }
 
@@ -2538,11 +2646,11 @@
       .services-section{
         padding-top:72px;
         padding-bottom:72px;
-        text-align:left;
+        text-align:left;                  /* feels closer to CLEAR / Audit tone */
       }
 
       .services-title{
-        font-size:20px;
+        font-size:20px;                   /* match Repeatability / CLEAR titles */
         line-height:1.35;
         margin-bottom:10px;
         text-align:center;
@@ -2556,23 +2664,24 @@
       }
 
       .services-subtext{
-        font-size:12.5px;
+        font-size:12.5px;                 /* same ballpark as CLEAR subcopy */
         line-height:1.6;
         max-width:520px;
+        
         margin:0 auto;
         text-align:center;
       }
 
       .services-grid{
-        margin-top:24px;
-        gap:16px;
+        margin-top:24px;                  /* was 36px → less vertical weight */
+        gap:16px;                         
         max-width:520px;
         margin-left:auto;
         margin-right:auto;
       }
 
       .service-card{
-        padding:14px 14px 16px;
+        padding:14px 14px 16px;           /* slightly smaller than current */
         border-radius:14px;
         box-shadow:0 10px 26px rgba(0,0,0,0.32);
       }
@@ -2590,7 +2699,7 @@
       }
 
       .service-name{
-        font-size:16px;
+        font-size:16px;                   /* similar to CLEAR card titles */
         line-height:1.3;
         min-height:auto;
         margin-bottom:2px;
@@ -2611,7 +2720,7 @@
         font-size:11.5px;
         line-height:1.55;
         margin:0 0 8px;
-        min-height:auto;
+        min-height:auto;                  /* remove forced height */
       }
 
       .service-middle{
@@ -2658,7 +2767,7 @@
       }
 
       .service-cta .btn{
-        width:100%;
+        width:100%;                       /* already set, but reiterating here */
         font-size:11.5px;
         padding:10px 16px;
       }
@@ -2693,14 +2802,14 @@
       }
 
       .case-title{
-        font-size:20px;
+        font-size:20px;           /* match Repeatability / CLEAR / Services titles */
         line-height:1.35;
         margin-bottom:10px;
         text-align:center;
       }
 
       .case-sub{
-        font-size:12.5px;
+        font-size:12.5px;         /* same ballpark as CLEAR subcopy */
         line-height:1.6;
         margin:4px auto 2px;
         max-width:520px;
@@ -2716,21 +2825,21 @@
       }
 
       .case-grid{
-        margin-top:24px;
-        gap:16px;
-        max-width:520px;
+        margin-top:24px;          
+        gap:16px;                 /* tighter gap between cards */
+        max-width:520px;          /* matches services grid on mobile */
         margin-left:auto;
         margin-right:auto;
       }
 
       .case-card{
-        border-radius:16px;
-        padding:16px 14px 16px;
+        border-radius:16px;       /* slightly softer, smaller than desktop */
+        padding:16px 14px 16px;   /* smaller padding = less scroll fatigue */
         box-shadow:0 10px 26px rgba(0,0,0,0.32);
       }
 
       .case-top{
-        min-height:auto;
+        min-height:auto;          /* remove forced height */
       }
 
       .case-tag{
@@ -2741,7 +2850,7 @@
       }
 
       .case-name{
-        font-size:16px;
+        font-size:16px;           /* in range of service/clear card titles */
         line-height:1.3;
         min-height:auto;
       }
@@ -2777,10 +2886,12 @@
         display:inline-block;
       }
 
-      .case-expanded{
-        font-size:11.5px;
-        line-height:1.6;
-      }
+      /* Expanded breakdown – bring type down to the same system */
+
+       .case-expanded{
+         font-size:11.5px;
+         line-height:1.6;
+       }
 
       .case-expanded-heading{
         font-size:13px;
@@ -2900,14 +3011,14 @@
       }
 
       .about-title{
-        font-size:20px;
+        font-size:20px;              /* matches CLEAR / Services / Case titles on mobile */
         line-height:1.35;
         text-align:center;
         margin-bottom:10px;
       }
 
       .about-subhead{
-        font-size:12.5px;
+        font-size:12.5px;            /* same family as other section subtitles */
         line-height:1.6;
         margin:0 0 10px;
         text-align:left;
@@ -2959,24 +3070,24 @@
 
     @media (max-width:600px){
       .contact-section{
-        padding:72px 0 72px;
+        padding:72px 0 72px;      /* in line with other sections */
       }
 
       .contact-title{
-        font-size:20px;
+        font-size:20px;           /* matches other mobile section titles */
         line-height:1.35;
         margin-bottom:10px;
       }
 
       .contact-sub{
-        font-size:12.5px;
+        font-size:12.5px;         /* similar to CLEAR / Services / Case subs */
         line-height:1.6;
         max-width:520px;
         margin:0 auto;
       }
 
       .contact-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
+        grid-template-columns:repeat(2, minmax(0, 1fr));  /* 2x2 on mobile */
         gap:16px;
       }
 
@@ -2996,7 +3107,7 @@
       }
 
       .contact-card h3{
-        font-size:13.5px;
+        font-size:13.5px;         /* close to other card titles on mobile */
       }
 
       .contact-card p{
@@ -3005,428 +3116,23 @@
       }
     }
 
-    /* Show only on *larger* desktops */
-    @media (min-width:1361px){
-      .audit-recorded-btn{
-        display:block;
-      }
-    }
-
-    /* Tablet landscape desktop-mode adjustment (Galaxy Tab S9 Ultra) */
-    @media (min-width:1361px) and (max-width:2000px) and (orientation:landscape) and (pointer: coarse) {
-      .audit-recorded-btn{
-        transform: translateY(270px);
-      }
-    }
-
     /* Mobile only background fix for the blank space at the bottom */
     @media (max-device-width:600px){
       html,
       body{
+        /* Match the darkest color in your gradient */
         background-color:#041736;
       }
 
       body{
+        /* Turn off fixed background only on mobile */
         background-attachment:scroll;
       }
     }
-
-    /* iPhone 15 Pro (and similar) – landscape typography + audit layout */
-    @media (min-width:700px) and (max-width:900px) and (orientation:landscape) and (pointer:coarse) {
-      /* ---------- GLOBAL TYPE SCALE ---------- */
-
-      body{
-        font-size:15px;
-        line-height:1.7;
-      }
-
-      h1{
-        font-size:clamp(36px, 5vw, 44px);
-        line-height:1.05;
-      }
-
-      .hero-sub{
-        font-size:14.5px;
-        line-height:1.8;
-      }
-
-      .hero-ctas .btn{
-        font-size:13px;
-      }
-
-      .repeat-title,
-      .case-title,
-      .services-title,
-      .clear-title,
-      .about-title,
-      .contact-title{
-        font-size:22px;
-        line-height:1.35;
-      }
-
-      .audit-contrast .case-title{
-        font-size:22px;
-        line-height:1.35;
-      }
-
-      .audit-title,
-      .audit-right-title{
-        font-size:20px;
-        line-height:1.35;
-        transform:none;
-      }
-
-      .repeat-sub,
-      .case-sub,
-      .services-subtext,
-      .clear-sub,
-      .contact-sub,
-      .about-subhead,
-      .audit-contrast .case-sub{
-        font-size:14px;
-        line-height:1.75;
-      }
-
-      .services-subtitle{
-        font-size:13.5px;
-      }
-
-      .case-note{
-        font-size:12.5px;
-        line-height:1.6;
-      }
-
-      .trust-title{
-        font-size:15px;
-      }
-
-      .trust-text{
-        font-size:13px;
-        line-height:1.6;
-      }
-
-      .clear-card-title{
-        font-size:17px;
-      }
-
-      .clear-card-text,
-      .clear-card-details p,
-      .clear-card-details ul{
-        font-size:13px;
-        line-height:1.7;
-      }
-
-      .clear-bottom-text{
-        font-size:12.5px;
-        line-height:1.6;
-      }
-
-      .service-name{
-        font-size:18px;
-        line-height:1.3;
-      }
-
-      .service-tagline{
-        font-size:13px;
-        line-height:1.6;
-      }
-
-      .service-body,
-      .service-list,
-      .service-meta{
-        font-size:13px;
-        line-height:1.7;
-      }
-
-      .service-cta .btn{
-        font-size:12.5px;
-      }
-
-      .service-cta-note,
-      .service-link{
-        font-size:12px;
-      }
-
-      .service-badge{
-        font-size:11.5px;
-      }
-
-      .repeat-col h3{
-        font-size:15px;
-      }
-
-      .repeat-col li{
-        font-size:12.5px;
-        line-height:1.5;
-      }
-
-      .repeat-mid .mid-text{
-        font-size:15px;
-        line-height:1.4;
-      }
-
-      .repeat-tag{
-        font-size:11.5px;
-      }
-
-      .repeat-micro{
-        font-size:12.5px;
-        line-height:1.6;
-      }
-
-      .case-name{
-        font-size:18px;
-        line-height:1.3;
-      }
-
-      .case-desc{
-        font-size:13px;
-        line-height:1.6;
-      }
-
-      .case-bullets{
-        font-size:13px;
-        line-height:1.6;
-      }
-
-      .case-link{
-        font-size:12.5px;
-      }
-
-      .case-expanded{
-        font-size:13px;
-        line-height:1.7;
-      }
-
-      .case-expanded-heading{
-        font-size:14px;
-      }
-
-      .case-ppp-label{
-        font-size:13px;
-      }
-
-      .case-ppp-body{
-        font-size:13px;
-        line-height:1.6;
-      }
-
-      .case-expanded-cta .btn{
-        font-size:13px;
-      }
-
-      .case-expanded-cta-note{
-        font-size:12.5px;
-      }
-
-      .about-body,
-      .about-list{
-        font-size:13px;
-        line-height:1.7;
-      }
-
-      .about-closing{
-        font-size:14px;
-      }
-
-      .about-cta .btn{
-        font-size:13px;
-      }
-
-      .about-cta-note{
-        font-size:12.5px;
-      }
-
-      .contact-card h3{
-        font-size:15px;
-      }
-
-      .contact-card p{
-        font-size:13px;
-        line-height:1.6;
-      }
-
-      .site-footer{
-        font-size:13px;
-      }
-
-      /* ---------- AUDIT SECTION – LAYOUT + TYPE ---------- */
-
-      .audit-inner{
-        display:grid;
-        grid-template-columns:1.4fr 1fr;
-        column-gap:32px;
-        align-items:flex-start;
-        position:relative;
-      }
-
-      .audit-inner::before{
-        display:block;
-        content:"";
-        position:absolute;
-        top:12px;
-        bottom:0;
-        left:50%;
-        width:1px;
-        background-color:var(--rule-color);
-        opacity:0.55;
-        pointer-events:none;
-      }
-
-      .audit-left{
-        margin-left:0;
-        padding-right:20px;
-      }
-
-      .audit-right{
-        align-items:center;
-      }
-
-      .audit-head{
-        position:relative;
-        padding-bottom:32px;
-        text-align:center;
-      }
-
-      .audit-title,
-      .audit-right-title{
-        max-width:520px;
-        margin:0 auto;
-        text-align:center;
-      }
-
-      .audit-rule,
-      .audit-right-rule{
-        position:absolute;
-        top:86px;
-        width:var(--rule-width);
-        max-width:260px;
-        height:1px;
-        margin:0 auto;
-        background-color:var(--rule-color);
-        opacity:0.75;
-      }
-
-      .audit-rule{
-        left:50%;
-        transform:translateX(-50%);
-      }
-
-      .audit-right-rule{
-        right:auto;
-        left:50%;
-        transform:translateX(-50%);
-      }
-
-      .audit-body,
-      .audit-body-small{
-        font-size:13px;
-        line-height:1.7;
-      }
-
-      .audit-subtitle{
-        font-size:13.5px;
-      }
-
-      .audit-list{
-        font-size:13px;
-        line-height:1.6;
-      }
-
-      .audit-microcopy{
-        font-size:12px;
-      }
-
-      .audit-contents-btn{
-        font-size:12.5px;
-      }
-
-      .audit-divider{
-        width:100%;
-        max-width:520px;
-        margin:18px 0;
-        height:1px;
-        background-color:var(--rule-color);
-      }
-
-      .audit-visual-stack{
-        max-width:260px;
-        height:320px;
-        margin-top:16px;
-        position:relative;
-        display:flex;
-        justify-content:center;
-        align-self:flex-start;
-      }
-
-      .audit-visual-stack img{
-        width:220px;
-      }
-
-      .audit-visual-stack.open img.toc{
-        transform:translateX(-50%) translateY(-70px) scale(1.35);
-      }
-
-      .audit-visual-cta{
-        margin-top:8px;
-        display:flex;
-        justify-content:center;
-        position:relative;
-        z-index:3;
-        width:100%;
-        max-width:260px;
-        align-self:flex-start;
-      }
-
-      .audit-contents-btn{
-        padding:10px 22px;
-        box-shadow:0 10px 24px rgba(0, 0, 0, 0.45);
-        transform:none;
-      }
-
-      .audit-contents-btn:hover{
-        transform:none;
-      }
-
-      .audit-bottom{
-        grid-column:1 / -1;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-        margin-top:8px;
-      }
-
-      .audit-body-small{
-        max-width:640px;
-        margin:0 auto 8px auto;
-      }
-
-      .audit-footer-rule{
-        width:100%;
-        max-width:520px;
-        margin:8px 0 18px 0;
-        height:1px;
-        background-color:var(--rule-color);
-      }
-
-      .audit-cta-block .btn.primary{
-        width:260px;
-        font-size:13px;
-        padding:11px 22px;
-      }
-
-      .audit-recorded-btn{
-        display:none;
-      }
-
-      .audit-recorded-mobile{
-        display:none;
-      }
-    }
+    
   </style>
 </head>
-<!-- PART 2 END -->
+
 <body>
   <header>
     <div class="wrap">
@@ -3486,8 +3192,7 @@
       </div>
     </section>
     <!-- PART 1 END -->
-
-    <!-- PART 2 START -->
+        <!-- PART 2 START -->
     <section class="repeat-section page-section" aria-label="If buyers cannot repeat it">
       <div class="wrap">
         <h2 class="repeat-title">If buyers cannot repeat it, they will not buy it.</h2>
@@ -3602,9 +3307,9 @@
               <img
                 src="assets/48-hour-clarityaudit-button.png"
                 alt="Recorded Walkthrough (20 to 25 minutes)"
-              >
+                >
             </div>
-
+            
           </div>
 
           <div class="audit-right">
@@ -3626,9 +3331,9 @@
               <img
                 src="assets/48-hour-clarityaudit-button.png"
                 alt="Recorded Walkthrough (20 to 25 minutes)"
-              >
+                >
             </div>
-
+            
           </div>
 
           <div class="audit-bottom">
@@ -4365,7 +4070,6 @@
         </div>
       </div>
     </section>
-    <!-- PART 2 END -->
   </main>
 
   <footer class="site-footer">
@@ -4475,7 +4179,7 @@
         card.classList.remove('service-card--open');
 
         const toggle = card.querySelector('.service-link');
-
+        
         if (toggle) {
           toggle.textContent = 'View details >';
         }
@@ -4491,12 +4195,14 @@
 
       toggleLink.addEventListener('click', function (event) {
         event.preventDefault();
-
+        
         const isOpen = card.classList.contains('service-card--open');
         if (isOpen) {
+          // Close this card
           card.classList.remove('service-card--open');
           toggleLink.textContent = 'View details >';
         } else {
+          // Open this card and close the others
           closeOtherServiceCards(card);
           card.classList.add('service-card--open');
           toggleLink.textContent = 'Hide details ▲';
@@ -4517,7 +4223,7 @@
 
       toggleLink.addEventListener('click', function (event) {
         event.preventDefault();
-
+        
         const isOpen = card.classList.contains('service-card--open');
         if (isOpen) {
           card.classList.remove('service-card--open');
@@ -4543,7 +4249,7 @@
 
       toggleLink.addEventListener('click', function (event) {
         event.preventDefault();
-
+        
         const isOpen = card.classList.contains('service-card--open');
         if (isOpen) {
           card.classList.remove('service-card--open');
@@ -4599,7 +4305,6 @@
         });
       });
     })();
-
     (function () {
       // Center the middle trust card on mobile
       const isMobile = window.matchMedia('(max-width: 600px)').matches;
@@ -4624,3 +4329,4 @@
   </script>
 </body>
 </html>
+<!-- PART 2 END -->
