@@ -3042,6 +3042,55 @@
         line-height:1.5;
       }
     }
+
+    @media (max-width:600px){
+      .contact-section{
+        padding:72px 0 72px;      /* in line with other sections */
+      }
+
+      .contact-title{
+        font-size:20px;           /* matches other mobile section titles */
+        line-height:1.35;
+        margin-bottom:10px;
+      }
+
+      .contact-sub{
+        font-size:12.5px;         /* similar to CLEAR / Services / Case subs */
+        line-height:1.6;
+        max-width:520px;
+        margin:0 auto;
+      }
+
+      .contact-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));  /* 2x2 on mobile */
+        gap:16px;
+      }
+
+      .contact-card{
+        padding:14px 10px 14px;
+        border-radius:16px;
+      }
+
+      .contact-icon{
+        max-width:48px;
+        margin-bottom:12px;
+      }
+
+      .contact-card--location .contact-icon{
+        max-width:54px;
+        margin-bottom:16px;
+      }
+
+      .contact-card h3{
+        font-size:13.5px;         /* close to other card titles on mobile */
+      }
+
+      .contact-card p{
+        font-size:11.5px;
+        line-height:1.55;
+      }
+    }
+    
   </style>
 </head>
 
