@@ -562,6 +562,7 @@
       max-width:640px;
       padding-right:20px;        /* was 32px – gives you a bit more room */
       margin-left:30px; /* ← subtle rightward nudge */
+      position:relative;   /* 👈 add this */
     }
 
     .audit-right{
@@ -643,7 +644,9 @@
 
     /* Recorded walkthrough button image (desktop only) */
     .audit-recorded-btn{
-      margin:0;              /* ⬅ no extra vertical space */
+      position:absolute;   /* take it out of normal flow */
+      left:0;
+      bottom:0;            /* sit inside the left column, near the bottom */
       max-width:360px;       /* back to the original size */
       display:none;         /* hidden by default */
     }
