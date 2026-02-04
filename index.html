@@ -818,23 +818,72 @@
       transform: translateY(-52px);
     }
 
-    @media (max-width:900px){
+    /* iPhone 15 Pro landscape (and similar): treat the Audit section like a compact desktop two-column layout */
+    @media (max-width:900px) and (min-width:700px) and (orientation:landscape) and (pointer:coarse) {
+      /* Put the Audit layout back into two columns */
       .audit-inner{
-        display:flex;
-        flex-direction:column;
-        gap:32px;
+        display:grid;
+        grid-template-columns:1.4fr 1fr;
+        column-gap:32px;
+        align-items:flex-start;
+        position:relative;
       }
+
+      /* Bring the vertical divider back */
       .audit-inner::before{
-        display:none;
+        display:block;
+        content:"";
+        position:absolute;
+        top:12px;
+        bottom:0;
+        left:50%;
+        width:1px;
+        background-color:var(--rule-color);
+        opacity:0.55;
+        pointer-events:none;
       }
+
+      /* Left column — get rid of the mobile-column feel */
+      .audit-left{
+        margin-left:0;
+        padding-right:20px;
+      }
+
+      /* Right column — center things a bit more nicely */
       .audit-right{
-        align-items:flex-start;
+        align-items:center;
       }
+
+      /* Nudge the right title so it doesn’t look “thrown” */
+      .audit-right-title{
+        transform:translate(-20px, 24px);
+        font-size:20px;
+      }
+
+      /* Tighten the visual stack so it doesn’t dominate the whole section */
+      .audit-visual-stack{
+        max-width:260px;
+        height:320px;
+        margin-top:16px;
+      }
+
+      .audit-visual-stack img{
+        width:220px;
+      }
+
+      /* Make the bottom copy feel more like desktop (centered, spanning both columns) */
       .audit-bottom{
-        align-items:flex-start;
-        text-align:left;
+        grid-column:1 / -1;
+        align-items:center;
+        text-align:center;
+        margin-top:8px;
+      }
+
+      .audit-body-small{
+        max-width:640px;
       }
     }
+    
     /* CLEAR FRAMEWORK SECTION */
     .clear-section{
       text-align:center;
