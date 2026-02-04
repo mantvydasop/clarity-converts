@@ -3090,6 +3090,20 @@
         line-height:1.55;
       }
     }
+
+    /* Mobile only background fix for the blank space at the bottom */
+    @media (max-width:600px){
+      html,
+      body{
+        /* Match the darkest color in your gradient */
+        background-color:#041736;
+      }
+
+      body{
+        /* Turn off fixed background only on mobile */
+        background-attachment:scroll;
+      }
+    }
     
   </style>
 </head>
