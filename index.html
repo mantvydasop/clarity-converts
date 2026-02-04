@@ -2081,7 +2081,7 @@
       margin:0 0 18px;
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       :root{
         --section-space:72px;
       }
@@ -2097,7 +2097,7 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       /* Header: compact + symmetric on mobile */
       header{
         padding-top:6px;
@@ -2204,7 +2204,7 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       /* Repeatability panel: keep the desktop slab, just scale it down */
 
       .repeat-title{
@@ -2289,7 +2289,7 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       /* AUDIT SECTION – mobile layout */
 
       /* Top contrast heading + subheading */
@@ -2524,7 +2524,7 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       /* CLEAR section – mobile sizing */
       .clear-title{
         font-size:20px;          /* matches .repeat-title and audit .case-title */
@@ -2591,7 +2591,7 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       /* SERVICES SECTION – mobile alignment with Repeatability / Audit / CLEAR */
 
       .services-section{
@@ -2738,7 +2738,7 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       /* PORTFOLIO / CASE SECTION – mobile alignment */
 
       .case-section{
@@ -2934,7 +2934,7 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       /* ABOUT / THINKING – mobile alignment with other sections */
 
       .about-section{
@@ -3019,7 +3019,7 @@
       }
     }
 
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       .contact-section{
         padding:72px 0 72px;      /* in line with other sections */
       }
@@ -3068,7 +3068,7 @@
     }
 
     /* Mobile only background fix for the blank space at the bottom */
-    @media (max-width:600px){
+    @media (max-device-width:600px){
       html,
       body{
         /* Match the darkest color in your gradient */
@@ -4258,7 +4258,7 @@
     })();
     (function () {
       // Center the middle trust card on mobile
-      const isMobile = window.matchMedia('(max-width: 600px)').matches;
+      const isMobile = window.matchMedia('(max-device-width: 600px)').matches;
       if (!isMobile) return;
 
       window.addEventListener('load', function () {
