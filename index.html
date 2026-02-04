@@ -641,6 +641,28 @@
       line-height:1.7;
     }
 
+    /* Recorded walkthrough button image (desktop only) */
+    .audit-recorded-btn{
+      margin-top:24px;
+      max-width:360px;
+      display:none; /* hidden by default */
+    }
+
+    .audit-recorded-btn img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:999px;
+      box-shadow:0 14px 34px rgba(0,0,0,0.45);
+    }
+
+    /* Show only on desktop */
+    @media (min-width:901px){
+      .audit-recorded-btn{
+        display:block;
+      }
+    }
+
     .audit-list li + li{
       margin-top:4px;
     }
@@ -3283,6 +3305,14 @@
               <li>Which messages are creating unnecessary friction</li>
               <li>What to change first to improve clarity and conversions</li>
             </ul>
+
+            <div class="audit-recorded-btn">
+              <img
+                src="assets/48-hour-clarityaudit-button.png"
+                alt="Recorded Walkthrough (20 to 25 minutes)"
+                >
+            </div>
+            
           </div>
 
           <div class="audit-right">
