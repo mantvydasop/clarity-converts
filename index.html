@@ -674,7 +674,7 @@
     }
 
     /* Show only on desktop */
-    @media (min-width:901px){
+   @media (min-width:1201px){
       .audit-recorded-btn{
         display:block;
       }
@@ -827,9 +827,14 @@
       }
     }
 
-    @media (max-width:900px) and (min-width:601px){
-      /* Show the “Recorded walkthrough” pill on tablet
-      and position it like on mobile, just a bit higher */
+    /* Tablet + small desktop (including many tablets in landscape) */
+    @media (min-width:601px) and (max-width:1200px){
+      /* Hide the left-column desktop image in this range */
+
+      .audit-recorded-btn{
+        display:none;
+      }
+      
       .audit-recorded-mobile{
         display:block;
         position:absolute;
