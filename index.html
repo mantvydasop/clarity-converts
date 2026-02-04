@@ -643,17 +643,17 @@
 
     /* Recorded walkthrough button image (desktop only) */
     .audit-recorded-btn{
-      margin-top:24px;
-      max-width:360px;
-      display:none; /* hidden by default */
+      margin-top:14px;      /* much tighter */
+      max-width:300px;      /* smaller footprint */
+      display:none;         /* hidden by default */
     }
 
     .audit-recorded-btn img{
       width:100%;
       height:auto;
       display:block;
-      border-radius:999px;
-      box-shadow:0 14px 34px rgba(0,0,0,0.45);
+      box-shadow:none;      /* remove button feel */
+      border-radius:0;      /* image, not UI */
     }
 
     /* Show only on desktop */
