@@ -3575,42 +3575,6 @@
       }
 
     }
-    
-    /* Tablet adjustment – fix RIGHT audit grey rule centering */
-    @media (min-width:700px) and (max-width:1360px) {
-
-      /* Let right column stretch so centering is real */
-      .audit-right{
-        align-items:stretch;
-      }
-
-      /* Make the heading container span the column */
-      .audit-right .audit-head{
-        width:100%;
-        max-width:none;
-        margin-left:0;
-        margin-right:0;
-        position:relative;
-        text-align:center;
-      }
-
-      /* Remove desktop transform from the right title */
-      .audit-right-title{
-        transform:none;
-        text-align:center;
-        margin:0 auto;
-      }
-
-      /* TRUE center the grey rule inside the right column */
-      .audit-right .audit-right-rule{
-        left:50%;
-        right:auto;
-        transform:translateX(-50%);
-        width:340px;
-        max-width:90%;
-      }
-
-    }
   </style>
 </head>
 
