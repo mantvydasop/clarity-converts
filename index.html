@@ -704,7 +704,17 @@
       .audit-left .audit-list{
         padding-right:6px;        /* subtle nudge away from the vertical rule */
         max-width:95%;            /* stops text from kissing the divider on narrower tablets */
-      }  
+      }
+
+      /* Shorten audit headline rules, keep them centered */
+      .audit-rule,
+      .audit-right-rule{
+        width:220px;        /* try 200–240px if needed */
+        max-width:70%;
+        left:50%;
+        transform:translateX(-50%);
+      }
+      
     }
     
     .audit-list li + li{
