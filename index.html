@@ -690,6 +690,14 @@
         transform: translateY(270px);
       }
     }
+
+    /* Tablet portrait adjustment – Repeatability left column padding */
+    @media (min-width:700px) and (max-width:1100px) and (orientation:portrait) and (pointer:coarse) {
+      /* Only affect the left column bullets, not the headline */
+      .repeat-grid .repeat-col:first-child .list-wrap {
+        padding-right: 18px; /* tweak 16–24px to taste */
+      }
+    }
     
     
     
