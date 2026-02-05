@@ -3326,6 +3326,7 @@
         bottom: 130px;
         left: 50%;
         width: 1px;
+        height: auto;  /* override the global fixed height */
         background-color: var(--rule-color);
         opacity: 0.55;
         pointer-events: none;
@@ -3453,12 +3454,13 @@
         width: 100%;
         max-width: 260px;
         align-self: flex-start;
+        transform: translateY(-14px);
       }
 
       .audit-contents-btn {
         padding: 10px 22px;
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
-        transform: translateY(-14px);
+        transform: none;
       }
 
       .audit-contents-btn:hover {
