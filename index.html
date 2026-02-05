@@ -706,15 +706,24 @@
         max-width:95%;            /* stops text from kissing the divider on narrower tablets */
       }
 
-      /* Shorten audit headline rules, keep them centered */
-      .audit-rule,
-      .audit-right-rule{
-        position:absolute;
-        top:98px;
+      /* LEFT headline rule — centered in left column */
+      .audit-left .audit-rule{
         left:50%;
-        right:auto;            /* 👈 fixes the stretched / off-center right line */
         transform:translateX(-50%);
-        width:340px;              /* ← adjust 300–360px to taste */
+        width:340px;
+        max-width:90%;
+      }
+
+      /* Anchor the right column FIRST */
+      .audit-right{
+        position:relative;
+      }
+
+      .audit-right .audit-right-rule{
+        left:50%;
+        right:auto;
+        transform:translateX(-50%);
+        width:340px;
         max-width:90%;
       }
 
