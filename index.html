@@ -714,18 +714,14 @@
         max-width:260px;  /* was 90%, now a hard upper cap */
       }
 
-      /* Make the right audit head a centered column container */
+      /* Make sure the right audit head is a centered block container */
       .audit-right .audit-head{
-        width:100%;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
         text-align:center;
         position:relative;
-        padding-bottom:32px;
+        padding-bottom:36px;
       }
 
-      /* RIGHT headline rule, centered under the right heading */
+      /* RIGHT headline rule, centered under the right heading in the right column */
       .audit-right .audit-right-rule{
         left:50% !important;
         right:auto !important;
@@ -737,28 +733,27 @@
       
       /* Align the right heading text with its centered rule */
       .audit-right-title{
-        transform:none !important;   /* override desktop translate */
+        transform:none !important;      /* remove desktop translate(-58px, 40px) */
         text-align:center;
         margin:0 auto;
         max-width:260px;
       }
 
-      /* Center the right column content (booklet + button) within the right column */
-      .audit-right{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-      }
-
-      .audit-visual-stack{
+      /* Center the booklet and button within the right column without changing the column layout */
+      .audit-right .audit-visual-stack{
+        margin-left:auto;
+        margin-right:auto;
         align-self:center;
       }
 
-      .audit-visual-cta{
+      .audit-right .audit-visual-cta{
+        margin-left:auto;
+        margin-right:auto;
         align-self:center;
         display:flex;
         justify-content:center;
         width:100%;
+        max-width:360px;
       }
       
     }
