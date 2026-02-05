@@ -706,6 +706,15 @@
         max-width:95%;            /* stops text from kissing the divider on narrower tablets */
       }
 
+      /* Trim ONLY the grey dividers inside the left text column
+         (NOT the headline rule) so they don't hit the center divider */
+
+      .audit-left > .audit-divider{
+        max-width:420px;   /* adjust 400–440px if needed */
+        margin-left:0;     /* keep left-aligned */
+      }
+      
+
       /* LEFT headline rule */
       .audit-left .audit-rule{
         left:50%;
