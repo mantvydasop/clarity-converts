@@ -692,11 +692,17 @@
     }
 
     /* Tablet portrait adjustment – Repeatability left column padding */
-    @media (min-width:600px) and (max-width:1360px) and (orientation:portrait) {
+    @media (min-width:700px) and (max-width:1360px) {
       /* Only affect the left column bullets, not the headline */
       .repeat-grid .repeat-col:first-child .list-wrap {
-        padding-right: 18px; /* tweak 16–24px to taste */
+        padding-right: 24px;   /* adjust 20–28px to taste */
       }
+
+      /* Tiny extra nudge just on the text, so it doesn’t feel crowded */
+      .repeat-grid .repeat-col:first-child li {
+        padding-right:4px;
+      }
+      
     }
     
     
