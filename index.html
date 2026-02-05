@@ -714,6 +714,11 @@
         max-width:260px;  /* was 90%, now a hard upper cap */
       }
 
+      /* Shift the entire right column left so the stack sits closer to center */
+      .audit-right{
+        transform:translateX(-40px);
+      }
+
       /* Make sure the right audit head is a centered block container */
       .audit-right .audit-head{
         text-align:center;
@@ -739,7 +744,7 @@
         max-width:260px;
       }
 
-      /* Center the booklet and button within the right column without changing the column layout */
+      /* Center the booklet and button within the right column, both shifted left by the parent */
       .audit-right .audit-visual-stack{
         margin-left:auto;
         margin-right:auto;
