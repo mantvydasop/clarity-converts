@@ -709,9 +709,10 @@
       /* Shorten audit headline rules, keep them centered */
       .audit-rule,
       .audit-right-rule{
-        width:220px;        /* try 200–240px if needed */
-        max-width:70%;
-        left:50%;
+        width:72%;           /* make them longer – try 70–80% to taste */
+        max-width:280px;     /* hard cap so they don’t get huge on larger tablets */
+        left:50%;            /* center inside EACH column's heading */
+        right:auto;
         transform:translateX(-50%);
       }
       
