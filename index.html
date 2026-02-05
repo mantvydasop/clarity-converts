@@ -3223,7 +3223,7 @@
       }
 
       .repeat-section::before {
-        top: 330px;
+        top: 330px; /* ribbon pushed further down in landscape */
       }
 
       /* Case / portfolio cards */
@@ -3331,10 +3331,10 @@
         pointer-events: none;
       }
 
-      /* Left column – keep it tidy and slightly away from the divider */
+      /* Left column, kept away from the divider */
       .audit-left {
         margin-left: 0;
-        padding-right: 20px;
+        padding-right: 28px;
       }
 
       /* Right column – centered stack */
@@ -3380,9 +3380,8 @@
         transform: translateX(-50%);
       }
 
-      /* Audit body copy, lists, microcopy */
-      .audit-body,
-      .audit-body-small {
+      /* Audit body copy, lists */
+      .audit-body {
         font-size: 13px;
         line-height: 1.7;
       }
@@ -3396,21 +3395,27 @@
         line-height: 1.6;
       }
 
+      /* Shorter grey dividers in the left column so they do not run into the center line */
+      .audit-divider {
+        width: 88%;
+        max-width: none;
+        margin: 18px 0;
+        height: 1px;
+        background-color: var(--rule-color);
+      }
+
+      /* Bottom microcopy above the CTA – smaller so it reads as supporting text, not a subheadline */
+      .audit-body-small {
+        font-size: 11.5px;
+        line-height: 1.6;
+      }
+
       .audit-microcopy {
         font-size: 12px;
       }
 
       .audit-contents-btn {
         font-size: 12.5px;
-      }
-
-      /* Divider lines in left column */
-      .audit-divider {
-        width: 100%;
-        max-width: 520px;
-        margin: 18px 0;
-        height: 1px;
-        background-color: var(--rule-color);
       }
 
       /* Visual stack on the right side */
