@@ -691,7 +691,7 @@
       }
     }
 
-    /* Tablet portrait adjustment – Repeatability left column padding */
+    /* Tablet portrait adjustment - Repeatability left column padding */
     @media (min-width:700px) and (max-width:1360px) {
       
       /* Give the whole left column more space away from the center divider */
@@ -710,23 +710,38 @@
       .audit-left .audit-rule{
         left:50%;
         transform:translateX(-50%);
-        width:82%;        /* <— was 300px / 90% combo */
-        max-width:260px;  /* <— was 90%, now a hard upper cap */
+        width:82%;        /* was 300px / 90% combo */
+        max-width:260px;  /* was 90%, now a hard upper cap */
       }
 
-      /* RIGHT headline rule */
+      /* RIGHT headline rule - centered within the right column */
       .audit-right .audit-right-rule{
         left:50% !important;
         right:auto !important;
-        transform: translateX(calc(-50% - 50px)) !important;
-        width:340px !important;
-        max-width:90% !important;
+        transform: translateX(-50%) !important;
+        width:82% !important;
+        max-width:260px !important;
         margin:0 auto !important;
       }
       
       /* Align the right heading text with its centered rule */
       .audit-right-title{
         transform:none;
+        text-align:center;
+        margin:0 auto;
+      }
+
+      /* Center the right column content (booklet + button) within the column */
+      .audit-right{
+        align-items:center;
+      }
+
+      .audit-visual-stack{
+        align-self:center;
+      }
+
+      .audit-visual-cta{
+        align-self:center;
       }
       
     }
