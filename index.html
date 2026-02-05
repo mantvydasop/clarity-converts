@@ -709,11 +709,18 @@
       /* Shorten audit headline rules, keep them centered */
       .audit-rule,
       .audit-right-rule{
-        width:72%;           /* make them longer – try 70–80% to taste */
-        max-width:280px;     /* hard cap so they don’t get huge on larger tablets */
-        left:50%;            /* center inside EACH column's heading */
-        right:auto;
+        position:absolute;
+        top:98px;
+        width:280px;           /* make them longer left→right */
+        max-width:80%;
+        left:50%;
+        right:auto;            /* 👈 fixes the stretched / off-center right line */
         transform:translateX(-50%);
+      }
+
+      /* Align the right heading text with its centered rule */
+      .audit-right-title{
+        transform:none;
       }
       
     }
