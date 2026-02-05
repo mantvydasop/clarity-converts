@@ -710,8 +710,8 @@
       .audit-left .audit-rule{
         left:50%;
         transform:translateX(-50%);
-        width:300px;
-        max-width:90%;
+        width:82%;        /* <— was 300px / 90% combo */
+        max-width:260px;  /* <— was 90%, now a hard upper cap */
       }
 
       /* RIGHT headline rule */
