@@ -716,13 +716,12 @@
 
       /* RIGHT headline rule */
       .audit-right .audit-right-rule{
-        left:auto;
+        left:50%;
         right:auto;
-        transform:none;
-        margin-left:auto;
-        margin-right:auto;
+        transform:translateX(-50%);
         width:100%;
         max-width:340px;
+        margin:0; /* just to neutralize the old margin-auto */
       }
       
       /* Align the right heading text with its centered rule */
