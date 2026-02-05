@@ -706,7 +706,16 @@
         max-width:95%;            /* stops text from kissing the divider on narrower tablets */
       }
 
-      /* LEFT headline rule — centered in left column */
+      /* Constrain heading containers so rules center visually */
+      .audit-left .audit-head,
+      .audit-right .audit-head{
+        width:100%;
+        max-width:360px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      /* LEFT headline rule */
       .audit-left .audit-rule{
         left:50%;
         transform:translateX(-50%);
@@ -714,11 +723,7 @@
         max-width:90%;
       }
 
-      /* Anchor the right column FIRST */
-      .audit-right{
-        position:relative;
-      }
-
+      /* RIGHT headline rule */
       .audit-right .audit-right-rule{
         left:50%;
         right:auto;
@@ -726,7 +731,7 @@
         width:340px;
         max-width:90%;
       }
-
+      
       /* Align the right heading text with its centered rule */
       .audit-right-title{
         transform:none;
