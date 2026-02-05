@@ -693,19 +693,19 @@
 
     /* Tablet portrait adjustment – Repeatability left column padding */
     @media (min-width:700px) and (max-width:1360px) {
-      /* Only affect the left column bullets, not the headline */
-      .repeat-grid .repeat-col:first-child .list-wrap {
-        padding-right: 24px;   /* adjust 20–28px to taste */
+      
+      /* Give the whole left column more space away from the center divider */
+      .audit-left{
+        padding-right:32px;       /* was 20px in the base rule */
       }
 
-      /* Tiny extra nudge just on the text, so it doesn’t feel crowded */
-      .repeat-grid .repeat-col:first-child li {
-        padding-right:4px;
-      }
-      
+      /* Extra padding just on the main text + bullet list */
+      .audit-left .audit-body,
+      .audit-left .audit-list{
+        padding-right:6px;        /* subtle nudge away from the vertical rule */
+        max-width:95%;            /* stops text from kissing the divider on narrower tablets */
+      }  
     }
-    
-    
     
     .audit-list li + li{
       margin-top:4px;
